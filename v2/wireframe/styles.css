@@ -224,6 +224,7 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
 }
 .main-nav a:hover { color: var(--primary); }
 .arrow { font-size: 0.6em; margin-left: 3px; }
+.dropdown-icon { width: 16px; height: 16px; vertical-align: -2px; margin-right: 4px; flex-shrink: 0; }
 
 /* Dropdown */
 .has-dropdown { position: relative; }
@@ -485,6 +486,7 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     border-radius: var(--radius-full);
     border: 1px solid var(--border);
 }
+.pill-icon { width: 18px; height: 18px; flex-shrink: 0; }
 
 /* ========== 5. STUDENT COUNT BAR ========== */
 .student-count-bar {
@@ -549,12 +551,22 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     transform: translateY(-6px);
     box-shadow: var(--shadow-lg);
 }
-.skill-emoji {
-    font-size: 2.5rem;
-    display: block;
-    margin-bottom: 12px;
+.skill-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 14px;
+    background: rgba(255,255,255,0.2);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     z-index: 1;
+}
+.skill-icon svg {
+    width: 28px;
+    height: 28px;
+    color: #fff;
 }
 .skill-card h3 {
     font-size: 1.1rem;
@@ -572,6 +584,12 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
 .skill-card-cta {
     color: var(--text) !important;
     border: 2px dashed rgba(0,0,0,0.2);
+}
+.skill-card-cta .skill-icon {
+    background: rgba(0,0,0,0.08);
+}
+.skill-card-cta .skill-icon svg {
+    color: var(--text);
 }
 
 /* ========== 7. PROVEN ADVANTAGE ========== */
@@ -665,9 +683,9 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
     margin: 0 auto 16px;
 }
+.advantage-icon svg { width: 28px; height: 28px; }
 .advantage-card h4 {
     font-size: 1rem;
     font-weight: 700;
@@ -723,9 +741,9 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
     margin: 16px auto 20px;
 }
+.step-icon-box svg { width: 32px; height: 32px; }
 .step-card h4 {
     font-size: 1.05rem;
     font-weight: 700;
@@ -813,7 +831,19 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     justify-content: center;
     position: relative;
 }
-.course-emoji { font-size: 3rem; }
+.course-icon-wrap {
+    width: 64px;
+    height: 64px;
+    background: rgba(255,255,255,0.2);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.course-icon-wrap svg {
+    width: 36px;
+    height: 36px;
+}
 .course-badge {
     position: absolute;
     top: 12px;
@@ -898,9 +928,9 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
     margin-bottom: 16px;
 }
+.feature-icon svg { width: 28px; height: 28px; }
 .feature-card h4 {
     font-size: 1rem;
     font-weight: 700;
@@ -1157,9 +1187,9 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
     margin: 0 auto 16px;
 }
+.parent-icon svg { width: 28px; height: 28px; }
 .parent-card h4 {
     font-size: 0.95rem;
     font-weight: 700;
@@ -1231,8 +1261,10 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(124, 58, 237, 0.1);
 }
-.award-pill span {
-    font-size: 1.3rem;
+.award-icon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
 }
 
 /* ========== CURRICULUM PATH ========== */
@@ -1367,8 +1399,8 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.3rem;
 }
+.quality-icon svg { width: 24px; height: 24px; }
 .quality-point h4 {
     font-size: 1rem;
     font-weight: 700;
@@ -1808,7 +1840,8 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     /* Skills */
     .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .skill-card { padding: 20px 14px; }
-    .skill-emoji { font-size: 2rem; }
+    .skill-icon { width: 40px; height: 40px; }
+    .skill-icon svg { width: 22px; height: 22px; }
 
     /* Proven advantage */
     .advantage-cards { grid-template-columns: 1fr; gap: 16px; }
@@ -1868,5 +1901,5 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     .parent-grid { grid-template-columns: 1fr; }
     .checkout-strip-inner { flex-direction: column; gap: 16px; }
     .award-pill { padding: 8px 16px; font-size: 0.8rem; gap: 6px; }
-    .award-pill span { font-size: 1.1rem; }
+    .award-icon { width: 18px; height: 18px; }
 }
