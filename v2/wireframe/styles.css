@@ -586,44 +586,46 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
 .proven-chart-box {
     background: linear-gradient(135deg, #F5F3FF, #EDE9FE);
     border-radius: var(--radius-2xl);
-    padding: 40px 32px 24px;
+    padding: 48px 32px 32px;
+    min-height: 340px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.chart-bars-row {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    gap: 32px;
-    min-height: 320px;
-    position: relative;
+    gap: 36px;
+    flex: 1;
 }
 .chart-bar {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
-    width: 64px;
-    height: 220px;
-    justify-content: flex-end;
+    width: 68px;
 }
 .chart-fill {
     width: 100%;
     border-radius: var(--radius-md) var(--radius-md) 0 0;
     transition: height 0.6s ease;
 }
-.chart-bar-1 .chart-fill { background: #CBD5E1; }
-.chart-bar-2 .chart-fill { background: #93C5FD; }
-.chart-bar-3 .chart-fill { background: var(--primary); }
+.chart-bar-1 .chart-fill { background: #CBD5E1; height: 80px; }
+.chart-bar-2 .chart-fill { background: #93C5FD; height: 130px; }
+.chart-bar-3 .chart-fill { background: var(--primary); height: 200px; }
 .chart-label {
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 600;
     color: var(--text-secondary);
     text-align: center;
+    margin-top: 10px;
+    white-space: nowrap;
 }
 .chart-title {
-    position: absolute;
-    top: 16px;
-    left: 24px;
     font-size: 0.82rem;
     font-weight: 700;
     color: var(--text-secondary);
+    margin-bottom: 16px;
 }
 
 .proven-content h3 {
@@ -1720,7 +1722,10 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     .skills-grid { grid-template-columns: repeat(4, 1fr); }
 
     .proven-inner { grid-template-columns: 1fr; }
-    .proven-chart-box { min-height: 260px; }
+    .proven-chart-box { min-height: 260px; padding: 36px 24px 24px; }
+    .chart-bar-1 .chart-fill { height: 60px !important; }
+    .chart-bar-2 .chart-fill { height: 100px !important; }
+    .chart-bar-3 .chart-fill { height: 160px !important; }
 
     .features-grid { grid-template-columns: repeat(2, 1fr); }
     .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1830,8 +1835,12 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     .grade-filters { gap: 6px; }
     .grade-btn { padding: 8px 18px; font-size: 0.82rem; }
 
-    .proven-chart-box { min-height: 220px; padding: 32px 20px 20px; }
-    .chart-bar { width: 48px; height: 160px; }
+    .proven-chart-box { min-height: 220px; padding: 28px 16px 20px; }
+    .chart-bar { width: 52px; }
+    .chart-bars-row { gap: 24px; }
+    .chart-bar-1 .chart-fill { height: 50px !important; }
+    .chart-bar-2 .chart-fill { height: 80px !important; }
+    .chart-bar-3 .chart-fill { height: 130px !important; }
 
     .footer-contact-row { flex-direction: column; gap: 8px; text-align: center; }
 

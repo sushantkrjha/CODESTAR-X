@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodestarX - Build the Future | Coding Classes for Kids</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ========== 1. SCROLLING ANNOUNCEMENT BAR ========== -->
+    <div class="announcement-bar">
+        <div class="announcement-track">
+            <span class="announcement-text">Book a Free Demo Class for your child - Limited spots available!</span>
+            <span class="announcement-text">Book a Free Demo Class for your child - Limited spots available!</span>
+            <span class="announcement-text">Book a Free Demo Class for your child - Limited spots available!</span>
+            <span class="announcement-text">Book a Free Demo Class for your child - Limited spots available!</span>
+            <span class="announcement-text">Book a Free Demo Class for your child - Limited spots available!</span>
+            <span class="announcement-text">Book a Free Demo Class for your child - Limited spots available!</span>
+            <span class="announcement-text">Book a Free Demo Class for your child - Limited spots available!</span>
+            <span class="announcement-text">Book a Free Demo Class for your child - Limited spots available!</span>
+            <span class="announcement-text">Book a Free Demo Class for your child - Limited spots available!</span>
+            <span class="announcement-text">Book a Free Demo Class for your child - Limited spots available!</span>
+            <span class="announcement-text">Book a Free Demo Class for your child - Limited spots available!</span>
+            <span class="announcement-text">Book a Free Demo Class for your child - Limited spots available!</span>
+        </div>
+    </div>
+
+    <!-- ========== 2. STICKY HEADER ========== -->
+    <header class="header" id="header">
+        <div class="container header-inner">
+            <a href="#hero" class="logo">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="44" height="44" rx="12" fill="url(#lgH)"/>
+                        <path d="M18 13l-8 9 8 9" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M26 13l8 9-8 9" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M24 11l-4 22" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/>
+                        <polygon points="38,6 39.8,10.5 44,11 40.8,14 41.6,18.2 38,16 34.4,18.2 35.2,14 32,11 36.2,10.5" fill="#FBBF24"/>
+                        <defs>
+                            <linearGradient id="lgH" x1="0" y1="0" x2="44" y2="44">
+                                <stop offset="0%" stop-color="#6D28D9"/>
+                                <stop offset="50%" stop-color="#7C3AED"/>
+                                <stop offset="100%" stop-color="#4F46E5"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </span>
+                <span class="logo-text">CODESTAR<span class="logo-x">X</span></span>
+            </a>
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li class="has-dropdown">
+                        <a href="#programs">Programs <span class="arrow">&#9662;</span></a>
+                        <ul class="dropdown">
+                            <li><a href="#programs">&#128992; Scratch</a></li>
+                            <li><a href="#programs">&#128013; Python</a></li>
+                            <li><a href="#programs">&#127760; Web Dev</a></li>
+                            <li><a href="#programs">&#128241; App Dev</a></li>
+                            <li><a href="#programs">&#129302; AI/ML</a></li>
+                            <li><a href="#programs">&#127918; Game Dev</a></li>
+                            <li class="dropdown-divider"></li>
+                            <li><a href="#programs">&#128204; View All Programs</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#why-us">About Us</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline-header">Login</a>
+                <a href="#booking" class="btn btn-primary">Sign Up</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#why-us">About Us</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#" class="btn btn-outline-header" style="margin-bottom:8px;">Login</a></li>
+                <li><a href="#booking" class="btn btn-primary">Sign Up</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- ========== 3. HERO SECTION ========== -->
+    <section class="hero" id="hero">
+        <div class="container hero-inner">
+            <p class="hero-explore">Explore the future of coding</p>
+            <h1 class="hero-heading">
+                Dream<span class="dot dot-red">.</span>
+                Discover<span class="dot dot-green">.</span>
+                Code<span class="dot dot-cyan">.</span>
+            </h1>
+            <a href="#booking" class="btn btn-primary btn-large hero-cta">Start Your Child's Journey</a>
+
+            <div class="hero-bottom">
+                <div class="hero-trust-left">
+                    <span>&#128737; Child-Safe Platform</span>
+                    <span>&#9733; 4.9 Rated by Parents</span>
+                    <span>&#128274; 100% Data Protected</span>
+                </div>
+                <div class="hero-project-right">
+                    <span>&#128187; Project-based learning</span>
+                    <span>Live 1:1 classes with expert teachers</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar">
+            <div class="container stats-bar-inner">
+                <div class="stat-item">
+                    <strong>10K+</strong>
+                    <span>Students</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <strong>500+</strong>
+                    <span>Teachers</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <strong>15+</strong>
+                    <span>Countries</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 4. SKILLS FOR SUCCESS ========== -->
+    <section class="section skills" id="programs">
+        <div class="container">
+            <div class="section-header">
+                <h2>Skills for Success</h2>
+                <p>Explore our grade-appropriate coding courses designed to build real-world skills</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card" style="background: #33CCFF;">
+                    <div class="skill-emoji">&#128992;</div>
+                    <h3>Scratch</h3>
+                    <p>Visual block-based coding for beginners</p>
+                </div>
+                <div class="skill-card" style="background: #FFA800;">
+                    <div class="skill-emoji">&#128013;</div>
+                    <h3>Python</h3>
+                    <p>Text-based programming with fun projects</p>
+                </div>
+                <div class="skill-card" style="background: #00B67A;">
+                    <div class="skill-emoji">&#127760;</div>
+                    <h3>Web Dev</h3>
+                    <p>Build real websites with HTML, CSS & JS</p>
+                </div>
+                <div class="skill-card" style="background: #7453D7;">
+                    <div class="skill-emoji">&#128241;</div>
+                    <h3>App Dev</h3>
+                    <p>Create real mobile applications</p>
+                </div>
+                <div class="skill-card" style="background: #FFCF11;">
+                    <div class="skill-emoji">&#129302;</div>
+                    <h3>AI / ML</h3>
+                    <p>Future-ready artificial intelligence skills</p>
+                </div>
+                <div class="skill-card" style="background: #ED675C;">
+                    <div class="skill-emoji">&#127918;</div>
+                    <h3>Game Dev</h3>
+                    <p>Design and code interactive games</p>
+                </div>
+                <div class="skill-card" style="background: #E958B7;">
+                    <div class="skill-emoji">&#128202;</div>
+                    <h3>Data Science</h3>
+                    <p>Analytics, visualization & insights</p>
+                </div>
+                <div class="skill-card skill-card-cta" style="background: #FFE4D8;">
+                    <div class="skill-emoji">&#128204;</div>
+                    <h3>View All</h3>
+                    <p>Explore our full curriculum</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 5. WHY CHOOSE CODESTARX ========== -->
+    <section class="section why-choose" id="why-us">
+        <div class="container">
+            <div class="why-choose-inner">
+                <div class="why-choose-visual">
+                    <div class="why-visual-box">
+                        <div class="why-visual-emoji">&#127891;&#8205;</div>
+                        <p>Student learning with an expert instructor on screen</p>
+                        <div class="why-play-btn">&#9654;</div>
+                    </div>
+                </div>
+                <div class="why-choose-content">
+                    <h2>Why Choose <span class="underline-yellow">CodestarX</span></h2>
+                    <div class="value-props">
+                        <div class="value-prop">
+                            <div class="vp-icon">&#9733;</div>
+                            <div>
+                                <h4>Certified Expert Instructors</h4>
+                                <p>Background-verified teachers trained in child education with 5+ years experience</p>
+                            </div>
+                        </div>
+                        <div class="value-prop">
+                            <div class="vp-icon">&#128218;</div>
+                            <div>
+                                <h4>Project-Based Curriculum</h4>
+                                <p>Hands-on learning with real projects - not just theory and lectures</p>
+                            </div>
+                        </div>
+                        <div class="value-prop">
+                            <div class="vp-icon">&#127942;</div>
+                            <div>
+                                <h4>Recognized Certifications</h4>
+                                <p>Auto-generated certificates on course completion for college readiness</p>
+                            </div>
+                        </div>
+                        <div class="value-prop">
+                            <div class="vp-icon">&#128274;</div>
+                            <div>
+                                <h4>Child Safety First</h4>
+                                <p>Mandatory class recordings, strict conduct policies, full data privacy</p>
+                            </div>
+                        </div>
+                        <div class="value-prop">
+                            <div class="vp-icon">&#127760;</div>
+                            <div>
+                                <h4>Learn from Anywhere</h4>
+                                <p>Live classes with timezone-aware scheduling across 15+ countries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 6. CHOOSE YOUR COURSE ========== -->
+    <section class="section courses" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Your Course</h2>
+                <p>Structured, grade-wise progression from beginner to advanced</p>
+            </div>
+            <div class="grade-filters">
+                <button class="grade-btn active">All</button>
+                <button class="grade-btn">Grade 4-5</button>
+                <button class="grade-btn">Grade 6-7</button>
+                <button class="grade-btn">Grade 8-10</button>
+            </div>
+            <div class="subject-filters">
+                <button class="subject-btn active">All Subjects</button>
+                <button class="subject-btn">Scratch</button>
+                <button class="subject-btn">Python</button>
+                <button class="subject-btn">Web Dev</button>
+                <button class="subject-btn">App Dev</button>
+                <button class="subject-btn">AI/ML</button>
+                <button class="subject-btn">Game Dev</button>
+            </div>
+            <div class="course-scroll">
+                <div class="course-card">
+                    <div class="course-img" style="background: linear-gradient(135deg, #33CCFF, #0099CC);">
+                        <span class="course-emoji">&#128992;</span>
+                        <span class="course-grade-tag">Grade 4-5</span>
+                    </div>
+                    <div class="course-body">
+                        <h4>Scratch & Block Coding</h4>
+                        <div class="course-meta">
+                            <span class="rating">&#9733; 4.8</span>
+                            <span>120+ students</span>
+                        </div>
+                        <div class="course-pricing">
+                            <span class="price">$19<small>/class</small></span>
+                            <span class="price-old">$29</span>
+                        </div>
+                        <a href="#booking" class="btn btn-primary btn-small btn-full">Book Demo</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-img" style="background: linear-gradient(135deg, #FFA800, #CC8500);">
+                        <span class="course-emoji">&#128013;</span>
+                        <span class="course-grade-tag">Grade 5-7</span>
+                    </div>
+                    <div class="course-body">
+                        <h4>Python for Kids</h4>
+                        <div class="course-meta">
+                            <span class="rating">&#9733; 4.9</span>
+                            <span>200+ students</span>
+                        </div>
+                        <div class="course-pricing">
+                            <span class="price">$22<small>/class</small></span>
+                            <span class="price-old">$35</span>
+                        </div>
+                        <a href="#booking" class="btn btn-primary btn-small btn-full">Book Demo</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-img" style="background: linear-gradient(135deg, #00B67A, #008C5E);">
+                        <span class="course-emoji">&#127760;</span>
+                        <span class="course-grade-tag">Grade 6-8</span>
+                    </div>
+                    <div class="course-body">
+                        <h4>Web Development</h4>
+                        <div class="course-meta">
+                            <span class="rating">&#9733; 4.7</span>
+                            <span>150+ students</span>
+                        </div>
+                        <div class="course-pricing">
+                            <span class="price">$25<small>/class</small></span>
+                            <span class="price-old">$40</span>
+                        </div>
+                        <a href="#booking" class="btn btn-primary btn-small btn-full">Book Demo</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-img" style="background: linear-gradient(135deg, #7453D7, #5A3FB5);">
+                        <span class="course-emoji">&#128241;</span>
+                        <span class="course-grade-tag">Grade 7-9</span>
+                    </div>
+                    <div class="course-body">
+                        <h4>App Development</h4>
+                        <div class="course-meta">
+                            <span class="rating">&#9733; 4.8</span>
+                            <span>90+ students</span>
+                        </div>
+                        <div class="course-pricing">
+                            <span class="price">$28<small>/class</small></span>
+                            <span class="price-old">$42</span>
+                        </div>
+                        <a href="#booking" class="btn btn-primary btn-small btn-full">Book Demo</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-img" style="background: linear-gradient(135deg, #FFCF11, #CCa500);">
+                        <span class="course-emoji">&#129302;</span>
+                        <span class="course-grade-tag">Grade 8-10</span>
+                    </div>
+                    <div class="course-body">
+                        <h4>AI & Machine Learning</h4>
+                        <div class="course-meta">
+                            <span class="rating">&#9733; 4.9</span>
+                            <span>80+ students</span>
+                        </div>
+                        <div class="course-pricing">
+                            <span class="price">$30<small>/class</small></span>
+                            <span class="price-old">$45</span>
+                        </div>
+                        <a href="#booking" class="btn btn-primary btn-small btn-full">Book Demo</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-img" style="background: linear-gradient(135deg, #ED675C, #C84A40);">
+                        <span class="course-emoji">&#127918;</span>
+                        <span class="course-grade-tag">Grade 5-8</span>
+                    </div>
+                    <div class="course-body">
+                        <h4>Game Development</h4>
+                        <div class="course-meta">
+                            <span class="rating">&#9733; 4.8</span>
+                            <span>110+ students</span>
+                        </div>
+                        <div class="course-pricing">
+                            <span class="price">$24<small>/class</small></span>
+                            <span class="price-old">$38</span>
+                        </div>
+                        <a href="#booking" class="btn btn-primary btn-small btn-full">Book Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 7. STUDENT SPOTLIGHT ========== -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Student Spotlight</h2>
+                <p>Hear from parents and students who transformed their learning journey</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-quote">"My son built his first game in just 3 weeks! The teachers are incredibly patient and encouraging. Best investment for his future."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background: #33CCFF;">A</div>
+                        <div>
+                            <strong>Parent of Arjun, Grade 6</strong>
+                            <span>Python Course &middot; India</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-quote">"The project-based approach keeps my daughter fully engaged. She now wants to become a software developer when she grows up!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background: #ED675C;">S</div>
+                        <div>
+                            <strong>Parent of Sara, Grade 8</strong>
+                            <span>Web Development &middot; UAE</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-quote">"The certificates are a great bonus for college applications. The AI/ML course content is truly world-class and age-appropriate."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar" style="background: #7453D7;">M</div>
+                        <div>
+                            <strong>Parent of Meera, Grade 10</strong>
+                            <span>AI & ML Course &middot; USA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 8. HOW IT WORKS ========== -->
+    <section class="section how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Get started in 4 simple steps</p>
+            </div>
+            <div class="hiw-inner">
+                <div class="hiw-steps">
+                    <div class="hiw-step" style="border-left: 4px solid #33CCFF;">
+                        <div class="hiw-step-header" data-step="1">
+                            <span class="hiw-step-num" style="background: #33CCFF;">STEP 1</span>
+                            <h4>Share Your Child's Interest</h4>
+                            <span class="hiw-toggle">+</span>
+                        </div>
+                        <div class="hiw-step-body open">
+                            <p>Fill in basic details including grade, interest areas, and preferred schedule. It takes less than 2 minutes.</p>
+                        </div>
+                    </div>
+                    <div class="hiw-step" style="border-left: 4px solid #FFA800;">
+                        <div class="hiw-step-header" data-step="2">
+                            <span class="hiw-step-num" style="background: #FFA800;">STEP 2</span>
+                            <h4>Attend Free Demo Class</h4>
+                            <span class="hiw-toggle">+</span>
+                        </div>
+                        <div class="hiw-step-body">
+                            <p>Experience a live 30-minute session with our expert instructor. No commitments, no credit card required.</p>
+                        </div>
+                    </div>
+                    <div class="hiw-step" style="border-left: 4px solid #00B67A;">
+                        <div class="hiw-step-header" data-step="3">
+                            <span class="hiw-step-num" style="background: #00B67A;">STEP 3</span>
+                            <h4>Get Matched with a Teacher</h4>
+                            <span class="hiw-toggle">+</span>
+                        </div>
+                        <div class="hiw-step-body">
+                            <p>We pair your child with the best-fit certified instructor based on their goals, grade level, and learning style.</p>
+                        </div>
+                    </div>
+                    <div class="hiw-step" style="border-left: 4px solid #7453D7;">
+                        <div class="hiw-step-header" data-step="4">
+                            <span class="hiw-step-num" style="background: #7453D7;">STEP 4</span>
+                            <h4>Start Learning & Building</h4>
+                            <span class="hiw-toggle">+</span>
+                        </div>
+                        <div class="hiw-step-body">
+                            <p>Regular live classes, real projects, assignments, quizzes, and certifications. Track progress through the parent dashboard.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hiw-video">
+                    <div class="hiw-video-box">
+                        <div class="hiw-play">&#9654;</div>
+                        <p>Watch: How CodestarX Works</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 9. AWARDS & ACCREDITATIONS ========== -->
+    <section class="section awards" id="awards">
+        <div class="container">
+            <div class="section-header">
+                <h2>Awards & Accreditations</h2>
+                <p>Trusted by parents and recognized by industry leaders worldwide</p>
+            </div>
+            <div class="awards-marquee">
+                <div class="awards-track">
+                    <div class="award-card" style="background: #EEF2FF;">
+                        <span class="award-icon">&#128737;</span>
+                        <span>Child Safety Certified</span>
+                    </div>
+                    <div class="award-card" style="background: #FEF3C7;">
+                        <span class="award-icon">&#127942;</span>
+                        <span>Best EdTech 2025</span>
+                    </div>
+                    <div class="award-card" style="background: #DCFCE7;">
+                        <span class="award-icon">&#9989;</span>
+                        <span>ISO 27001 Certified</span>
+                    </div>
+                    <div class="award-card" style="background: #FCE7F3;">
+                        <span class="award-icon">&#128274;</span>
+                        <span>COPPA Compliant</span>
+                    </div>
+                    <div class="award-card" style="background: #E0E7FF;">
+                        <span class="award-icon">&#11088;</span>
+                        <span>Top Rated Platform</span>
+                    </div>
+                    <div class="award-card" style="background: #FEF9C3;">
+                        <span class="award-icon">&#127775;</span>
+                        <span>GDPR Compliant</span>
+                    </div>
+                    <div class="award-card" style="background: #D1FAE5;">
+                        <span class="award-icon">&#128640;</span>
+                        <span>Innovation Award</span>
+                    </div>
+                    <div class="award-card" style="background: #EDE9FE;">
+                        <span class="award-icon">&#128176;</span>
+                        <span>Trusted Platform</span>
+                    </div>
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="award-card" style="background: #EEF2FF;">
+                        <span class="award-icon">&#128737;</span>
+                        <span>Child Safety Certified</span>
+                    </div>
+                    <div class="award-card" style="background: #FEF3C7;">
+                        <span class="award-icon">&#127942;</span>
+                        <span>Best EdTech 2025</span>
+                    </div>
+                    <div class="award-card" style="background: #DCFCE7;">
+                        <span class="award-icon">&#9989;</span>
+                        <span>ISO 27001 Certified</span>
+                    </div>
+                    <div class="award-card" style="background: #FCE7F3;">
+                        <span class="award-icon">&#128274;</span>
+                        <span>COPPA Compliant</span>
+                    </div>
+                    <div class="award-card" style="background: #E0E7FF;">
+                        <span class="award-icon">&#11088;</span>
+                        <span>Top Rated Platform</span>
+                    </div>
+                    <div class="award-card" style="background: #FEF9C3;">
+                        <span class="award-icon">&#127775;</span>
+                        <span>GDPR Compliant</span>
+                    </div>
+                    <div class="award-card" style="background: #D1FAE5;">
+                        <span class="award-icon">&#128640;</span>
+                        <span>Innovation Award</span>
+                    </div>
+                    <div class="award-card" style="background: #EDE9FE;">
+                        <span class="award-icon">&#128176;</span>
+                        <span>Trusted Platform</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 10. OUR TEACHERS ========== -->
+    <section class="section teachers" id="teachers">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Teachers</h2>
+                <p>Background-verified, certified educators passionate about coding education</p>
+            </div>
+            <div class="teacher-grid">
+                <div class="teacher-card">
+                    <div class="teacher-photo" style="background: linear-gradient(135deg, #7453D7, #4D3BC2);">
+                        <span class="teacher-avatar-emoji">&#128105;&#8205;&#127891;</span>
+                    </div>
+                    <div class="teacher-info">
+                        <h4>Ms. Priya Sharma</h4>
+                        <div class="teacher-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>5.0</span></div>
+                        <p class="teacher-exp">&#128188; 7+ years experience</p>
+                        <p class="teacher-skills">Python, AI/ML, Data Science</p>
+                        <a href="#booking" class="btn btn-outline btn-small">Book Demo</a>
+                    </div>
+                </div>
+                <div class="teacher-card">
+                    <div class="teacher-photo" style="background: linear-gradient(135deg, #33CCFF, #0099CC);">
+                        <span class="teacher-avatar-emoji">&#128104;&#8205;&#128187;</span>
+                    </div>
+                    <div class="teacher-info">
+                        <h4>Mr. James Wilson</h4>
+                        <div class="teacher-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>4.9</span></div>
+                        <p class="teacher-exp">&#128188; 9+ years experience</p>
+                        <p class="teacher-skills">Web Dev, JavaScript, React</p>
+                        <a href="#booking" class="btn btn-outline btn-small">Book Demo</a>
+                    </div>
+                </div>
+                <div class="teacher-card">
+                    <div class="teacher-photo" style="background: linear-gradient(135deg, #ED675C, #C84A40);">
+                        <span class="teacher-avatar-emoji">&#128105;&#8205;&#128187;</span>
+                    </div>
+                    <div class="teacher-info">
+                        <h4>Ms. Aisha Khan</h4>
+                        <div class="teacher-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>4.8</span></div>
+                        <p class="teacher-exp">&#128188; 6+ years experience</p>
+                        <p class="teacher-skills">Scratch, Game Dev, Robotics</p>
+                        <a href="#booking" class="btn btn-outline btn-small">Book Demo</a>
+                    </div>
+                </div>
+                <div class="teacher-card">
+                    <div class="teacher-photo" style="background: linear-gradient(135deg, #00B67A, #008C5E);">
+                        <span class="teacher-avatar-emoji">&#128104;&#8205;&#127891;</span>
+                    </div>
+                    <div class="teacher-info">
+                        <h4>Mr. Rahul Verma</h4>
+                        <div class="teacher-rating">&#9733;&#9733;&#9733;&#9733;&#9733; <span>4.9</span></div>
+                        <p class="teacher-exp">&#128188; 8+ years experience</p>
+                        <p class="teacher-skills">App Dev, Flutter, Kotlin</p>
+                        <a href="#booking" class="btn btn-outline btn-small">Book Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 11. BOOKING FORM ========== -->
+    <section class="section booking" id="booking">
+        <div class="container">
+            <div class="booking-inner">
+                <div class="booking-form-wrap">
+                    <h2>Book Now & Get Certified</h2>
+                    <p>Schedule a free personalized demo class for your child</p>
+                    <form onsubmit="return false;">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Country & Dial Code</label>
+                                <select>
+                                    <option>&#127470;&#127475; India (+91)</option>
+                                    <option>&#127482;&#127480; USA (+1)</option>
+                                    <option>&#127468;&#127463; UK (+44)</option>
+                                    <option>&#127462;&#127466; UAE (+971)</option>
+                                    <option>&#127464;&#127462; Canada (+1)</option>
+                                    <option>&#127462;&#127482; Australia (+61)</option>
+                                    <option>&#127480;&#127468; Singapore (+65)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" placeholder="Enter phone number">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" placeholder="parent@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Child's Name</label>
+                                <input type="text" placeholder="Enter child's name">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Interested Course</label>
+                                <select>
+                                    <option>Select Course</option>
+                                    <option>Scratch Programming</option>
+                                    <option>Python for Kids</option>
+                                    <option>Web Development</option>
+                                    <option>App Development</option>
+                                    <option>AI & Machine Learning</option>
+                                    <option>Game Development</option>
+                                    <option>Data Science</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Does your child have a laptop?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="laptop" value="yes" checked> Yes
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="laptop" value="no"> No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large btn-full">Book a Free Trial Class</button>
+                        <p class="form-disclaimer">By submitting, you agree to our <a href="#">Terms</a> & <a href="#">Privacy Policy</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 12. FAQ ========== -->
+    <section class="section faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-tabs">
+                <button class="faq-tab active">Class Experience</button>
+                <button class="faq-tab">For Parents</button>
+                <button class="faq-tab">Pricing</button>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What devices are needed for the classes?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A laptop or tablet with a stable internet connection, webcam, and microphone is required. Chromebooks work great too. We recommend a screen size of at least 11 inches for the best experience.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How are the live classes conducted?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Classes are conducted live via our secure platform with video, audio, and screen sharing. Each class is 50 minutes long. All sessions are mandatorily recorded for safety and review.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Can I reschedule or cancel a class?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Students can reschedule classes up to 4 hours before the scheduled time through their dashboard. Cancellations are subject to our flexible cancellation policy.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How do you ensure child safety during classes?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Every class is mandatorily recorded. Teachers follow a strict code of conduct. No private off-platform communication is allowed. All instructors are background-verified.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Will my child get a certificate after completing a course?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Certificates are auto-generated upon course completion and can be downloaded from the student dashboard. These are great for college applications and extracurricular portfolios.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What is the refund policy?</h4>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a flexible refund policy. If you're not satisfied within the first 7 days, you can request a full refund. Please refer to our refund & cancellation policy page for full details.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== 13. FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="#hero" class="logo footer-logo">
+                        <span class="logo-icon">
+                            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="44" height="44" rx="12" fill="url(#lgF)"/>
+                                <path d="M18 13l-8 9 8 9" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M26 13l8 9-8 9" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M24 11l-4 22" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/>
+                                <polygon points="38,6 39.8,10.5 44,11 40.8,14 41.6,18.2 38,16 34.4,18.2 35.2,14 32,11 36.2,10.5" fill="#FBBF24"/>
+                                <defs>
+                                    <linearGradient id="lgF" x1="0" y1="0" x2="44" y2="44">
+                                        <stop offset="0%" stop-color="#6D28D9"/>
+                                        <stop offset="50%" stop-color="#7C3AED"/>
+                                        <stop offset="100%" stop-color="#4F46E5"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </span>
+                        <span class="logo-text">CODESTAR<span class="logo-x">X</span></span>
+                    </a>
+                    <p>Empowering the next generation with future-ready coding skills through live, instructor-led classes.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">&#128266; FB</a>
+                        <a href="#" title="YouTube">&#9654; YT</a>
+                        <a href="#" title="LinkedIn">&#128101; LI</a>
+                        <a href="#" title="Instagram">&#128247; IG</a>
+                    </div>
+                    <p class="footer-email">&#9993; support@codestarx.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Courses</h4>
+                    <ul>
+                        <li><a href="#programs">Scratch Programming</a></li>
+                        <li><a href="#programs">Python for Kids</a></li>
+                        <li><a href="#programs">Web Development</a></li>
+                        <li><a href="#programs">App Development</a></li>
+                        <li><a href="#programs">AI & Machine Learning</a></li>
+                        <li><a href="#programs">Game Development</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>By Grade</h4>
+                    <ul>
+                        <li><a href="#pricing">Grade 4</a></li>
+                        <li><a href="#pricing">Grade 5</a></li>
+                        <li><a href="#pricing">Grade 6</a></li>
+                        <li><a href="#pricing">Grade 7</a></li>
+                        <li><a href="#pricing">Grade 8</a></li>
+                        <li><a href="#pricing">Grade 9-10</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#why-us">About Us</a></li>
+                        <li><a href="#teachers">Our Teachers</a></li>
+                        <li><a href="#awards">Accreditations</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#booking">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Policies</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CodestarX. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Refund & Cancellation</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== 14. MOBILE STICKY CTA ========== -->
+    <div class="mobile-sticky-cta">
+        <a href="#booking" class="btn btn-primary btn-full">Book Free Demo Class</a>
+    </div>
+
+    <!-- ========== INLINE JAVASCRIPT ========== -->
+    <script>
+        // FAQ accordion toggle
+        document.querySelectorAll('.faq-question').forEach(function(question) {
+            question.addEventListener('click', function() {
+                var item = this.parentElement;
+                var answer = item.querySelector('.faq-answer');
+                var toggle = this.querySelector('.faq-toggle');
+                var isOpen = answer.style.display === 'block';
+
+                // Close all
+                document.querySelectorAll('.faq-answer').forEach(function(a) {
+                    a.style.display = 'none';
+                });
+                document.querySelectorAll('.faq-toggle').forEach(function(t) {
+                    t.textContent = '+';
+                });
+
+                // Open clicked if it was closed
+                if (!isOpen) {
+                    answer.style.display = 'block';
+                    toggle.textContent = '-';
+                }
+            });
+        });
+
+        // How It Works accordion toggle
+        document.querySelectorAll('.hiw-step-header').forEach(function(header) {
+            header.addEventListener('click', function() {
+                var step = this.parentElement;
+                var body = step.querySelector('.hiw-step-body');
+                var toggle = this.querySelector('.hiw-toggle');
+                var isOpen = body.classList.contains('open');
+
+                // Close all
+                document.querySelectorAll('.hiw-step-body').forEach(function(b) {
+                    b.classList.remove('open');
+                });
+                document.querySelectorAll('.hiw-toggle').forEach(function(t) {
+                    t.textContent = '+';
+                });
+
+                // Open clicked if it was closed
+                if (!isOpen) {
+                    body.classList.add('open');
+                    toggle.textContent = '-';
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        var menuBtn = document.getElementById('mobileMenuBtn');
+        var mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('open');
+            menuBtn.classList.toggle('active');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('open');
+                menuBtn.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                var targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                var target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    var headerHeight = document.querySelector('.header').offsetHeight;
+                    var targetPos = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10;
+                    window.scrollTo({ top: targetPos, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Header backdrop blur on scroll
+        window.addEventListener('scroll', function() {
+            var header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // FAQ tab switching
+        document.querySelectorAll('.faq-tab').forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.faq-tab').forEach(function(t) {
+                    t.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Grade filter buttons
+        document.querySelectorAll('.grade-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.grade-btn').forEach(function(b) {
+                    b.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // Subject filter buttons
+        document.querySelectorAll('.subject-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.subject-btn').forEach(function(b) {
+                    b.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
