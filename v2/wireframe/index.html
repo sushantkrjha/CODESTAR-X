@@ -101,10 +101,29 @@
                 </a>
             </div>
             <div class="hero-right">
-                <div class="hero-image-placeholder">
-                    <div class="hero-placeholder-text">&#128187; Live 1:1 Class</div>
+                <div class="hero-video-carousel" id="heroVideoCarousel">
+                    <div class="hero-video-slide active">
+                        <video src="videos/student1.mp4" autoplay muted loop playsinline preload="auto"></video>
+                        <div class="hero-video-overlay"></div>
+                        <div class="video-caption"><span class="live-dot"></span> Aarav learning Scratch coding</div>
+                    </div>
+                    <div class="hero-video-slide">
+                        <video src="videos/student2.mp4" muted loop playsinline preload="auto"></video>
+                        <div class="hero-video-overlay"></div>
+                        <div class="video-caption"><span class="live-dot"></span> Rohan building a Python game</div>
+                    </div>
+                    <div class="hero-video-slide">
+                        <video src="videos/student3.mp4" muted loop playsinline preload="auto"></video>
+                        <div class="hero-video-overlay"></div>
+                        <div class="video-caption"><span class="live-dot"></span> Arjun coding his first website</div>
+                    </div>
+                    <div class="hero-video-dots">
+                        <button class="vdot active" data-i="0"></button>
+                        <button class="vdot" data-i="1"></button>
+                        <button class="vdot" data-i="2"></button>
+                    </div>
                 </div>
-                <!-- Floating subject labels -->
+                <!-- Labels OUTSIDE carousel, positioned relative to hero-right -->
                 <div class="hero-label hero-label-scratch">&#128992; Scratch</div>
                 <div class="hero-label hero-label-python">&#128013; Python</div>
                 <div class="hero-label hero-label-webdev">&#127760; Web Dev</div>
@@ -1129,6 +1148,72 @@
             }
             window.addEventListener('scroll', animateCount);
             animateCount();
+        })();
+
+        // ===== HERO VIDEO CAROUSEL =====
+        (function() {
+            var slides = document.querySelectorAll('.hero-video-slide');
+            var dots = document.querySelectorAll('.vdot');
+            if (!slides.length) return;
+            var current = 0;
+            var total = slides.length;
+            var interval = 5000; // 5 seconds per slide
+
+            function goToSlide(i) {
+                // Pause current video
+                var curVid = slides[current].querySelector('video');
+                if (curVid) curVid.pause();
+
+                // Remove active
+                slides[current].classList.remove('active');
+                dots[current] && dots[current].classList.remove('active');
+
+                // Set new
+                current = i;
+                slides[current].classList.add('active');
+                dots[current] && dots[current].classList.add('active');
+
+                // Play new video
+                var newVid = slides[current].querySelector('video');
+                if (newVid) {
+                    newVid.currentTime = 0;
+                    newVid.play().catch(function(){});
+                }
+            }
+
+            // Auto rotate
+            var timer = setInterval(function() {
+                goToSlide((current + 1) % total);
+            }, interval);
+
+            // Dot clicks
+            dots.forEach(function(dot, idx) {
+                dot.addEventListener('click', function() {
+                    clearInterval(timer);
+                    goToSlide(idx);
+                    timer = setInterval(function() {
+                        goToSlide((current + 1) % total);
+                    }, interval);
+                });
+            });
+
+            // Force play ALL videos (browsers need user gesture or muted)
+            slides.forEach(function(slide) {
+                var v = slide.querySelector('video');
+                if (v) {
+                    v.muted = true;
+                    v.play().catch(function(){});
+                }
+            });
+
+            // Also retry on any user interaction
+            document.addEventListener('click', function tryPlay() {
+                slides.forEach(function(slide) {
+                    var v = slide.querySelector('video');
+                    if (v) { v.muted = true; v.play().catch(function(){}); }
+                });
+                document.removeEventListener('click', tryPlay);
+            });
         })();
     </script>
 

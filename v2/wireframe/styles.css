@@ -343,7 +343,7 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     display: flex;
     align-items: center;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     padding: 60px 0;
 }
 .hero-inner {
@@ -386,29 +386,100 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     align-items: center;
     justify-content: center;
     min-height: 420px;
+    overflow: visible;
+    padding: 40px 50px;
 }
-.hero-image-placeholder {
-    width: 360px;
-    height: 320px;
-    background: #E8E0FF;
+/* Hero Video Carousel */
+.hero-video-carousel {
+    width: 380px;
+    height: 340px;
     border-radius: var(--radius-2xl);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(77,59,194,0.2);
+    background: linear-gradient(135deg, #6D28D9 0%, #7C3AED 50%, #4F46E5 100%);
+}
+.hero-video-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.hero-video-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    z-index: 0;
+}
+.hero-video-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+.hero-video-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.hero-video-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.5) 100%);
+    pointer-events: none;
+}
+.video-caption {
+    position: absolute;
+    bottom: 14px;
+    left: 16px;
+    right: 16px;
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 600;
     display: flex;
     align-items: center;
-    justify-content: center;
-    position: relative;
-    box-shadow: var(--shadow-lg);
+    gap: 8px;
+    z-index: 2;
 }
-.hero-placeholder-text {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--primary);
-    opacity: 0.7;
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background: #FF4444;
+    border-radius: 50%;
+    display: inline-block;
+    animation: live-pulse 1.5s ease-in-out infinite;
 }
-
-/* Floating subject labels */
+@keyframes live-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+}
+.hero-video-dots {
+    position: absolute;
+    bottom: 14px;
+    right: 16px;
+    display: flex;
+    gap: 6px;
+    z-index: 3;
+}
+.vdot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,0.4);
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s;
+}
+.vdot.active {
+    background: #fff;
+    width: 22px;
+    border-radius: 4px;
+}
+/* Floating subject labels - positioned relative to .hero-right */
 .hero-label {
     position: absolute;
-    padding: 8px 16px;
+    padding: 9px 18px;
     border-radius: var(--radius-full);
     font-size: 0.82rem;
     font-weight: 700;
@@ -416,48 +487,68 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     white-space: nowrap;
     box-shadow: var(--shadow-md);
     animation: float 3s ease-in-out infinite;
-    z-index: 3;
+    z-index: 10;
 }
+/* Labels arranged symmetrically around carousel - equal spacing both sides */
+/* Top-left */
 .hero-label-scratch {
     background: #33CCFF;
-    top: 10%;
-    left: -5%;
+    top: 2%;
+    left: -2%;
     animation-delay: 0s;
 }
+/* Top-right */
 .hero-label-python {
     background: #FFA800;
-    top: 5%;
-    right: 2%;
+    top: 2%;
+    right: -2%;
+    animation: float-alt 3.4s ease-in-out infinite;
     animation-delay: 0.5s;
 }
+/* Mid-left */
 .hero-label-webdev {
     background: #00B67A;
-    top: 45%;
-    left: -10%;
+    top: 43%;
+    left: -6%;
+    animation: float-alt2 3.6s ease-in-out infinite;
     animation-delay: 1s;
 }
+/* Mid-right */
+.hero-label-gamedev {
+    background: #ED675C;
+    top: 43%;
+    right: -6%;
+    animation: float-alt 3.2s ease-in-out infinite;
+    animation-delay: 2.5s;
+}
+/* Bottom-left */
 .hero-label-appdev {
     background: #7453D7;
-    bottom: 10%;
-    left: 0%;
+    bottom: 2%;
+    left: -2%;
+    animation: float-alt2 3.8s ease-in-out infinite;
     animation-delay: 1.5s;
 }
+/* Bottom-right */
 .hero-label-aiml {
     background: #D4A817;
     color: #1E293B;
-    bottom: 5%;
-    right: 5%;
+    bottom: 2%;
+    right: -2%;
+    animation: float 3.5s ease-in-out infinite;
     animation-delay: 2s;
-}
-.hero-label-gamedev {
-    background: #ED675C;
-    top: 40%;
-    right: -5%;
-    animation-delay: 2.5s;
 }
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-8px); }
+}
+@keyframes float-alt {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+}
+@keyframes float-alt2 {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-6px) rotate(-2deg); }
 }
 
 /* ========== 4. ACHIEVEMENT INFO BAR ========== */
@@ -1717,7 +1808,7 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     .hero-inner { grid-template-columns: 1fr; text-align: center; }
     .hero-left { text-align: center; }
     .hero-right { min-height: 340px; }
-    .hero-image-placeholder { width: 300px; height: 260px; }
+    .hero-video-carousel { width: 320px; height: 280px; }
 
     .skills-grid { grid-template-columns: repeat(4, 1fr); }
 
@@ -1763,7 +1854,7 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     .hero { padding: 40px 0; min-height: auto; }
     .hero-heading { font-size: 1.8rem; }
     .hero-right { min-height: 280px; }
-    .hero-image-placeholder { width: 240px; height: 200px; }
+    .hero-video-carousel { width: 100%; height: 260px; }
     .hero-label { font-size: 0.72rem; padding: 6px 12px; }
 
     /* Info bar */
@@ -1823,8 +1914,8 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     .hero-heading { font-size: 1.5rem; }
     .hero-subtitle { font-size: 1rem; }
     .hero-right { min-height: 240px; }
-    .hero-image-placeholder { width: 200px; height: 170px; }
-    .hero-label { font-size: 0.68rem; padding: 5px 10px; }
+    .hero-video-carousel { width: 100%; height: 220px; }
+    .hero-label { display: none; }
 
     .skills-grid { grid-template-columns: 1fr 1fr; }
 
