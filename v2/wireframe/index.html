@@ -90,8 +90,22 @@
 
     <!-- ========== 3. HERO SECTION (Codeyoung Style - Light Gradient) ========== -->
     <section class="hero" id="hero">
+        <!-- Full-screen background video carousel -->
+        <div class="hero-video-carousel" id="heroVideoCarousel">
+            <div class="hero-video-slide active">
+                <video src="videos/student1.mp4" autoplay muted loop playsinline preload="auto"></video>
+            </div>
+            <div class="hero-video-slide">
+                <video src="videos/student2.mp4" muted loop playsinline preload="auto"></video>
+            </div>
+            <div class="hero-video-slide">
+                <video src="videos/student3.mp4" muted loop playsinline preload="auto"></video>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+        <!-- Text content over video -->
         <div class="container hero-inner">
-            <div class="hero-left">
+            <div class="hero-content">
                 <h1 class="hero-heading">
                     <span class="gradient-text">1:1 live coding classes</span> for your child to build the future
                 </h1>
@@ -99,37 +113,11 @@
                 <a href="#booking" class="btn btn-primary btn-large hero-cta">
                     Book a FREE Trial Class <span class="btn-arrow">&#8594;</span>
                 </a>
-            </div>
-            <div class="hero-right">
-                <div class="hero-video-carousel" id="heroVideoCarousel">
-                    <div class="hero-video-slide active">
-                        <video src="videos/student1.mp4" autoplay muted loop playsinline preload="auto"></video>
-                        <div class="hero-video-overlay"></div>
-                        <div class="video-caption"><span class="live-dot"></span> Aarav learning Scratch coding</div>
-                    </div>
-                    <div class="hero-video-slide">
-                        <video src="videos/student2.mp4" muted loop playsinline preload="auto"></video>
-                        <div class="hero-video-overlay"></div>
-                        <div class="video-caption"><span class="live-dot"></span> Rohan building a Python game</div>
-                    </div>
-                    <div class="hero-video-slide">
-                        <video src="videos/student3.mp4" muted loop playsinline preload="auto"></video>
-                        <div class="hero-video-overlay"></div>
-                        <div class="video-caption"><span class="live-dot"></span> Arjun coding his first website</div>
-                    </div>
-                    <div class="hero-video-dots">
-                        <button class="vdot active" data-i="0"></button>
-                        <button class="vdot" data-i="1"></button>
-                        <button class="vdot" data-i="2"></button>
-                    </div>
+                <div class="hero-video-dots">
+                    <button class="vdot active" data-i="0"></button>
+                    <button class="vdot" data-i="1"></button>
+                    <button class="vdot" data-i="2"></button>
                 </div>
-                <!-- Labels OUTSIDE carousel, positioned relative to hero-right -->
-                <div class="hero-label hero-label-scratch">&#128992; Scratch</div>
-                <div class="hero-label hero-label-python">&#128013; Python</div>
-                <div class="hero-label hero-label-webdev">&#127760; Web Dev</div>
-                <div class="hero-label hero-label-appdev">&#128241; App Dev</div>
-                <div class="hero-label hero-label-aiml">&#129302; AI/ML</div>
-                <div class="hero-label hero-label-gamedev">&#127918; Game Dev</div>
             </div>
         </div>
     </section>
