@@ -105,10 +105,12 @@ button { font-family: var(--font); }
 .info-pill .material-icons { font-size: 18px; vertical-align: -4px; margin-right: 4px; }
 .skill-emoji .material-icons { font-size: 2.5rem; }
 .hex-icon .material-icons { font-size: 2.4rem; color: #fff; }
-.advantage-icon .material-icons { font-size: 1.5rem; }
-.feature-icon .material-icons { font-size: 1.5rem; }
-.parent-icon .material-icons { font-size: 1.5rem; }
-.quality-icon .material-icons { font-size: 1.5rem; }
+.advantage-icon > .material-icons,
+.feature-icon > .material-icons,
+.parent-icon > .material-icons,
+.quality-icon > .material-icons {
+    font-size: 1.5rem;
+}
 .course-emoji .material-icons { font-size: 3rem; color: #fff; }
 .gs-chip .material-icons { font-size: 16px; vertical-align: -3px; }
 .gs-half-icon-wrap .material-icons { font-size: 2rem; }
@@ -746,11 +748,9 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     width: 56px;
     height: 56px;
     border-radius: var(--radius-lg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
     margin: 0 auto 16px;
+    display: grid;
+    place-items: center;
 }
 .advantage-card h4 {
     font-size: 1rem;
@@ -979,11 +979,9 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     width: 56px;
     height: 56px;
     border-radius: var(--radius-lg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
     margin-bottom: 16px;
+    display: grid;
+    place-items: center;
 }
 .feature-card h4 {
     font-size: 1rem;
@@ -1238,11 +1236,9 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     width: 56px;
     height: 56px;
     border-radius: var(--radius-lg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
     margin: 0 auto 16px;
+    display: grid;
+    place-items: center;
 }
 .parent-card h4 {
     font-size: 0.95rem;
@@ -1448,10 +1444,8 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     height: 48px;
     min-width: 48px;
     border-radius: var(--radius-lg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
+    display: grid;
+    place-items: center;
 }
 .quality-point h4 {
     font-size: 1rem;
@@ -3803,7 +3797,6 @@ body {
 }
 .feature-icon {
     transition: transform 0.3s cubic-bezier(.34,1.56,.64,1);
-    font-size: 1.6rem;
 }
 .feature-card:hover .feature-icon { transform: scale(1.2) rotate(-8deg); }
 
@@ -3887,7 +3880,7 @@ body {
     box-shadow: 0 16px 40px rgba(77,59,194,0.12);
     border-color: rgba(77,59,194,0.2);
 }
-.parent-icon { transition: transform 0.3s cubic-bezier(.34,1.56,.64,1); font-size: 1.6rem; }
+.parent-icon { transition: transform 0.3s cubic-bezier(.34,1.56,.64,1); }
 .parent-card:hover .parent-icon { transform: scale(1.2) rotate(-8deg); }
 
 /* ---- ROADMAP: Advanced upgrade ---- */
@@ -4033,7 +4026,7 @@ body {
     transform: translateY(-6px);
     box-shadow: 0 16px 40px rgba(77,59,194,0.12);
 }
-.advantage-icon { transition: transform 0.3s cubic-bezier(.34,1.56,.64,1); font-size: 1.6rem; }
+.advantage-icon { transition: transform 0.3s cubic-bezier(.34,1.56,.64,1); }
 .advantage-card:hover .advantage-icon { transform: scale(1.2) rotate(-6deg); }
 
 /* ---- AWARDS: Premium ---- */
