@@ -2154,3 +2154,292 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     .award-pill { padding: 8px 16px; font-size: 0.8rem; gap: 6px; }
     .award-icon { width: 18px; height: 18px; }
 }
+
+
+/* ============================================================
+   ANIMATIONS & SCROLL REVEALS (Zenda-inspired)
+   ============================================================ */
+
+/* --- Nav hide/show on scroll --- */
+.header {
+    transition: transform 0.4s cubic-bezier(.32,.72,0,1);
+}
+.header.nav-hidden {
+    transform: translateY(-100%);
+}
+
+/* --- Hero entrance animations --- */
+.hero-content {
+    opacity: 0;
+}
+.hero-loaded .hero-content {
+    opacity: 1;
+}
+.hero-loaded .hero-heading {
+    animation: heroSlideUp 0.9s cubic-bezier(.22,.61,.36,1) 0.2s both;
+}
+.hero-loaded .hero-subtitle {
+    animation: heroSlideUp 0.9s cubic-bezier(.22,.61,.36,1) 0.4s both;
+}
+.hero-loaded .hero-cta {
+    animation: heroSlideUp 0.9s cubic-bezier(.22,.61,.36,1) 0.6s both;
+}
+.hero-loaded .hero-video-dots {
+    animation: heroFadeIn 0.8s ease 0.8s both;
+}
+
+@keyframes heroSlideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* --- Scroll-reveal base classes --- */
+[data-reveal] {
+    opacity: 0;
+    transition: opacity 0.7s cubic-bezier(.22,.61,.36,1),
+                transform 0.7s cubic-bezier(.22,.61,.36,1);
+    will-change: opacity, transform;
+}
+[data-reveal="fade-up"] {
+    transform: translateY(50px);
+}
+[data-reveal="fade-down"] {
+    transform: translateY(-50px);
+}
+[data-reveal="fade-left"] {
+    transform: translateX(-60px);
+}
+[data-reveal="fade-right"] {
+    transform: translateX(60px);
+}
+[data-reveal="zoom-in"] {
+    transform: scale(0.85);
+}
+[data-reveal="fade"] {
+    transform: none;
+}
+
+/* Revealed state */
+[data-reveal].revealed {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+}
+
+/* Stagger children: each child delays 0.1s * index */
+[data-reveal-stagger] > [data-reveal] {
+    transition-delay: calc(var(--reveal-i, 0) * 0.12s);
+}
+
+/* --- Upgraded Spotlight Carousel (Swiper-style) --- */
+.spotlight-carousel {
+    position: relative;
+    overflow: hidden;
+}
+.spotlight-track {
+    display: flex;
+    transition: transform 0.55s cubic-bezier(.32,.72,0,1);
+}
+.spotlight-slide {
+    min-width: 100%;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+    flex-shrink: 0;
+    opacity: 0.4;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    animation: none;
+}
+.spotlight-slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Spotlight nav arrows */
+.spotlight-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 32px;
+}
+.spotlight-arrow {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: var(--card-bg);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: var(--text);
+    font-size: 1.2rem;
+}
+.spotlight-arrow:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+    transform: scale(1.08);
+}
+.spotlight-arrow svg {
+    width: 20px;
+    height: 20px;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    fill: none;
+}
+
+/* Progress bar between arrows */
+.spotlight-progress {
+    width: 120px;
+    height: 4px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+.spotlight-progress-fill {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 4px;
+    transition: width 0.4s ease;
+}
+
+/* --- Info bar pills entrance --- */
+.info-bar .info-pill {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.info-bar.revealed .info-pill {
+    opacity: 1;
+    transform: translateY(0);
+}
+.info-bar.revealed .info-pill:nth-child(1) { transition-delay: 0s; }
+.info-bar.revealed .info-pill:nth-child(2) { transition-delay: 0.1s; }
+.info-bar.revealed .info-pill:nth-child(3) { transition-delay: 0.2s; }
+.info-bar.revealed .info-pill:nth-child(4) { transition-delay: 0.3s; }
+
+/* --- Feature cards stagger --- */
+.features-grid .feature-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.features-grid.revealed .feature-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+.features-grid.revealed .feature-card:nth-child(1) { transition-delay: 0s; }
+.features-grid.revealed .feature-card:nth-child(2) { transition-delay: 0.1s; }
+.features-grid.revealed .feature-card:nth-child(3) { transition-delay: 0.15s; }
+.features-grid.revealed .feature-card:nth-child(4) { transition-delay: 0.2s; }
+.features-grid.revealed .feature-card:nth-child(5) { transition-delay: 0.25s; }
+.features-grid.revealed .feature-card:nth-child(6) { transition-delay: 0.3s; }
+
+/* --- Testimonial cards stagger --- */
+.testimonial-grid .testimonial-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.testimonial-grid.revealed .testimonial-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+.testimonial-grid.revealed .testimonial-card:nth-child(1) { transition-delay: 0s; }
+.testimonial-grid.revealed .testimonial-card:nth-child(2) { transition-delay: 0.15s; }
+.testimonial-grid.revealed .testimonial-card:nth-child(3) { transition-delay: 0.25s; }
+
+/* --- Skill cards stagger --- */
+.skills-grid .skill-card {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.skills-grid.revealed .skill-card {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+.skills-grid.revealed .skill-card:nth-child(1) { transition-delay: 0s; }
+.skills-grid.revealed .skill-card:nth-child(2) { transition-delay: 0.08s; }
+.skills-grid.revealed .skill-card:nth-child(3) { transition-delay: 0.16s; }
+.skills-grid.revealed .skill-card:nth-child(4) { transition-delay: 0.24s; }
+.skills-grid.revealed .skill-card:nth-child(5) { transition-delay: 0.32s; }
+.skills-grid.revealed .skill-card:nth-child(6) { transition-delay: 0.4s; }
+
+/* --- Pricing cards stagger --- */
+.pricing-grid .pricing-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.pricing-grid.revealed .pricing-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+.pricing-grid.revealed .pricing-card:nth-child(1) { transition-delay: 0s; }
+.pricing-grid.revealed .pricing-card:nth-child(2) { transition-delay: 0.15s; }
+.pricing-grid.revealed .pricing-card:nth-child(3) { transition-delay: 0.25s; }
+
+/* --- Teacher cards stagger --- */
+.mentor-cards .mentor-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.mentor-cards.revealed .mentor-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+.mentor-cards.revealed .mentor-card:nth-child(1) { transition-delay: 0s; }
+.mentor-cards.revealed .mentor-card:nth-child(2) { transition-delay: 0.12s; }
+.mentor-cards.revealed .mentor-card:nth-child(3) { transition-delay: 0.24s; }
+.mentor-cards.revealed .mentor-card:nth-child(4) { transition-delay: 0.36s; }
+
+/* --- Student count bar animation --- */
+.student-count-bar .student-count-inner {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.8s ease, transform 0.8s cubic-bezier(.22,.61,.36,1);
+}
+.student-count-bar.revealed .student-count-inner {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* --- Booking section --- */
+.booking-layout {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.booking-layout.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Mobile responsive for spotlight arrows --- */
+@media (max-width: 768px) {
+    .spotlight-slide {
+        grid-template-columns: 1fr !important;
+        gap: 24px !important;
+    }
+    .spotlight-arrow {
+        width: 40px;
+        height: 40px;
+    }
+    .spotlight-progress {
+        width: 80px;
+    }
+    .spotlight-nav {
+        margin-top: 24px;
+    }
+}
