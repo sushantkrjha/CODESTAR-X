@@ -6,12 +6,8 @@
     <title>CodestarX - Build the Future | 1:1 Live Coding Classes for Kids</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
 </head>
 <body>
-
-    <div class="scroll-progress" id="scrollProgress"></div>
 
     <!-- ========== 1. SCROLLING ANNOUNCEMENT BAR ========== -->
     <div class="announcement-bar">
@@ -35,24 +31,41 @@
     <header class="header" id="header">
         <div class="container header-inner">
             <a href="#hero" class="logo">
-                <img src="videos/logo1.png" alt="CodestarX" class="logo-img">
+                <span class="logo-icon">
+                    <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="44" height="44" rx="12" fill="url(#lgH)"/>
+                        <path d="M18 13l-8 9 8 9" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M26 13l8 9-8 9" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M24 11l-4 22" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/>
+                        <polygon points="38,6 39.8,10.5 44,11 40.8,14 41.6,18.2 38,16 34.4,18.2 35.2,14 32,11 36.2,10.5" fill="#FBBF24"/>
+                        <defs>
+                            <linearGradient id="lgH" x1="0" y1="0" x2="44" y2="44">
+                                <stop offset="0%" stop-color="#6D28D9"/>
+                                <stop offset="50%" stop-color="#7C3AED"/>
+                                <stop offset="100%" stop-color="#4F46E5"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </span>
+                <span class="logo-text">CODESTAR<span class="logo-x">X</span></span>
             </a>
             <nav class="main-nav" id="mainNav">
                 <ul>
                     <li class="has-dropdown">
                         <a href="#programs">Programs <span class="arrow">&#9662;</span></a>
                         <ul class="dropdown">
-                            <li><a href="#programs"><span class="material-icons">extension</span> Scratch</a></li>
-                            <li><a href="#programs"><span class="material-icons">code</span> Python</a></li>
-                            <li><a href="#programs"><span class="material-icons">language</span> Web Dev</a></li>
-                            <li><a href="#programs"><span class="material-icons">phone_android</span> App Dev</a></li>
-                            <li><a href="#programs"><span class="material-icons">smart_toy</span> AI/ML</a></li>
-                            <li><a href="#programs"><span class="material-icons">sports_esports</span> Game Dev</a></li>
+                            <li><a href="#programs">&#128992; Scratch</a></li>
+                            <li><a href="#programs">&#128013; Python</a></li>
+                            <li><a href="#programs">&#127760; Web Dev</a></li>
+                            <li><a href="#programs">&#128241; App Dev</a></li>
+                            <li><a href="#programs">&#129302; AI/ML</a></li>
+                            <li><a href="#programs">&#127918; Game Dev</a></li>
                             <li class="dropdown-divider"></li>
-                            <li><a href="#programs"><span class="material-icons">apps</span> View All Programs</a></li>
+                            <li><a href="#programs">&#128204; View All Programs</a></li>
                         </ul>
                     </li>
                     <li><a href="#why-us">About Us</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
@@ -68,6 +81,7 @@
             <ul>
                 <li><a href="#programs">Programs</a></li>
                 <li><a href="#why-us">About Us</a></li>
+                <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#" class="btn btn-outline-header" style="margin-bottom:8px;">Login</a></li>
                 <li><a href="#booking" class="btn btn-primary">Sign Up</a></li>
             </ul>
@@ -79,21 +93,15 @@
         <div class="container hero-inner">
             <div class="hero-left">
                 <h1 class="hero-heading">
-                    Build <span class="gradient-text">Future Skills</span> with Coding & AI for Grades 1–10
+                    <span class="gradient-text">1:1 live coding classes</span> for your child to build the future
                 </h1>
-                <p class="hero-subtitle">No prior coding experience required. One child. One mentor. Real attention. Clear progress.</p>
-                <div class="hero-highlights">
-                    <span class="hero-highlight-pill"><span class="material-icons">celebration</span> Fun Learning</span>
-                    <span class="hero-highlight-pill"><span class="material-icons">live_tv</span> Live Classes</span>
-                    <span class="hero-highlight-pill"><span class="material-icons">rocket_launch</span> Future-ready Skills</span>
-                </div>
+                <p class="hero-subtitle">One child. One mentor. Real attention. Clear progress.</p>
                 <a href="#booking" class="btn btn-primary btn-large hero-cta">
                     Book a FREE Trial Class <span class="btn-arrow">&#8594;</span>
                 </a>
             </div>
             <div class="hero-right">
                 <div class="hero-video-carousel" id="heroVideoCarousel">
-                    
                     <div class="hero-video-slide active">
                         <video src="videos/student1.mp4" autoplay muted loop playsinline preload="auto"></video>
                         <div class="hero-video-overlay"></div>
@@ -123,10 +131,10 @@
     <section class="info-bar">
         <div class="container">
             <div class="info-pills">
-                <div class="info-pill"><span class="material-icons">videocam</span> Live 1:1 classes</div>
-                <div class="info-pill"><span class="material-icons">home</span> Learn from home</div>
-                <div class="info-pill"><span class="material-icons">handyman</span> Project-based</div>
-                <div class="info-pill"><span class="material-icons">date_range</span> Flexible scheduling</div>
+                <div class="info-pill">&#128250; Live 1:1 classes</div>
+                <div class="info-pill">&#127968; Learn from home</div>
+                <div class="info-pill">&#128736; Project-based</div>
+                <div class="info-pill">&#128197; Flexible scheduling</div>
             </div>
         </div>
     </section>
@@ -146,135 +154,51 @@
     <!-- ========== 6. SKILLS FOR THE FUTURE ========== -->
     <section class="section skills" id="programs">
         <div class="container">
-            <div class="section-header" data-reveal="fade-up">
-                <p class="section-chip"><span class="material-icons">import_contacts</span> What We Teach</p>
+            <div class="section-header">
                 <h2 class="gradient-text">Skills for the Future</h2>
                 <p>Grade-appropriate coding courses designed to build real-world skills</p>
             </div>
-            <div class="skills-grid" data-reveal-stagger>
+            <div class="skills-grid">
                 <div class="skill-card" style="background: #33CCFF;">
-                    <div class="skill-emoji"><span class="material-icons">extension</span></div>
+                    <div class="skill-emoji">&#128992;</div>
                     <h3>Scratch</h3>
                     <p>Visual block-based coding for beginners</p>
                 </div>
-                <div class="skill-card" style="background: #7453D7;">
-                    <div class="skill-emoji"><span class="material-icons">phone_android</span></div>
-                    <h3>App Development</h3>
-                    <p>Create real mobile applications</p>
-                </div>
-                <div class="skill-card" style="background: #ED675C;">
-                    <div class="skill-emoji"><span class="material-icons">sports_esports</span></div>
-                    <h3>Game Development</h3>
-                    <p>Design and code interactive games</p>
-                </div>
-                <div class="skill-card" style="background: #00B67A;">
-                    <div class="skill-emoji"><span class="material-icons">language</span></div>
-                    <h3>Web Development</h3>
-                    <p>Build real websites with HTML, CSS & JS</p>
-                </div>
-                <div class="skill-card" style="background: #E958B7;">
-                    <div class="skill-emoji"><span class="material-icons">view_in_ar</span></div>
-                    <h3>AR / VR</h3>
-                    <p>Augmented & virtual reality experiences</p>
-                </div>
-                <div class="skill-card" style="background: #FF7043;">
-                    <div class="skill-emoji"><span class="material-icons">3d_rotation</span></div>
-                    <h3>3D Modelling</h3>
-                    <p>Design 3D objects and animations</p>
-                </div>
-                <div class="skill-card" style="background: #FFCF11;">
-                    <div class="skill-emoji"><span class="material-icons">smart_toy</span></div>
-                    <h3>AI / ML</h3>
-                    <p>Future-ready artificial intelligence skills</p>
-                </div>
                 <div class="skill-card" style="background: #FFA800;">
-                    <div class="skill-emoji"><span class="material-icons">code</span></div>
+                    <div class="skill-emoji">&#128013;</div>
                     <h3>Python</h3>
                     <p>Text-based programming with fun projects</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== BENEFITS OF CODING ========== -->
-    <section class="section coding-benefits" id="benefits">
-        <div class="container">
-            <div class="section-header" data-reveal="fade-up">
-                <p class="section-chip"><img src="videos/logo1.png" alt="" class="chip-logo"> Why CodestarX</p>
-                <h2 class="gradient-text">Benefits of Coding for Kids</h2>
-                <p>At CodestarX, every child builds these essential future-ready skills through live, personalised 1:1 coding classes</p>
-            </div>
-            <div class="benefits-hex-wrap" data-reveal="fade-up">
-                <div class="benefits-hex-row benefits-hex-row-1">
-                    <div class="benefit-hex" data-delay="0" style="--hx-color: linear-gradient(135deg,#4D3BC2,#7C6EF0);">
-                        <div class="hex-inner">
-                            <span class="hex-icon"><span class="material-icons">psychology</span></span>
-                            <h4>Critical Thinking</h4>
-                            <p>Analyze problems, see multiple angles, choose best solutions</p>
-                        </div>
-                    </div>
-                    <div class="benefit-hex" data-delay="80" style="--hx-color: linear-gradient(135deg,#00B67A,#00E698);">
-                        <div class="hex-inner">
-                            <span class="hex-icon"><span class="material-icons">troubleshoot</span></span>
-                            <h4>Problem Solving</h4>
-                            <p>Break complex challenges into clear, logical steps</p>
-                        </div>
-                    </div>
-                    <div class="benefit-hex" data-delay="160" style="--hx-color: linear-gradient(135deg,#0099DD,#33CCFF);">
-                        <div class="hex-inner">
-                            <span class="hex-icon"><span class="material-icons">hub</span></span>
-                            <h4>Logical Reasoning</h4>
-                            <p>Build structured thinking patterns through code</p>
-                        </div>
-                    </div>
-                    <div class="benefit-hex" data-delay="240" style="--hx-color: linear-gradient(135deg,#FFA800,#FFCE47);">
-                        <div class="hex-inner">
-                            <span class="hex-icon"><span class="material-icons">gps_fixed</span></span>
-                            <h4>Decision Making</h4>
-                            <p>Evaluate options, predict outcomes, decide confidently</p>
-                        </div>
-                    </div>
+                <div class="skill-card" style="background: #00B67A;">
+                    <div class="skill-emoji">&#127760;</div>
+                    <h3>Web Dev</h3>
+                    <p>Build real websites with HTML, CSS & JS</p>
                 </div>
-                <div class="benefits-hex-row benefits-hex-row-2">
-                    <div class="benefit-hex" data-delay="80" style="--hx-color: linear-gradient(135deg,#E958B7,#FF5FA3);">
-                        <div class="hex-inner">
-                            <span class="hex-icon"><span class="material-icons">design_services</span></span>
-                            <h4>Creator Mindset</h4>
-                            <p>Turn ideas into real products — imagination to creation</p>
-                        </div>
-                    </div>
-                    <div class="benefit-hex" data-delay="160" style="--hx-color: linear-gradient(135deg,#ED675C,#FF9580);">
-                        <div class="hex-inner">
-                            <span class="hex-icon"><span class="material-icons">trending_up</span></span>
-                            <h4>Algorithmic Thinking</h4>
-                            <p>Design step-by-step solutions machines understand</p>
-                        </div>
-                    </div>
-                    <div class="benefit-hex" data-delay="240" style="--hx-color: linear-gradient(135deg,#5B5BD6,#818CF8);">
-                        <div class="hex-inner">
-                            <span class="hex-icon"><span class="material-icons">devices</span></span>
-                            <h4>Tech Savviness</h4>
-                            <p>Become fluent in modern technology and digital tools</p>
-                        </div>
-                    </div>
-                    <div class="benefit-hex" data-delay="320" style="--hx-color: linear-gradient(135deg,#FFAD00,#FF6B35);">
-                        <div class="hex-inner">
-                            <span class="hex-icon"><span class="material-icons">memory</span></span>
-                            <h4>Intelligence Quotient</h4>
-                            <p>Strengthen memory, focus, and cognitive abilities</p>
-                        </div>
-                    </div>
+                <div class="skill-card" style="background: #7453D7;">
+                    <div class="skill-emoji">&#128241;</div>
+                    <h3>App Dev</h3>
+                    <p>Create real mobile applications</p>
                 </div>
-            </div>
-            <!-- Puzzle connector graphic -->
-            <div class="benefits-connector-bar" data-reveal="fade-up">
-                <div class="bcb-item"><span class="bcb-num">8</span><span class="bcb-label">Core Skills</span></div>
-                <div class="bcb-divider"></div>
-                <div class="bcb-item"><span class="bcb-num">10+</span><span class="bcb-label">Years of Age Range</span></div>
-                <div class="bcb-divider"></div>
-                <div class="bcb-item"><span class="bcb-num">100%</span><span class="bcb-label">Hands-on Learning</span></div>
-                <div class="bcb-divider"></div>
-                <div class="bcb-item"><span class="bcb-num">1:1</span><span class="bcb-label">Personalised Attention</span></div>
+                <div class="skill-card" style="background: #FFCF11;">
+                    <div class="skill-emoji">&#129302;</div>
+                    <h3>AI / ML</h3>
+                    <p>Future-ready artificial intelligence skills</p>
+                </div>
+                <div class="skill-card" style="background: #ED675C;">
+                    <div class="skill-emoji">&#127918;</div>
+                    <h3>Game Dev</h3>
+                    <p>Design and code interactive games</p>
+                </div>
+                <div class="skill-card" style="background: #E958B7;">
+                    <div class="skill-emoji">&#128202;</div>
+                    <h3>Data Science</h3>
+                    <p>Analytics, visualization & insights</p>
+                </div>
+                <div class="skill-card skill-card-cta" style="background: #FFE4D8;">
+                    <div class="skill-emoji">&#128204;</div>
+                    <h3>View All</h3>
+                    <p>Explore our full curriculum</p>
+                </div>
             </div>
         </div>
     </section>
@@ -282,10 +206,10 @@
     <!-- ========== 7. PROVEN ADVANTAGE ========== -->
     <section class="section proven-advantage" id="proven-advantage">
         <div class="container">
-            <div class="section-header" data-reveal="fade-up">
+            <div class="section-header">
                 <h2 class="gradient-text">The proven advantage of 1:1 learning</h2>
             </div>
-            <div class="proven-inner" data-reveal="fade-up">
+            <div class="proven-inner">
                 <div class="proven-visual">
                     <div class="proven-chart-box">
                         <div class="chart-title">Learning Effectiveness</div>
@@ -313,17 +237,17 @@
             </div>
             <div class="advantage-cards">
                 <div class="advantage-card">
-                    <div class="advantage-icon" style="background: #E8E0FF;"><span class="material-icons">duo</span></div>
+                    <div class="advantage-icon" style="background: #E8E0FF;">&#128250;</div>
                     <h4>Live 1:1 classes</h4>
                     <p>Dedicated attention in every single session</p>
                 </div>
                 <div class="advantage-card">
-                    <div class="advantage-icon" style="background: #D4F5E9;"><span class="material-icons">show_chart</span></div>
+                    <div class="advantage-icon" style="background: #D4F5E9;">&#128200;</div>
                     <h4>Mastery-based tracking</h4>
                     <p>Move forward only when concepts are truly understood</p>
                 </div>
                 <div class="advantage-card">
-                    <div class="advantage-icon" style="background: #FFF3CD;"><span class="material-icons">flash_on</span></div>
+                    <div class="advantage-icon" style="background: #FFF3CD;">&#9889;</div>
                     <h4>Real-time feedback</h4>
                     <p>Instant corrections and encouragement during class</p>
                 </div>
@@ -332,75 +256,30 @@
     </section>
 
     <!-- ========== 8. GETTING STARTED ========== -->
-    <section class="getting-started-v2" id="getting-started">
+    <section class="section getting-started" id="getting-started">
         <div class="container">
-            <!-- Inline header + steps — compact layout -->
-            <div class="gs-compact-wrap" data-reveal="fade-up">
-                <!-- Top label row -->
-                <div class="gs-top-row">
-                    <div class="gs-chip"><span class="material-icons">bolt</span> Quick Start</div>
-                    <h2 class="gs-title">Getting started is <span class="gs-highlight">super easy</span></h2>
-                    <p class="gs-sub">Two steps — your child's CodestarX journey begins!</p>
+            <div class="section-header">
+                <h2 class="gradient-text">Getting started is super easy</h2>
+                <p>Take a demo session for FREE and decide for yourself</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon-box" style="background: #E8E0FF;">&#128218;</div>
+                    <h4>Select course</h4>
+                    <p>Choose the right course based on your child's grade and interest</p>
                 </div>
-
-                <!-- Split card -->
-                <div class="gs-split-card">
-                    <!-- Step 1 -->
-                    <div class="gs-half gs-half-1">
-                        <div class="gs-half-num">01</div>
-                        <div class="gs-half-icon-wrap">
-                            <span class="material-icons">edit_note</span>
-                        </div>
-                        <div class="gs-half-tag">STEP 1</div>
-                        <h3>Book Your <span>Free Demo</span></h3>
-                        <p>Fill in your child's details and pick a time slot in under 30 seconds.</p>
-                        <ul class="gs-mini-list">
-                            <li><span class="gs-check"><span class="material-icons">check</span></span> Student &amp; parent details</li>
-                            <li><span class="gs-check"><span class="material-icons">check</span></span> Pick a preferred time slot</li>
-                            <li><span class="gs-check"><span class="material-icons">check</span></span> Instant confirmation</li>
-                        </ul>
-                        <a href="#booking" class="gs-cta-btn">
-                            Reserve My Spot
-                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                        </a>
-                    </div>
-
-                    <!-- Central divider badge -->
-                    <div class="gs-divider-badge" aria-hidden="true">
-                        <div class="gs-div-ring">
-                            <div class="gs-div-inner">
-                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                            </div>
-                        </div>
-                        <span class="gs-div-then">THEN</span>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div class="gs-half gs-half-2">
-                        <div class="gs-half-num">02</div>
-                        <div class="gs-half-icon-wrap gs-icon-2">
-                            <span class="material-icons">school</span>
-                        </div>
-                        <div class="gs-half-tag gs-tag-2">STEP 2</div>
-                        <h3>Attend Your <span>Live Class</span></h3>
-                        <p>Meet your dedicated mentor and start learning with personalised 1:1 live sessions.</p>
-                        <div class="gs-feature-pills">
-                            <span class="gs-pill"><span class="material-icons">person_pin</span> Personal mentor</span>
-                            <span class="gs-pill"><span class="material-icons">laptop_mac</span> Live 1:1</span>
-                            <span class="gs-pill"><span class="material-icons">construction</span> Real projects</span>
-                            <span class="gs-pill"><span class="material-icons">card_membership</span> Certificate</span>
-                        </div>
-                        <div class="gs-half-cta-note"><span class="material-icons">check_circle</span> Free first class — no payment needed</div>
-                    </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon-box" style="background: #D4F5E9;">&#128197;</div>
+                    <h4>Book FREE trial class</h4>
+                    <p>Pick a convenient time slot and experience a live 1:1 session</p>
                 </div>
-
-                <!-- Slim trust strip -->
-                <div class="gs-trust-strip">
-                    <span><span class="material-icons">timer</span> Less than 30 seconds to book</span>
-                    <span class="gs-ts-dot"></span>
-                    <span><span class="material-icons">check</span> Cancel anytime</span>
-                    <span class="gs-ts-dot"></span>
-                    <span><span class="material-icons">local_fire_department</span> 200+ slots booked this week</span>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon-box" style="background: #FFF3CD;">&#128640;</div>
+                    <h4>Enroll for the course</h4>
+                    <p>Love the experience? Enroll and begin the coding journey</p>
                 </div>
             </div>
         </div>
@@ -409,210 +288,128 @@
     <!-- ========== 9. COURSE CARDS ========== -->
     <section class="section courses" id="courses">
         <div class="container">
-            <div class="section-header" data-reveal="fade-up">
-                <p class="section-chip"><span class="material-icons">library_books</span> Our Programs</p>
-                <h2 class="gradient-text">Courses for Every Age Group</h2>
-                <p>Structured learning tracks from Grade 1 to Grade 10</p>
+            <div class="section-header">
+                <h2 class="gradient-text">Coding courses for Grades 4-10</h2>
+                <p>Well researched and highly effective curriculum tailored to each age group</p>
             </div>
             <div class="grade-filters">
-                <button class="grade-btn active" data-grade="1-3"><span class="material-icons">star</span> Star Learners <span class="grade-sub">Grade 1–3</span></button>
-                <button class="grade-btn" data-grade="4-7"><span class="material-icons">lightbulb</span> Star Thinkers <span class="grade-sub">Grade 4–7</span></button>
-                <button class="grade-btn" data-grade="8+"><span class="material-icons">rocket_launch</span> Star Innovators <span class="grade-sub">Grade 8+</span></button>
+                <button class="grade-btn active">Grade 4-5</button>
+                <button class="grade-btn">Grade 6-7</button>
+                <button class="grade-btn">Grade 8-10</button>
             </div>
-
-            <!-- Grade 1-3: Star Learners -->
-            <div class="course-category active" data-category="1-3">
-                <div class="category-banner" style="background: linear-gradient(135deg,#33CCFF,#0099CC);">
-                    <div class="category-banner-info">
-                        <h3><span class="material-icons">star</span> Star Learners — Grades 1–3</h3>
-                        <p>Introduction to coding through play, creativity, and storytelling</p>
+            <div class="course-scroll">
+                <div class="course-card">
+                    <div class="course-img" style="background: linear-gradient(135deg, #33CCFF, #0099CC);">
+                        <span class="course-badge badge-popular">Popular</span>
+                        <span class="course-emoji">&#128992;</span>
                     </div>
-                    <div class="category-classes-count">
-                        <div class="class-count-pill"><span class="material-icons">menu_book</span> Fundamentals: <strong>30 classes</strong></div>
-                    </div>
-                </div>
-                <div class="course-scroll" data-reveal-stagger>
-                    <div class="course-card">
-                        <div class="course-img" style="background: linear-gradient(135deg, #33CCFF, #0099CC);">
-                            <span class="course-badge badge-popular">Popular</span>
-                            <span class="course-emoji"><span class="material-icons">extension</span></span>
+                    <div class="course-body">
+                        <h4>Scratch & Block Coding</h4>
+                        <p class="course-desc">Build animations, stories, and games with visual block-based programming</p>
+                        <div class="course-tags">
+                            <span class="tag">Age 8-10</span>
+                            <span class="tag">Grade 4-5</span>
                         </div>
-                        <div class="course-body">
-                            <h4>Scratch Jr. & Block Coding</h4>
-                            <p class="course-desc">Build animations, stories, and simple games with visual blocks</p>
-                            <div class="course-learn-box">
-                                <div class="course-learn-item"><span class="material-icons">check</span> Logical thinking</div>
-                                <div class="course-learn-item"><span class="material-icons">check</span> Sequencing & patterns</div>
-                                <div class="course-learn-item"><span class="material-icons">check</span> Create stories & animations</div>
-                            </div>
-                            <div class="course-tools"><span class="material-icons">build</span> Tools: Scratch Jr, Blockly</div>
-                            <div class="course-tags"><span class="tag">Grade 1–3</span><span class="tag">30 Classes</span></div>
-                            <div class="course-meta"><span class="rating">&#9733; 4.8</span><span>120+ students</span></div>
-                            <a href="#booking" class="btn btn-primary btn-small btn-full">Book Free Demo</a>
+                        <div class="course-meta">
+                            <span class="rating">&#9733; 4.8</span>
+                            <span>120+ students</span>
                         </div>
-                    </div>
-                    <div class="course-card">
-                        <div class="course-img" style="background: linear-gradient(135deg, #E958B7, #B02890);">
-                            <span class="course-badge badge-new">New</span>
-                            <span class="course-emoji"><span class="material-icons">palette</span></span>
-                        </div>
-                        <div class="course-body">
-                            <h4>Creative Coding & Art</h4>
-                            <p class="course-desc">Combine art and coding to create colorful digital drawings</p>
-                            <div class="course-learn-box">
-                                <div class="course-learn-item"><span class="material-icons">check</span> Digital creativity</div>
-                                <div class="course-learn-item"><span class="material-icons">check</span> Basic algorithms</div>
-                                <div class="course-learn-item"><span class="material-icons">check</span> Color & pattern coding</div>
-                            </div>
-                            <div class="course-tools"><span class="material-icons">build</span> Tools: Scratch, Tynker</div>
-                            <div class="course-tags"><span class="tag">Grade 1–3</span><span class="tag">30 Classes</span></div>
-                            <div class="course-meta"><span class="rating">&#9733; 4.7</span><span>80+ students</span></div>
-                            <a href="#booking" class="btn btn-primary btn-small btn-full">Book Free Demo</a>
-                        </div>
+                        <a href="#pricing" class="btn btn-primary btn-small btn-full">View Plans & Book Demo</a>
                     </div>
                 </div>
-            </div>
-
-            <!-- Grade 4-7: Star Thinkers -->
-            <div class="course-category" data-category="4-7">
-                <div class="category-banner" style="background: linear-gradient(135deg,#FFA800,#CC8500);">
-                    <div class="category-banner-info">
-                        <h3><span class="material-icons">lightbulb</span> Star Thinkers — Grades 4–7</h3>
-                        <p>Real programming skills with projects, games, and web development</p>
+                <div class="course-card">
+                    <div class="course-img" style="background: linear-gradient(135deg, #FFA800, #CC8500);">
+                        <span class="course-badge badge-popular">Popular</span>
+                        <span class="course-emoji">&#128013;</span>
                     </div>
-                    <div class="category-classes-count">
-                        <div class="class-count-pill"><span class="material-icons">terminal</span> Development: <strong>40 classes</strong></div>
-                    </div>
-                </div>
-                <div class="course-scroll" data-reveal-stagger>
-                    <div class="course-card">
-                        <div class="course-img" style="background: linear-gradient(135deg, #FFA800, #CC8500);">
-                            <span class="course-badge badge-popular">Popular</span>
-                            <span class="course-emoji"><span class="material-icons">code</span></span>
+                    <div class="course-body">
+                        <h4>Python for Kids</h4>
+                        <p class="course-desc">Learn text-based coding with fun projects, games, and real applications</p>
+                        <div class="course-tags">
+                            <span class="tag">Age 10-13</span>
+                            <span class="tag">Grade 5-7</span>
                         </div>
-                        <div class="course-body">
-                            <h4>Python for Kids</h4>
-                            <p class="course-desc">Learn text-based coding with fun projects, games, and real applications</p>
-                            <div class="course-learn-box">
-                                <div class="course-learn-item"><span class="material-icons">check</span> Variables & loops</div>
-                                <div class="course-learn-item"><span class="material-icons">check</span> Functions & logic</div>
-                                <div class="course-learn-item"><span class="material-icons">check</span> Build mini games</div>
-                            </div>
-                            <div class="course-tools"><span class="material-icons">build</span> Tools: Python, Replit</div>
-                            <div class="course-tags"><span class="tag">Grade 4–7</span><span class="tag">40 Classes</span></div>
-                            <div class="course-meta"><span class="rating">&#9733; 4.9</span><span>200+ students</span></div>
-                            <a href="#booking" class="btn btn-primary btn-small btn-full">Book Free Demo</a>
+                        <div class="course-meta">
+                            <span class="rating">&#9733; 4.9</span>
+                            <span>200+ students</span>
                         </div>
-                    </div>
-                    <div class="course-card">
-                        <div class="course-img" style="background: linear-gradient(135deg, #00B67A, #008C5E);">
-                            <span class="course-badge badge-new">New</span>
-                            <span class="course-emoji"><span class="material-icons">language</span></span>
-                        </div>
-                        <div class="course-body">
-                            <h4>Web Development</h4>
-                            <p class="course-desc">Build real websites with HTML, CSS, JavaScript and deploy them live</p>
-                            <div class="course-learn-box">
-                                <div class="course-learn-item"><span class="material-icons">check</span> HTML & CSS basics</div>
-                                <div class="course-learn-item"><span class="material-icons">check</span> JavaScript interactivity</div>
-                                <div class="course-learn-item"><span class="material-icons">check</span> Publish live website</div>
-                            </div>
-                            <div class="course-tools"><span class="material-icons">build</span> Tools: VS Code, GitHub Pages</div>
-                            <div class="course-tags"><span class="tag">Grade 4–7</span><span class="tag">40 Classes</span></div>
-                            <div class="course-meta"><span class="rating">&#9733; 4.7</span><span>150+ students</span></div>
-                            <a href="#booking" class="btn btn-primary btn-small btn-full">Book Free Demo</a>
-                        </div>
-                    </div>
-                    <div class="course-card">
-                        <div class="course-img" style="background: linear-gradient(135deg, #ED675C, #C84A40);">
-                            <span class="course-badge badge-popular">Popular</span>
-                            <span class="course-emoji"><span class="material-icons">sports_esports</span></span>
-                        </div>
-                        <div class="course-body">
-                            <h4>Game Development</h4>
-                            <p class="course-desc">Design and build interactive games with real game engines</p>
-                            <div class="course-learn-box">
-                                <div class="course-learn-item"><span class="material-icons">check</span> Game design thinking</div>
-                                <div class="course-learn-item"><span class="material-icons">check</span> Physics & collision</div>
-                                <div class="course-learn-item"><span class="material-icons">check</span> Publish your game</div>
-                            </div>
-                            <div class="course-tools"><span class="material-icons">build</span> Tools: Unity, GDevelop</div>
-                            <div class="course-tags"><span class="tag">Grade 4–7</span><span class="tag">40 Classes</span></div>
-                            <div class="course-meta"><span class="rating">&#9733; 4.8</span><span>110+ students</span></div>
-                            <a href="#booking" class="btn btn-primary btn-small btn-full">Book Free Demo</a>
-                        </div>
+                        <a href="#pricing" class="btn btn-primary btn-small btn-full">View Plans &amp; Book Demo</a>
                     </div>
                 </div>
-            </div>
-
-            <!-- Grade 8+: Star Innovators -->
-            <div class="course-category" data-category="8+">
-                <div class="category-banner" style="background: linear-gradient(135deg,#7453D7,#4D3BC2);">
-                    <div class="category-banner-info">
-                        <h3><span class="material-icons">rocket_launch</span> Star Innovators — Grades 8+</h3>
-                        <p>Advanced tech skills with AI, full-stack development & portfolio projects</p>
+                <div class="course-card">
+                    <div class="course-img" style="background: linear-gradient(135deg, #00B67A, #008C5E);">
+                        <span class="course-badge badge-new">New</span>
+                        <span class="course-emoji">&#127760;</span>
                     </div>
-                    <div class="category-classes-count">
-                        <div class="class-count-pill"><span class="material-icons">grade</span> Prime Star: <strong>50 classes</strong></div>
+                    <div class="course-body">
+                        <h4>Web Development</h4>
+                        <p class="course-desc">Build real websites with HTML, CSS, JavaScript and deploy them live</p>
+                        <div class="course-tags">
+                            <span class="tag">Age 11-14</span>
+                            <span class="tag">Grade 6-8</span>
+                        </div>
+                        <div class="course-meta">
+                            <span class="rating">&#9733; 4.7</span>
+                            <span>150+ students</span>
+                        </div>
+                        <a href="#pricing" class="btn btn-primary btn-small btn-full">View Plans &amp; Book Demo</a>
                     </div>
                 </div>
-                <div class="course-scroll" data-reveal-stagger>
-                    <div class="course-card">
-                        <div class="course-img" style="background: linear-gradient(135deg, #7453D7, #5A3FB5);">
-                            <span class="course-badge badge-popular">Popular</span>
-                            <span class="course-emoji"><span class="material-icons">phone_android</span></span>
-                        </div>
-                        <div class="course-body">
-                            <h4>App Development</h4>
-                            <p class="course-desc">Design and build real mobile applications from scratch</p>
-                            <div class="course-learn-box">
-                                <div class="course-learn-item"><span class="material-icons">check</span> UI/UX design basics</div>
-                                <div class="course-learn-item"><span class="material-icons">check</span> Flutter/React Native</div>
-                                <div class="course-learn-item"><span class="material-icons">check</span> Publish to app store</div>
-                            </div>
-                            <div class="course-tools"><span class="material-icons">build</span> Tools: Flutter, Firebase</div>
-                            <div class="course-tags"><span class="tag">Grade 8+</span><span class="tag">50 Classes</span></div>
-                            <div class="course-meta"><span class="rating">&#9733; 4.8</span><span>90+ students</span></div>
-                            <a href="#booking" class="btn btn-primary btn-small btn-full">Book Free Demo</a>
-                        </div>
+                <div class="course-card">
+                    <div class="course-img" style="background: linear-gradient(135deg, #7453D7, #5A3FB5);">
+                        <span class="course-badge badge-popular">Popular</span>
+                        <span class="course-emoji">&#128241;</span>
                     </div>
-                    <div class="course-card">
-                        <div class="course-img" style="background: linear-gradient(135deg, #FFCF11, #CCA500);">
-                            <span class="course-badge badge-new">New</span>
-                            <span class="course-emoji"><span class="material-icons">smart_toy</span></span>
+                    <div class="course-body">
+                        <h4>App Development</h4>
+                        <p class="course-desc">Design and build real mobile applications from scratch</p>
+                        <div class="course-tags">
+                            <span class="tag">Age 12-15</span>
+                            <span class="tag">Grade 7-9</span>
                         </div>
-                        <div class="course-body">
-                            <h4>AI & Machine Learning</h4>
-                            <p class="course-desc">Explore artificial intelligence, machine learning models, and smart projects</p>
-                            <div class="course-learn-box">
-                                <div class="course-learn-item"><span class="material-icons">check</span> Neural networks</div>
-                                <div class="course-learn-item"><span class="material-icons">check</span> Train your own AI model</div>
-                                <div class="course-learn-item"><span class="material-icons">check</span> Real AI projects</div>
-                            </div>
-                            <div class="course-tools"><span class="material-icons">build</span> Tools: Python, TensorFlow, ML5.js</div>
-                            <div class="course-tags"><span class="tag">Grade 8+</span><span class="tag">50 Classes</span></div>
-                            <div class="course-meta"><span class="rating">&#9733; 4.9</span><span>80+ students</span></div>
-                            <a href="#booking" class="btn btn-primary btn-small btn-full">Book Free Demo</a>
+                        <div class="course-meta">
+                            <span class="rating">&#9733; 4.8</span>
+                            <span>90+ students</span>
                         </div>
+                        <a href="#pricing" class="btn btn-primary btn-small btn-full">View Plans &amp; Book Demo</a>
                     </div>
-                    <div class="course-card">
-                        <div class="course-img" style="background: linear-gradient(135deg, #E958B7, #C23D99);">
-                            <span class="course-badge badge-new">New</span>
-                            <span class="course-emoji"><span class="material-icons">view_in_ar</span></span>
+                </div>
+                <div class="course-card">
+                    <div class="course-img" style="background: linear-gradient(135deg, #FFCF11, #CCA500);">
+                        <span class="course-badge badge-new">New</span>
+                        <span class="course-emoji">&#129302;</span>
+                    </div>
+                    <div class="course-body">
+                        <h4>AI & Machine Learning</h4>
+                        <p class="course-desc">Explore artificial intelligence, machine learning models, and smart projects</p>
+                        <div class="course-tags">
+                            <span class="tag">Age 13-16</span>
+                            <span class="tag">Grade 8-10</span>
                         </div>
-                        <div class="course-body">
-                            <h4>AR / VR Development</h4>
-                            <p class="course-desc">Build augmented and virtual reality experiences for the future</p>
-                            <div class="course-learn-box">
-                                <div class="course-learn-item"><span class="material-icons">check</span> 3D environments</div>
-                                <div class="course-learn-item"><span class="material-icons">check</span> AR filters & effects</div>
-                                <div class="course-learn-item"><span class="material-icons">check</span> VR scene building</div>
-                            </div>
-                            <div class="course-tools"><span class="material-icons">build</span> Tools: Unity, A-Frame, Spark AR</div>
-                            <div class="course-tags"><span class="tag">Grade 8+</span><span class="tag">50 Classes</span></div>
-                            <div class="course-meta"><span class="rating">&#9733; 4.8</span><span>60+ students</span></div>
-                            <a href="#booking" class="btn btn-primary btn-small btn-full">Book Free Demo</a>
+                        <div class="course-meta">
+                            <span class="rating">&#9733; 4.9</span>
+                            <span>80+ students</span>
                         </div>
+                        <a href="#pricing" class="btn btn-primary btn-small btn-full">View Plans &amp; Book Demo</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-img" style="background: linear-gradient(135deg, #ED675C, #C84A40);">
+                        <span class="course-badge badge-popular">Popular</span>
+                        <span class="course-emoji">&#127918;</span>
+                    </div>
+                    <div class="course-body">
+                        <h4>Game Development</h4>
+                        <p class="course-desc">Design, code, and publish interactive games with real game engines</p>
+                        <div class="course-tags">
+                            <span class="tag">Age 10-14</span>
+                            <span class="tag">Grade 5-8</span>
+                        </div>
+                        <div class="course-meta">
+                            <span class="rating">&#9733; 4.8</span>
+                            <span>110+ students</span>
+                        </div>
+                        <a href="#pricing" class="btn btn-primary btn-small btn-full">View Plans &amp; Book Demo</a>
                     </div>
                 </div>
             </div>
@@ -624,7 +421,7 @@
         <div class="container">
             <div class="checkout-strip-inner">
                 <div class="checkout-strip-text">Pick a learning track, check out in minutes, and start learning!</div>
-                <a href="#booking" class="btn btn-accent btn-large">Book Free Trial <span class="material-icons">menu_book</span></a>
+                <a href="#booking" class="btn btn-accent btn-large">Book Free Trial <span>&#128218;</span></a>
             </div>
         </div>
     </section>
@@ -632,50 +429,39 @@
     <!-- ========== 10. WHAT SETS US APART ========== -->
     <section class="section why-choose" id="why-us">
         <div class="container">
-            <div class="section-header" data-reveal="fade-up">
-                <p class="section-chip"><span class="material-icons">workspace_premium</span> Our Edge</p>
+            <div class="section-header">
                 <h2 class="gradient-text">What really sets us apart</h2>
             </div>
-            <div class="features-grid" data-reveal-stagger>
+            <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon" style="background: #E8E0FF;"><span class="material-icons">tune</span></div>
-                    <h4>Personalized Learning Paths</h4>
-                    <p>Every child gets a custom curriculum tailored to their grade, pace, and interests — not a one-size-fits-all approach</p>
+                    <div class="feature-icon" style="background: #E8E0FF;">&#128218;</div>
+                    <h4>Quality of curriculum</h4>
+                    <p>Research-backed, project-based curriculum designed by IIT/NIT alumni and Stanford-trained educators for each grade level</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon" style="background: #D4F5E9;"><span class="material-icons">cast_connected</span></div>
-                    <h4>Live Interactive Sessions</h4>
-                    <p>Real-time 1:1 classes with two-way interaction, live code reviews, and instant doubt resolution</p>
+                    <div class="feature-icon" style="background: #D4F5E9;">&#128200;</div>
+                    <h4>Progress monitoring</h4>
+                    <p>Real-time parent dashboard with detailed reports on concepts mastered, projects completed, and areas for improvement</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon" style="background: #FFF3CD;"><span class="material-icons">architecture</span></div>
-                    <h4>Project-Based Learning</h4>
-                    <p>Students build real apps, games, websites, and AI models — not just theory. Portfolio-ready projects by course end</p>
+                    <div class="feature-icon" style="background: #FFF3CD;">&#127891;</div>
+                    <h4>Quality of teachers</h4>
+                    <p>Top 1% selected, background-verified, trained in child psychology with 5+ years of teaching experience minimum</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon" style="background: #FCE4EC;"><span class="material-icons">developer_board</span></div>
-                    <h4>Focus on AI & Future Tech</h4>
-                    <p>Curriculum built around AI, ML, AR/VR, and emerging technologies to keep students ahead of the curve</p>
+                    <div class="feature-icon" style="background: #FCE4EC;">&#127919;</div>
+                    <h4>In-class & outside engagement</h4>
+                    <p>Interactive quizzes, coding challenges, hackathons, and peer projects to keep learning fun beyond the classroom</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon" style="background: #E3F2FD;"><span class="material-icons">military_tech</span></div>
-                    <h4>Certified & Experienced Trainers</h4>
-                    <p>Top 1% selected, background-verified mentors with 5+ years experience, trained in child psychology</p>
+                    <div class="feature-icon" style="background: #E3F2FD;">&#128274;</div>
+                    <h4>Child safety & recordings</h4>
+                    <p>Every class mandatorily recorded. Strict conduct policies. No off-platform communication. Full COPPA compliance</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon" style="background: #FFF8E1;"><span class="material-icons">bar_chart</span></div>
-                    <h4>Regular Progress Tracking</h4>
-                    <p>Detailed parent reports on concepts mastered, projects completed, quiz scores, and next steps every week</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: #E8F5E9;"><span class="material-icons">groups</span></div>
-                    <h4>Small Batch or 1:1 Attention</h4>
-                    <p>Maximum focus on your child — either exclusive 1:1 or micro-batch sessions for full mentor attention</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon" style="background: #F3E5F5;"><span class="material-icons">security</span></div>
-                    <h4>Safe & Engaging Environment</h4>
-                    <p>Mandatorily recorded sessions, verified mentors, strict safety policies — completely safe for every student</p>
+                    <div class="feature-icon" style="background: #FFF8E1;">&#128736;</div>
+                    <h4>Project-based learning</h4>
+                    <p>Students build real apps, games, websites, and AI models - not just theory. Portfolio-ready projects by course end</p>
                 </div>
             </div>
         </div>
@@ -684,12 +470,11 @@
     <!-- ========== 11. TESTIMONIALS ========== -->
     <section class="section testimonials" id="testimonials">
         <div class="container">
-            <div class="section-header" data-reveal="fade-up">
-                <p class="section-chip"><span class="material-icons">rate_review</span> Stories</p>
+            <div class="section-header">
                 <h2 class="gradient-text">Trusted by parents, loved by students!</h2>
                 <p>500+ parents trust us. Rated <strong>4.9/5</strong></p>
             </div>
-            <div class="testimonial-grid" data-reveal-stagger>
+            <div class="testimonial-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-top">
                         <div class="google-badge">G</div>
@@ -742,8 +527,7 @@
     <!-- ========== NEW: PRICING PLANS (from PRD) ========== -->
     <section class="section pricing" id="pricing">
         <div class="container">
-            <div class="section-header" data-reveal="fade-up">
-                <p class="section-chip"><span class="material-icons">sell</span> Simple Pricing</p>
+            <div class="section-header">
                 <h2 class="gradient-text">Choose your learning plan</h2>
                 <p>Pick a subscription that fits your schedule. All plans include any course from our catalog.</p>
             </div>
@@ -763,7 +547,7 @@
                     <span>Start FREE demo</span>
                 </div>
             </div>
-            <div class="pricing-grid" data-reveal-stagger>
+            <div class="pricing-grid">
                 <div class="pricing-card">
                     <div class="pricing-header-card">
                         <h3>Demo</h3>
@@ -771,10 +555,10 @@
                         <p>Try before you commit</p>
                     </div>
                     <ul class="pricing-features">
-                        <li><span class="material-icons">check</span> 1 Free Live Demo Class</li>
-                        <li><span class="material-icons">check</span> Personalized Assessment</li>
-                        <li><span class="material-icons">check</span> Course Recommendation</li>
-                        <li><span class="material-icons">check</span> No Credit Card Required</li>
+                        <li>&#10003; 1 Free Live Demo Class</li>
+                        <li>&#10003; Personalized Assessment</li>
+                        <li>&#10003; Course Recommendation</li>
+                        <li>&#10003; No Credit Card Required</li>
                     </ul>
                     <a href="#booking" class="btn btn-outline btn-full">Book Free Demo</a>
                 </div>
@@ -786,12 +570,12 @@
                         <p>8 classes/month with dedicated mentor</p>
                     </div>
                     <ul class="pricing-features">
-                        <li><span class="material-icons">check</span> 8 Live 1:1 Sessions/Month</li>
-                        <li><span class="material-icons">check</span> Dedicated Instructor</li>
-                        <li><span class="material-icons">check</span> Project-Based Curriculum</li>
-                        <li><span class="material-icons">check</span> Class Recordings Access</li>
-                        <li><span class="material-icons">check</span> Assignments & Quizzes</li>
-                        <li><span class="material-icons">check</span> Progress Reports to Parents</li>
+                        <li>&#10003; 8 Live 1:1 Sessions/Month</li>
+                        <li>&#10003; Dedicated Instructor</li>
+                        <li>&#10003; Project-Based Curriculum</li>
+                        <li>&#10003; Class Recordings Access</li>
+                        <li>&#10003; Assignments & Quizzes</li>
+                        <li>&#10003; Progress Reports to Parents</li>
                     </ul>
                     <a href="#booking" class="btn btn-primary btn-full">Get Started</a>
                 </div>
@@ -802,13 +586,13 @@
                         <p>12 classes/month + certificates</p>
                     </div>
                     <ul class="pricing-features">
-                        <li><span class="material-icons">check</span> 12 Live 1:1 Sessions/Month</li>
-                        <li><span class="material-icons">check</span> Senior Instructor</li>
-                        <li><span class="material-icons">check</span> Advanced Project Mentoring</li>
-                        <li><span class="material-icons">check</span> Class Recordings Access</li>
-                        <li><span class="material-icons">check</span> Certificates on Completion</li>
-                        <li><span class="material-icons">check</span> Priority Support</li>
-                        <li><span class="material-icons">check</span> Parent Dashboard Access</li>
+                        <li>&#10003; 12 Live 1:1 Sessions/Month</li>
+                        <li>&#10003; Senior Instructor</li>
+                        <li>&#10003; Advanced Project Mentoring</li>
+                        <li>&#10003; Class Recordings Access</li>
+                        <li>&#10003; Certificates on Completion</li>
+                        <li>&#10003; Priority Support</li>
+                        <li>&#10003; Parent Dashboard Access</li>
                     </ul>
                     <a href="#booking" class="btn btn-outline btn-full">Get Started</a>
                 </div>
@@ -817,98 +601,31 @@
         </div>
     </section>
 
-    <!-- ========== HAPPY TO HELP YOU - SPEAK TO AN EXPERT ========== -->
-    <section class="expert-section" id="speak-to-expert">
-        <div class="expert-bg-blobs">
-            <div class="expert-blob expert-blob-1"></div>
-            <div class="expert-blob expert-blob-2"></div>
-        </div>
-        <div class="container">
-            <div class="expert-inner">
-                <div class="expert-left" data-reveal="fade-right">
-                    <div class="expert-tag"><span class="material-icons">bolt</span> Free Counselling</div>
-                    <h2 class="expert-heading">Happy to Help You!</h2>
-                    <p class="expert-sub">Not sure which CodestarX course is right for your child? Our expert education counsellors are here to guide you — personally, patiently, and for free.</p>
-                    <ul class="expert-checklist">
-                        <li><span class="ecl-check"><span class="material-icons">check</span></span> Free 15-minute counselling call</li>
-                        <li><span class="ecl-check"><span class="material-icons">check</span></span> Grade-appropriate course recommendation</li>
-                        <li><span class="ecl-check"><span class="material-icons">check</span></span> All questions answered live, no wait time</li>
-                        <li><span class="ecl-check"><span class="material-icons">check</span></span> Zero pressure — just helpful guidance</li>
-                    </ul>
-                    <div class="expert-cta-row">
-                        <a href="#booking" class="btn-expert-primary">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.9 13.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.8 2.7h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17.27z"/></svg>
-                            Speak to an Expert
-                        </a>
-                        <a href="#" class="btn-expert-whatsapp">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-                            Chat on WhatsApp
-                        </a>
-                    </div>
-                    <div class="expert-availability">
-                        <span class="expert-online-dot"></span>
-                        <span>Counsellors available Mon–Sat, 9AM–8PM IST</span>
-                    </div>
-                </div>
-                <div class="expert-right" data-reveal="fade-left">
-                    <div class="expert-card-stack">
-                        <div class="expert-card expert-card-main">
-                            <div class="expert-avatar-large"><span class="material-icons">support_agent</span></div>
-                            <div class="expert-card-info">
-                                <strong>CodestarX Counsellors</strong>
-                                <span>Certified Education Experts</span>
-                            </div>
-                            <div class="expert-card-badge">&#11088; 4.9/5</div>
-                        </div>
-                        <div class="expert-stat-cards">
-                            <div class="expert-stat">
-                                <span class="est-num">10,000+</span>
-                                <span class="est-label">Students Counselled</span>
-                            </div>
-                            <div class="expert-stat">
-                                <span class="est-num">98%</span>
-                                <span class="est-label">Satisfaction Rate</span>
-                            </div>
-                            <div class="expert-stat">
-                                <span class="est-num">&lt;2 min</span>
-                                <span class="est-label">Avg Response Time</span>
-                            </div>
-                        </div>
-                        <div class="expert-quote-card">
-                            <p>"Our CodestarX counsellor understood exactly what our daughter needed. No sales pressure — just genuine guidance!"</p>
-                            <span class="expert-quote-author">— Priya M., Parent of Grade 5 student</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ========== NEW: PARENT VISIBILITY (from PRD) ========== -->
     <section class="section parent-section" id="parents">
         <div class="container">
-            <div class="section-header" data-reveal="fade-up">
+            <div class="section-header">
                 <h2 class="gradient-text">Complete visibility for parents</h2>
                 <p>Stay informed about your child's progress at every step</p>
             </div>
-            <div class="parent-grid" data-reveal-stagger>
+            <div class="parent-grid">
                 <div class="parent-card">
-                    <div class="parent-icon" style="background: #E8E0FF;"><span class="material-icons">notifications_active</span></div>
+                    <div class="parent-icon" style="background: #E8E0FF;">&#128231;</div>
                     <h4>Class Schedule Alerts</h4>
                     <p>Get email/WhatsApp notifications for upcoming classes, reschedules, and cancellations</p>
                 </div>
                 <div class="parent-card">
-                    <div class="parent-icon" style="background: #D4F5E9;"><span class="material-icons">assessment</span></div>
+                    <div class="parent-icon" style="background: #D4F5E9;">&#128200;</div>
                     <h4>Progress Reports</h4>
                     <p>Detailed reports on concepts mastered, projects completed, quiz scores, and areas for improvement</p>
                 </div>
                 <div class="parent-card">
-                    <div class="parent-icon" style="background: #FFF3CD;"><span class="material-icons">workspace_premium</span></div>
+                    <div class="parent-icon" style="background: #FFF3CD;">&#127942;</div>
                     <h4>Certificates & Portfolio</h4>
                     <p>Auto-generated certificates on course completion. Download anytime from the student dashboard</p>
                 </div>
                 <div class="parent-card">
-                    <div class="parent-icon" style="background: #FCE4EC;"><span class="material-icons">receipt_long</span></div>
+                    <div class="parent-icon" style="background: #FCE4EC;">&#128176;</div>
                     <h4>Payment & Invoices</h4>
                     <p>Transparent billing with automated payment receipts and invoice history sent to parent email</p>
                 </div>
@@ -919,158 +636,81 @@
     <!-- ========== AWARDS & ACCREDITATIONS ========== -->
     <section class="section awards">
         <div class="container">
-            <div class="section-header" data-reveal="fade-up">
+            <div class="section-header">
                 <h2 class="gradient-text">Awards & Accreditations</h2>
                 <p>Trusted by parents and recognized by industry leaders worldwide</p>
             </div>
         </div>
         <div class="awards-marquee-wrapper">
             <div class="awards-marquee-track">
-                <div class="award-pill" style="background:#F0EBFF;"><span class="material-icons">military_tech</span> Best EdTech 2025</div>
-                <div class="award-pill" style="background:#E0F7FA;"><span class="material-icons">shield</span> Child Safety Certified</div>
-                <div class="award-pill" style="background:#FFF8E1;"><span class="material-icons">loyalty</span> Trusted Platform</div>
-                <div class="award-pill" style="background:#E8F5E9;"><span class="material-icons">verified</span> ISO 27001 Certified</div>
-                <div class="award-pill" style="background:#FCE4EC;"><span class="material-icons">emoji_objects</span> Innovation Award</div>
-                <div class="award-pill" style="background:#E3F2FD;"><span class="material-icons">admin_panel_settings</span> COPPA Compliant</div>
-                <div class="award-pill" style="background:#FFF3E0;"><span class="material-icons">school</span> STEM Accredited</div>
-                <div class="award-pill" style="background:#F3E5F5;"><span class="material-icons">thumb_up</span> Top Rated Platform</div>
-                <div class="award-pill" style="background:#E0F2F1;"><span class="material-icons">description</span> GDPR Compliant</div>
+                <div class="award-pill" style="background:#F0EBFF;"><span>&#127942;</span> Best EdTech 2025</div>
+                <div class="award-pill" style="background:#E0F7FA;"><span>&#128737;</span> Child Safety Certified</div>
+                <div class="award-pill" style="background:#FFF8E1;"><span>&#128176;</span> Trusted Platform</div>
+                <div class="award-pill" style="background:#E8F5E9;"><span>&#9989;</span> ISO 27001 Certified</div>
+                <div class="award-pill" style="background:#FCE4EC;"><span>&#127775;</span> Innovation Award</div>
+                <div class="award-pill" style="background:#E3F2FD;"><span>&#128274;</span> COPPA Compliant</div>
+                <div class="award-pill" style="background:#FFF3E0;"><span>&#127891;</span> STEM Accredited</div>
+                <div class="award-pill" style="background:#F3E5F5;"><span>&#128200;</span> Top Rated Platform</div>
+                <div class="award-pill" style="background:#E0F2F1;"><span>&#128196;</span> GDPR Compliant</div>
                 <!-- Duplicate for seamless loop -->
-                <div class="award-pill" style="background:#F0EBFF;"><span class="material-icons">military_tech</span> Best EdTech 2025</div>
-                <div class="award-pill" style="background:#E0F7FA;"><span class="material-icons">shield</span> Child Safety Certified</div>
-                <div class="award-pill" style="background:#FFF8E1;"><span class="material-icons">loyalty</span> Trusted Platform</div>
-                <div class="award-pill" style="background:#E8F5E9;"><span class="material-icons">verified</span> ISO 27001 Certified</div>
-                <div class="award-pill" style="background:#FCE4EC;"><span class="material-icons">emoji_objects</span> Innovation Award</div>
-                <div class="award-pill" style="background:#E3F2FD;"><span class="material-icons">admin_panel_settings</span> COPPA Compliant</div>
-                <div class="award-pill" style="background:#FFF3E0;"><span class="material-icons">school</span> STEM Accredited</div>
-                <div class="award-pill" style="background:#F3E5F5;"><span class="material-icons">thumb_up</span> Top Rated Platform</div>
-                <div class="award-pill" style="background:#E0F2F1;"><span class="material-icons">description</span> GDPR Compliant</div>
+                <div class="award-pill" style="background:#F0EBFF;"><span>&#127942;</span> Best EdTech 2025</div>
+                <div class="award-pill" style="background:#E0F7FA;"><span>&#128737;</span> Child Safety Certified</div>
+                <div class="award-pill" style="background:#FFF8E1;"><span>&#128176;</span> Trusted Platform</div>
+                <div class="award-pill" style="background:#E8F5E9;"><span>&#9989;</span> ISO 27001 Certified</div>
+                <div class="award-pill" style="background:#FCE4EC;"><span>&#127775;</span> Innovation Award</div>
+                <div class="award-pill" style="background:#E3F2FD;"><span>&#128274;</span> COPPA Compliant</div>
+                <div class="award-pill" style="background:#FFF3E0;"><span>&#127891;</span> STEM Accredited</div>
+                <div class="award-pill" style="background:#F3E5F5;"><span>&#128200;</span> Top Rated Platform</div>
+                <div class="award-pill" style="background:#E0F2F1;"><span>&#128196;</span> GDPR Compliant</div>
             </div>
         </div>
     </section>
 
-    <!-- ========== ANIMATED LEARNING ROADMAP ========== -->
-    <section class="section roadmap-section" id="curriculum">
+    <!-- ========== NEW: CURRICULUM PROGRESSION PATH (from PRD) ========== -->
+    <section class="section curriculum-path" id="curriculum">
         <div class="container">
-            <div class="section-header" data-reveal="fade-up">
-                <p class="section-chip"><span class="material-icons">timeline</span> Learning Path</p>
-                <h2 class="gradient-text">Your child's coding adventure</h2>
-                <p>A clear grade-by-grade roadmap from Grade 1 to Grade 10</p>
+            <div class="section-header">
+                <h2 class="gradient-text">Your child's learning journey</h2>
+                <p>Structured grade-wise progression from beginner to advanced</p>
             </div>
-            <div class="roadmap-wrapper" id="roadmapWrapper">
-                <!-- Row 1: left to right — Grade 1, 2, 3 -->
-                <div class="roadmap-row roadmap-row-ltr">
-                    <div class="roadmap-node rn-start" data-grade="1">
-                        <div class="rn-bubble" style="background:linear-gradient(135deg,#33CCFF,#0099CC);">
-                            <span class="rn-grade">1</span>
-                        </div>
-                        <div class="rn-label">
-                            <strong>Grade 1</strong>
-                            <span>Scratch Jr.</span>
-                        </div>
-                    </div>
-                    <div class="roadmap-road"></div>
-                    <div class="roadmap-node" data-grade="2">
-                        <div class="rn-bubble" style="background:linear-gradient(135deg,#00B67A,#008C5E);">
-                            <span class="rn-grade">2</span>
-                        </div>
-                        <div class="rn-label">
-                            <strong>Grade 2</strong>
-                            <span>Block Coding</span>
-                        </div>
-                    </div>
-                    <div class="roadmap-road"></div>
-                    <div class="roadmap-node" data-grade="3">
-                        <div class="rn-bubble" style="background:linear-gradient(135deg,#E958B7,#B02890);">
-                            <span class="rn-grade">3</span>
-                        </div>
-                        <div class="rn-label">
-                            <strong>Grade 3</strong>
-                            <span>Creative Coding</span>
-                        </div>
-                    </div>
-                    <div class="roadmap-curve roadmap-curve-right"></div>
-                </div>
-                <!-- Row 2: right to left — Grade 4, 5 -->
-                <div class="roadmap-row roadmap-row-rtl">
-                    <div class="roadmap-curve roadmap-curve-left"></div>
-                    <div class="roadmap-node" data-grade="5">
-                        <div class="rn-bubble" style="background:linear-gradient(135deg,#FFA800,#CC8500);">
-                            <span class="rn-grade">5</span>
-                        </div>
-                        <div class="rn-label">
-                            <strong>Grade 5</strong>
-                            <span>Python Basics</span>
-                        </div>
-                    </div>
-                    <div class="roadmap-road"></div>
-                    <div class="roadmap-node rn-milestone" data-grade="4">
-                        <div class="rn-milestone-badge"><span class="material-icons">star</span> Star Learner</div>
-                        <div class="rn-bubble" style="background:linear-gradient(135deg,#FFCF11,#CCA500);">
-                            <span class="rn-grade">4</span>
-                        </div>
-                        <div class="rn-label">
-                            <strong>Grade 4</strong>
-                            <span>Scratch Advanced</span>
+            <div class="path-timeline">
+                <div class="path-item">
+                    <div class="path-dot" style="background: #33CCFF;"></div>
+                    <div class="path-content">
+                        <div class="path-grade">Grade 4-5</div>
+                        <h4>Foundation</h4>
+                        <p>Scratch, Block Coding, Logic & Problem Solving, Intro to Game Design</p>
+                        <div class="path-tags">
+                            <span style="background:#33CCFF20;color:#0099CC;">Scratch</span>
+                            <span style="background:#ED675C20;color:#C84A40;">Game Dev</span>
                         </div>
                     </div>
                 </div>
-                <!-- Row 3: left to right — Grade 6, 7 -->
-                <div class="roadmap-row roadmap-row-ltr">
-                    <div class="roadmap-node" data-grade="6">
-                        <div class="rn-bubble" style="background:linear-gradient(135deg,#4D3BC2,#6C5CE7);">
-                            <span class="rn-grade">6</span>
-                        </div>
-                        <div class="rn-label">
-                            <strong>Grade 6</strong>
-                            <span>Web Dev</span>
-                        </div>
-                    </div>
-                    <div class="roadmap-road"></div>
-                    <div class="roadmap-node rn-milestone" data-grade="7">
-                        <div class="rn-milestone-badge"><span class="material-icons">lightbulb</span> Star Thinker</div>
-                        <div class="rn-bubble" style="background:linear-gradient(135deg,#ED675C,#C84A40);">
-                            <span class="rn-grade">7</span>
-                        </div>
-                        <div class="rn-label">
-                            <strong>Grade 7</strong>
-                            <span>Game Dev</span>
+                <div class="path-connector"></div>
+                <div class="path-item">
+                    <div class="path-dot" style="background: #FFA800;"></div>
+                    <div class="path-content">
+                        <div class="path-grade">Grade 6-7</div>
+                        <h4>Intermediate</h4>
+                        <p>Python, Web Development (HTML/CSS/JS), App Basics, Data Structures</p>
+                        <div class="path-tags">
+                            <span style="background:#FFA80020;color:#CC8500;">Python</span>
+                            <span style="background:#00B67A20;color:#008C5E;">Web Dev</span>
+                            <span style="background:#7453D720;color:#5A3FB5;">App Dev</span>
                         </div>
                     </div>
-                    <div class="roadmap-curve roadmap-curve-right"></div>
                 </div>
-                <!-- Row 4: right to left — Grade 8, 9, 10 -->
-                <div class="roadmap-row roadmap-row-rtl">
-                    <div class="roadmap-curve roadmap-curve-left"></div>
-                    <div class="roadmap-node" data-grade="10">
-                        <div class="rn-finish-flag"><span class="material-icons">flag</span> Finish</div>
-                        <div class="rn-bubble rn-final" style="background:linear-gradient(135deg,#FF7043,#E64A19);">
-                            <span class="rn-grade">10</span>
-                        </div>
-                        <div class="rn-label">
-                            <strong>Grade 10</strong>
-                            <span>AI Portfolio</span>
-                        </div>
-                    </div>
-                    <div class="roadmap-road"></div>
-                    <div class="roadmap-node" data-grade="9">
-                        <div class="rn-bubble" style="background:linear-gradient(135deg,#E958B7,#C23D99);">
-                            <span class="rn-grade">9</span>
-                        </div>
-                        <div class="rn-label">
-                            <strong>Grade 9</strong>
-                            <span>AR/VR Dev</span>
-                        </div>
-                    </div>
-                    <div class="roadmap-road"></div>
-                    <div class="roadmap-node rn-milestone" data-grade="8">
-                        <div class="rn-milestone-badge"><span class="material-icons">rocket_launch</span> Star Innovator</div>
-                        <div class="rn-bubble" style="background:linear-gradient(135deg,#7453D7,#5A3FB5);">
-                            <span class="rn-grade">8</span>
-                        </div>
-                        <div class="rn-label">
-                            <strong>Grade 8</strong>
-                            <span>App Dev</span>
+                <div class="path-connector"></div>
+                <div class="path-item">
+                    <div class="path-dot" style="background: #7453D7;"></div>
+                    <div class="path-content">
+                        <div class="path-grade">Grade 8-10</div>
+                        <h4>Advanced</h4>
+                        <p>AI/ML, Advanced Python, Full-Stack Projects, Data Science, Capstone Portfolio</p>
+                        <div class="path-tags">
+                            <span style="background:#FFCF1120;color:#CCA500;">AI/ML</span>
+                            <span style="background:#E958B720;color:#C23D99;">Data Sci</span>
+                            <span style="background:#7453D720;color:#5A3FB5;">Full-Stack</span>
                         </div>
                     </div>
                 </div>
@@ -1081,8 +721,7 @@
     <!-- ========== 12. TEACHER/MENTOR CARDS ========== -->
     <section class="section mentors" id="mentors">
         <div class="container">
-            <div class="section-header" data-reveal="fade-up">
-                <p class="section-chip"><span class="material-icons">groups</span> Our Mentors</p>
+            <div class="section-header">
                 <h2 class="gradient-text">Expert guidance from qualified mentors</h2>
             </div>
             <div class="mentors-inner">
@@ -1091,21 +730,21 @@
                         <p class="mentors-desc">Our mentors are more than just teachers. They are dedicated guides who invest in every child's success through personalized attention and deep expertise.</p>
                         <div class="mentor-quality-points">
                             <div class="quality-point">
-                                <div class="quality-icon" style="background: #E8E0FF;"><span class="material-icons">star</span></div>
+                                <div class="quality-icon" style="background: #E8E0FF;">&#127942;</div>
                                 <div>
                                     <h4>1% selection rate</h4>
                                     <p>Only the best make it through our rigorous 5-stage screening process</p>
                                 </div>
                             </div>
                             <div class="quality-point">
-                                <div class="quality-icon" style="background: #D4F5E9;"><span class="material-icons">accessibility_new</span></div>
+                                <div class="quality-icon" style="background: #D4F5E9;">&#128218;</div>
                                 <div>
                                     <h4>Guru approach</h4>
                                     <p>Each mentor adapts teaching style to the student's pace and learning needs</p>
                                 </div>
                             </div>
                             <div class="quality-point">
-                                <div class="quality-icon" style="background: #FFF3CD;"><span class="material-icons">forum</span></div>
+                                <div class="quality-icon" style="background: #FFF3CD;">&#128172;</div>
                                 <div>
                                     <h4>Continuous feedback loop</h4>
                                     <p>Regular parent updates, progress reports, and open communication channels</p>
@@ -1113,55 +752,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mentors-right-preview">
-                        <div class="mentor-preview-card">
-                            <div class="mentor-preview-header">
-                                <span class="material-icons">verified_user</span>
-                                <h4>Mentor Excellence</h4>
-                            </div>
-                            <div class="mentor-preview-stats">
-                                <div class="mentor-stat-item">
-                                    <span class="material-icons">people</span>
-                                    <div>
-                                        <strong>500+</strong>
-                                        <span>Certified Mentors</span>
-                                    </div>
-                                </div>
-                                <div class="mentor-stat-item">
-                                    <span class="material-icons">schedule</span>
-                                    <div>
-                                        <strong>50,000+</strong>
-                                        <span>Hours Taught</span>
-                                    </div>
-                                </div>
-                                <div class="mentor-stat-item">
-                                    <span class="material-icons">workspace_premium</span>
-                                    <div>
-                                        <strong>Top 1%</strong>
-                                        <span>Selection Rate</span>
-                                    </div>
-                                </div>
-                                <div class="mentor-stat-item">
-                                    <span class="material-icons">star</span>
-                                    <div>
-                                        <strong>4.9/5</strong>
-                                        <span>Avg Rating</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mentor-preview-badges">
-                                <span class="mentor-pbadge"><span class="material-icons">check_circle</span> Background Verified</span>
-                                <span class="mentor-pbadge"><span class="material-icons">check_circle</span> Child Safety Trained</span>
-                                <span class="mentor-pbadge"><span class="material-icons">check_circle</span> IIT / NIT Alumni</span>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="mentors-right-preview">&#128104;&#8205;&#128187;</div>
                 </div>
                 <div class="mentors-bottom">
                     <div class="mentor-cards-scroll">
                         <div class="mentor-card">
                             <div class="mentor-avatar" style="background: linear-gradient(135deg, #7453D7, #4D3BC2);">
-                                <span class="material-icons">school</span>
+                                <span>&#128105;&#8205;&#127891;</span>
                             </div>
                             <p class="mentor-quote">"Seeing a child's eyes light up when their code works for the first time - that's why I teach."</p>
                             <h4>Ms. Priya Sharma</h4>
@@ -1170,7 +767,7 @@
                         </div>
                         <div class="mentor-card">
                             <div class="mentor-avatar" style="background: linear-gradient(135deg, #33CCFF, #0099CC);">
-                                <span class="material-icons">engineering</span>
+                                <span>&#128104;&#8205;&#128187;</span>
                             </div>
                             <p class="mentor-quote">"Every child learns differently. My job is to find the key that unlocks their potential."</p>
                             <h4>Mr. James Wilson</h4>
@@ -1179,7 +776,7 @@
                         </div>
                         <div class="mentor-card">
                             <div class="mentor-avatar" style="background: linear-gradient(135deg, #ED675C, #C84A40);">
-                                <span class="material-icons">integration_instructions</span>
+                                <span>&#128105;&#8205;&#128187;</span>
                             </div>
                             <p class="mentor-quote">"I don't just teach coding - I teach problem-solving, creativity, and confidence."</p>
                             <h4>Ms. Aisha Khan</h4>
@@ -1188,7 +785,7 @@
                         </div>
                         <div class="mentor-card">
                             <div class="mentor-avatar" style="background: linear-gradient(135deg, #00B67A, #008C5E);">
-                                <span class="material-icons">science</span>
+                                <span>&#128104;&#8205;&#127891;</span>
                             </div>
                             <p class="mentor-quote">"Building a project together creates a bond that makes learning effortless."</p>
                             <h4>Mr. Rahul Verma</h4>
@@ -1204,104 +801,67 @@
     <!-- ========== 13. BOOKING FORM ========== -->
     <section class="section booking" id="booking">
         <div class="container">
-            <div class="booking-inner" data-reveal="fade-up">
+            <div class="booking-inner">
                 <div class="booking-form-wrap">
                     <h2>Book Now & Get Certified</h2>
                     <p>Schedule a free personalized demo class for your child</p>
-                    <div id="form-success" class="form-success-msg" style="display:none;">
-                        <div class="form-success-icon"><span class="material-icons">celebration</span></div>
-                        <h3>You're all set!</h3>
-                        <p>We've received your booking request. Our counselor will call you within 30 minutes to confirm your slot.</p>
-                    </div>
-                    <form id="bookingForm" onsubmit="return handleBookingSubmit(event);" novalidate>
+                    <form onsubmit="return false;">
                         <div class="form-row">
                             <div class="form-group">
-                                <label>Student Name *</label>
-                                <input type="text" id="studentName" placeholder="Enter student's name" required>
-                                <span class="field-error" id="err-studentName"></span>
-                            </div>
-                            <div class="form-group">
-                                <label>Parent Name *</label>
-                                <input type="text" id="parentName" placeholder="Enter parent's name" required>
-                                <span class="field-error" id="err-parentName"></span>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Email ID *</label>
-                                <input type="email" id="emailId" placeholder="parent@email.com" required>
-                                <span class="field-error" id="err-emailId"></span>
-                            </div>
-                            <div class="form-group">
-                                <label>Phone Number *</label>
-                                <input type="tel" id="phoneNumber" placeholder="Enter 10-digit phone number" required>
-                                <span class="field-error" id="err-phoneNumber"></span>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Grade *</label>
-                                <select id="gradeSelect" required>
-                                    <option value="">Select Grade</option>
-                                    <option value="1">Grade 1</option>
-                                    <option value="2">Grade 2</option>
-                                    <option value="3">Grade 3</option>
-                                    <option value="4">Grade 4</option>
-                                    <option value="5">Grade 5</option>
-                                    <option value="6">Grade 6</option>
-                                    <option value="7">Grade 7</option>
-                                    <option value="8">Grade 8</option>
-                                    <option value="9">Grade 9</option>
-                                    <option value="10">Grade 10</option>
+                                <label>Country & Dial Code</label>
+                                <select>
+                                    <option>&#127470;&#127475; India (+91)</option>
+                                    <option>&#127482;&#127480; USA (+1)</option>
+                                    <option>&#127468;&#127463; UK (+44)</option>
+                                    <option>&#127462;&#127466; UAE (+971)</option>
+                                    <option>&#127464;&#127462; Canada (+1)</option>
+                                    <option>&#127462;&#127482; Australia (+61)</option>
+                                    <option>&#127480;&#127468; Singapore (+65)</option>
                                 </select>
-                                <span class="field-error" id="err-gradeSelect"></span>
                             </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" placeholder="Enter phone number">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" placeholder="parent@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Child's Name</label>
+                                <input type="text" placeholder="Enter child's name">
+                            </div>
+                        </div>
+                        <div class="form-row">
                             <div class="form-group">
                                 <label>Interested Course</label>
-                                <select id="courseSelect">
-                                    <option value="">Select Course (Optional)</option>
+                                <select>
+                                    <option>Select Course</option>
                                     <option>Scratch Programming</option>
                                     <option>Python for Kids</option>
                                     <option>Web Development</option>
                                     <option>App Development</option>
                                     <option>AI & Machine Learning</option>
                                     <option>Game Development</option>
-                                    <option>AR / VR Development</option>
-                                    <option>3D Modelling</option>
+                                    <option>Data Science</option>
                                 </select>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Preferred Day *</label>
-                                <select id="preferredDay" required>
-                                    <option value="">Select Preferred Day</option>
-                                    <option>Monday</option>
-                                    <option>Tuesday</option>
-                                    <option>Wednesday</option>
-                                    <option>Thursday</option>
-                                    <option>Friday</option>
-                                    <option>Saturday</option>
-                                    <option>Sunday</option>
-                                    <option>Weekdays (Any)</option>
-                                    <option>Weekends (Any)</option>
-                                </select>
-                                <span class="field-error" id="err-preferredDay"></span>
                             </div>
                             <div class="form-group">
-                                <label>Preferred Time Slot *</label>
-                                <select id="preferredTime" required>
-                                    <option value="">Select Time Slot</option>
-                                    <option>Morning: 9 AM – 12 PM</option>
-                                    <option>Afternoon: 12 PM – 3 PM</option>
-                                    <option>Evening: 3 PM – 6 PM</option>
-                                    <option>Night: 6 PM – 9 PM</option>
-                                </select>
-                                <span class="field-error" id="err-preferredTime"></span>
+                                <label>Does your child have a laptop?</label>
+                                <div class="radio-group">
+                                    <label class="radio-option">
+                                        <input type="radio" name="laptop" value="yes" checked> Yes
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="laptop" value="no"> No
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-large btn-full">Book a Free Trial Class &#8594;</button>
-                        <p class="form-disclaimer">By submitting, you agree to our <a href="#">Terms</a> &amp; <a href="#">Privacy Policy</a></p>
+                        <button type="submit" class="btn btn-primary btn-large btn-full">Book a Free Trial Class</button>
+                        <p class="form-disclaimer">By submitting, you agree to our <a href="#">Terms</a> & <a href="#">Privacy Policy</a></p>
                     </form>
                 </div>
             </div>
@@ -1311,7 +871,7 @@
     <!-- ========== 14. FAQ ========== -->
     <section class="section faq" id="faq">
         <div class="container">
-            <div class="section-header" data-reveal="fade-up">
+            <div class="section-header">
                 <h2 class="gradient-text">Frequently Asked Questions</h2>
             </div>
             <div class="faq-tabs">
@@ -1384,7 +944,23 @@
             <!-- Footer Logo -->
             <div class="footer-logo-row">
                 <a href="#hero" class="logo footer-logo-link">
-                    <img src="videos/logo1.png" alt="CodestarX" class="logo-img">
+                    <span class="logo-icon">
+                        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="44" height="44" rx="12" fill="url(#lgF)"/>
+                            <path d="M18 13l-8 9 8 9" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M26 13l8 9-8 9" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M24 11l-4 22" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round"/>
+                            <polygon points="38,6 39.8,10.5 44,11 40.8,14 41.6,18.2 38,16 34.4,18.2 35.2,14 32,11 36.2,10.5" fill="#FBBF24"/>
+                            <defs>
+                                <linearGradient id="lgF" x1="0" y1="0" x2="44" y2="44">
+                                    <stop offset="0%" stop-color="#6D28D9"/>
+                                    <stop offset="50%" stop-color="#7C3AED"/>
+                                    <stop offset="100%" stop-color="#4F46E5"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </span>
+                    <span class="logo-text">CODESTAR<span class="logo-x">X</span></span>
                 </a>
                 <p class="footer-tagline">Empowering the next generation with future-ready coding skills through live, 1:1 instructor-led classes.</p>
             </div>
@@ -1466,22 +1042,6 @@
         </div>
     </footer>
 
-    <!-- ========== FLOATING ACTION BUTTONS (Vedantu-style) ========== -->
-    <div class="floating-fabs" id="floatingFabs">
-        <a href="#booking" class="fab fab-demo" title="Book Free Demo">
-            <span class="material-icons">school</span>
-            <span class="fab-label">Free Demo</span>
-        </a>
-        <a href="tel:+919876543210" class="fab fab-call" title="Call Us">
-            <span class="material-icons">phone_callback</span>
-            <span class="fab-label">Call Us</span>
-        </a>
-        <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="fab fab-whatsapp" title="WhatsApp">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-            <span class="fab-label">WhatsApp</span>
-        </a>
-    </div>
-
     <!-- ========== 16. MOBILE STICKY CTA ========== -->
     <div class="mobile-sticky-cta">
         <a href="#booking" class="btn btn-primary btn-full">Book a FREE trial class</a>
@@ -1489,101 +1049,7 @@
 
     <!-- ========== INLINE JAVASCRIPT ========== -->
     <script>
-    (function() {
-        'use strict';
-
-        // ===== 1. HERO ENTRANCE ANIMATION =====
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.querySelector('.hero').classList.add('hero-loaded');
-            }, 100);
-        });
-
-        // ===== 2. NAV HIDE/SHOW ON SCROLL (Zenda-style) =====
-        (function() {
-            var header = document.getElementById('header');
-            var lastScroll = 0;
-            var ticking = false;
-
-            window.addEventListener('scroll', function() {
-                if (!ticking) {
-                    window.requestAnimationFrame(function() {
-                        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-                        if (scrollTop > 50) {
-                            header.classList.add('scrolled');
-                        } else {
-                            header.classList.remove('scrolled');
-                        }
-
-                        if (scrollTop > lastScroll && scrollTop > 100) {
-                            header.classList.add('nav-hidden');
-                        } else {
-                            header.classList.remove('nav-hidden');
-                        }
-
-                        lastScroll = scrollTop <= 0 ? 0 : scrollTop;
-                        ticking = false;
-                    });
-                    ticking = true;
-                }
-            });
-        })();
-
-        // ===== 3. SCROLL-REVEAL (IntersectionObserver) =====
-        (function() {
-            var revealEls = document.querySelectorAll('[data-reveal]');
-            if (!revealEls.length) return;
-
-            var observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('revealed');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-
-            revealEls.forEach(function(el) { observer.observe(el); });
-        })();
-
-        // ===== 4. STAGGER-REVEAL for grids =====
-        (function() {
-            var staggerContainers = document.querySelectorAll(
-                '.features-grid, .skills-grid, .testimonial-grid, .pricing-grid, ' +
-                '.course-scroll, .mentor-cards-scroll, .parent-grid'
-            );
-            if (!staggerContainers.length) return;
-
-            var observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('revealed');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-
-            staggerContainers.forEach(function(el) { observer.observe(el); });
-        })();
-
-        // ===== 5. INFO BAR, STUDENT COUNT, CHECKOUT STRIP reveal =====
-        (function() {
-            var els = document.querySelectorAll('.info-bar, .student-count-bar, .checkout-strip');
-
-            var observer = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('revealed');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.2 });
-
-            els.forEach(function(el) { observer.observe(el); });
-        })();
-
-        // ===== 6. FAQ ACCORDION =====
+        // FAQ accordion toggle
         document.querySelectorAll('.faq-question').forEach(function(question) {
             question.addEventListener('click', function() {
                 var item = this.parentElement;
@@ -1591,9 +1057,15 @@
                 var toggle = this.querySelector('.faq-toggle');
                 var isOpen = answer.style.display === 'block';
 
-                document.querySelectorAll('.faq-answer').forEach(function(a) { a.style.display = 'none'; });
-                document.querySelectorAll('.faq-toggle').forEach(function(t) { t.textContent = '+'; });
+                // Close all
+                document.querySelectorAll('.faq-answer').forEach(function(a) {
+                    a.style.display = 'none';
+                });
+                document.querySelectorAll('.faq-toggle').forEach(function(t) {
+                    t.textContent = '+';
+                });
 
+                // Open clicked if it was closed
                 if (!isOpen) {
                     answer.style.display = 'block';
                     toggle.textContent = '-';
@@ -1601,13 +1073,15 @@
             });
         });
 
-        // ===== 7. MOBILE MENU =====
+        // Mobile menu toggle
         var menuBtn = document.getElementById('mobileMenuBtn');
         var mobileMenu = document.getElementById('mobileMenu');
         menuBtn.addEventListener('click', function() {
             mobileMenu.classList.toggle('open');
             menuBtn.classList.toggle('active');
         });
+
+        // Close mobile menu on link click
         mobileMenu.querySelectorAll('a').forEach(function(link) {
             link.addEventListener('click', function() {
                 mobileMenu.classList.remove('open');
@@ -1615,7 +1089,7 @@
             });
         });
 
-        // ===== 8. SMOOTH SCROLL =====
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
             anchor.addEventListener('click', function(e) {
                 var targetId = this.getAttribute('href');
@@ -1630,34 +1104,44 @@
             });
         });
 
-        // ===== 9. FAQ TABS =====
+        // Header scroll state
+        window.addEventListener('scroll', function() {
+            var header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // FAQ tab switching
         document.querySelectorAll('.faq-tab').forEach(function(tab) {
             tab.addEventListener('click', function() {
-                document.querySelectorAll('.faq-tab').forEach(function(t) { t.classList.remove('active'); });
+                document.querySelectorAll('.faq-tab').forEach(function(t) {
+                    t.classList.remove('active');
+                });
                 this.classList.add('active');
             });
         });
 
-        // ===== 10. GRADE FILTER =====
+        // Grade filter buttons
         document.querySelectorAll('.grade-btn').forEach(function(btn) {
             btn.addEventListener('click', function() {
-                document.querySelectorAll('.grade-btn').forEach(function(b) { b.classList.remove('active'); });
-                this.classList.add('active');
-                var grade = this.getAttribute('data-grade');
-                document.querySelectorAll('.course-category').forEach(function(cat) {
-                    cat.classList.toggle('active', cat.getAttribute('data-category') === grade);
+                document.querySelectorAll('.grade-btn').forEach(function(b) {
+                    b.classList.remove('active');
                 });
+                this.classList.add('active');
             });
         });
 
-        // ===== 11. STUDENT COUNT ANIMATION (IntersectionObserver) =====
+        // Student count animation on scroll
         (function() {
             var counter = document.getElementById('studentCounter');
-            if (!counter) return;
             var animated = false;
-
-            var observer = new IntersectionObserver(function(entries) {
-                if (entries[0].isIntersecting && !animated) {
+            function animateCount() {
+                if (animated) return;
+                var rect = counter.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
                     animated = true;
                     var target = 10000;
                     var current = 0;
@@ -1671,31 +1155,35 @@
                         counter.textContent = current.toLocaleString() + '+';
                     }, 16);
                 }
-            }, { threshold: 0.5 });
-
-            observer.observe(counter);
+            }
+            window.addEventListener('scroll', animateCount);
+            animateCount();
         })();
 
-        // ===== 12. HERO VIDEO CAROUSEL =====
+        // ===== HERO VIDEO CAROUSEL =====
         (function() {
             var slides = document.querySelectorAll('.hero-video-slide');
             var dots = document.querySelectorAll('.vdot');
             if (!slides.length) return;
             var current = 0;
             var total = slides.length;
-            var interval = 5000;
+            var interval = 5000; // 5 seconds per slide
 
             function goToSlide(i) {
+                // Pause current video
                 var curVid = slides[current].querySelector('video');
                 if (curVid) curVid.pause();
 
+                // Remove active
                 slides[current].classList.remove('active');
                 dots[current] && dots[current].classList.remove('active');
 
+                // Set new
                 current = i;
                 slides[current].classList.add('active');
                 dots[current] && dots[current].classList.add('active');
 
+                // Play new video
                 var newVid = slides[current].querySelector('video');
                 if (newVid) {
                     newVid.currentTime = 0;
@@ -1703,10 +1191,12 @@
                 }
             }
 
+            // Auto rotate
             var timer = setInterval(function() {
                 goToSlide((current + 1) % total);
             }, interval);
 
+            // Dot clicks
             dots.forEach(function(dot, idx) {
                 dot.addEventListener('click', function() {
                     clearInterval(timer);
@@ -1717,11 +1207,16 @@
                 });
             });
 
+            // Force play ALL videos (browsers need user gesture or muted)
             slides.forEach(function(slide) {
                 var v = slide.querySelector('video');
-                if (v) { v.muted = true; v.play().catch(function(){}); }
+                if (v) {
+                    v.muted = true;
+                    v.play().catch(function(){});
+                }
             });
 
+            // Also retry on any user interaction
             document.addEventListener('click', function tryPlay() {
                 slides.forEach(function(slide) {
                     var v = slide.querySelector('video');
@@ -1730,114 +1225,6 @@
                 document.removeEventListener('click', tryPlay);
             });
         })();
-
-        // ===== 13. FLOATING FABs SHOW/HIDE =====
-        (function() {
-            var fabs = document.getElementById('floatingFabs');
-            if (!fabs) return;
-            fabs.style.opacity = '0';
-            fabs.style.transform = 'translateY(20px)';
-            fabs.style.pointerEvents = 'none';
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 500) {
-                    fabs.style.opacity = '1';
-                    fabs.style.transform = 'translateY(0)';
-                    fabs.style.pointerEvents = 'auto';
-                } else {
-                    fabs.style.opacity = '0';
-                    fabs.style.transform = 'translateY(20px)';
-                    fabs.style.pointerEvents = 'none';
-                }
-            });
-        })();
-
-    })();
-    </script>
-
-    <!-- ========== BENEFIT CARDS + ROADMAP ANIMATIONS ========== -->
-    <script>
-    (function() {
-        var benefitHexes = document.querySelectorAll('.benefit-hex');
-        if (benefitHexes.length) {
-            var bcObs = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        var delay = parseInt(entry.target.getAttribute('data-delay') || 0);
-                        setTimeout(function() { entry.target.classList.add('visible'); }, delay);
-                        bcObs.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
-            benefitHexes.forEach(function(c) { bcObs.observe(c); });
-        }
-
-        var roadmapNodes = document.querySelectorAll('.roadmap-node');
-        if (roadmapNodes.length) {
-            var rnObs = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
-                    if (entry.isIntersecting) {
-                        var idx = Array.prototype.indexOf.call(roadmapNodes, entry.target);
-                        setTimeout(function() { entry.target.classList.add('visible'); }, idx * 130);
-                        rnObs.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.15 });
-            roadmapNodes.forEach(function(n) { rnObs.observe(n); });
-        }
-    })();
-    </script>
-
-    <!-- ========== BOOKING FORM VALIDATION ========== -->
-    <script>
-    function handleBookingSubmit(e) {
-        e.preventDefault();
-        var valid = true;
-
-        function setError(id, msg) {
-            var el = document.getElementById('err-' + id);
-            if (el) { el.textContent = msg; el.style.display = msg ? 'block' : 'none'; }
-            var input = document.getElementById(id);
-            if (input) input.classList.toggle('input-error', !!msg);
-            if (msg) valid = false;
-        }
-
-        var studentName = document.getElementById('studentName').value.trim();
-        var parentName = document.getElementById('parentName').value.trim();
-        var emailId = document.getElementById('emailId').value.trim();
-        var phoneNumber = document.getElementById('phoneNumber').value.trim();
-        var gradeSelect = document.getElementById('gradeSelect').value;
-        var preferredDay = document.getElementById('preferredDay').value;
-        var preferredTime = document.getElementById('preferredTime').value;
-
-        setError('studentName', !studentName ? 'Please enter student name' : '');
-        setError('parentName', !parentName ? 'Please enter parent name' : '');
-        setError('emailId', !emailId ? 'Please enter email' : (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailId) ? 'Please enter a valid email' : ''));
-        setError('phoneNumber', !phoneNumber ? 'Please enter phone number' : (!/^\d{10}$/.test(phoneNumber.replace(/[\s\-\+]/g,'')) ? 'Please enter a valid 10-digit number' : ''));
-        setError('gradeSelect', !gradeSelect ? 'Please select a grade' : '');
-        setError('preferredDay', !preferredDay ? 'Please select a preferred day' : '');
-        setError('preferredTime', !preferredTime ? 'Please select a time slot' : '');
-
-        if (valid) {
-            document.getElementById('bookingForm').style.display = 'none';
-            document.getElementById('form-success').style.display = 'block';
-            document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-        return false;
-    }
-    </script>
-
-    <!-- ========== SCROLL PROGRESS ========== -->
-    <script>
-    (function() {
-        var bar = document.getElementById('scrollProgress');
-        if (!bar) return;
-        window.addEventListener('scroll', function() {
-            var scrollTop = window.pageYOffset;
-            var docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-            bar.style.width = pct + '%';
-        }, { passive: true });
-    })();
     </script>
 
 </body>
