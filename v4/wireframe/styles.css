@@ -3539,43 +3539,54 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     to { stroke-dashoffset: -800; }
 }
 
-/* Mobile — show as compact vertical timeline */
+/* Tablet — keep snake but tighter */
+@media (max-width: 1024px) {
+    .roadmap-fullwidth { padding: 0 40px; }
+    .roadmap-snake { height: 480px; }
+    .sn-bubble { width: 50px; height: 50px; border-width: 2.5px; box-shadow: 0 3px 10px rgba(77,59,194,0.2), 0 0 0 2.5px var(--primary); }
+    .sn-bubble .material-icons { font-size: 20px; }
+    .sn-num { width: 18px; height: 18px; font-size: 0.6rem; top: -4px; right: -4px; }
+    .sn-label { min-width: 80px; padding: 5px 8px; margin-top: 8px; }
+    .sn-label strong { font-size: 0.72rem; }
+    .sn-label span { font-size: 0.6rem; }
+}
+
+/* Mobile — keep snake pattern, smaller scale, hide labels */
 @media (max-width: 768px) {
-    .roadmap-snake {
-        aspect-ratio: auto;
-        padding: 0;
+    .roadmap-fullwidth { padding: 0 12px; }
+    .roadmap-snake { height: 420px; }
+    .sn-bubble { width: 42px; height: 42px; border-width: 2px; box-shadow: 0 2px 8px rgba(77,59,194,0.2), 0 0 0 2px var(--primary); }
+    .sn-bubble .material-icons { font-size: 18px; }
+    .sn-num { width: 16px; height: 16px; font-size: 0.55rem; top: -3px; right: -3px; border-width: 1.5px; }
+    .sn-label {
+        min-width: auto;
+        padding: 3px 6px;
+        margin-top: 6px;
+        background: transparent;
+        border: none;
+        box-shadow: none;
     }
-    .snake-path { display: none; }
-    .snake-nodes {
-        display: flex;
-        flex-direction: column;
-        gap: 28px;
-        position: relative;
-        padding: 20px 0;
-    }
-    .snake-nodes::before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        top: 0; bottom: 0;
-        width: 3px;
-        background: linear-gradient(180deg, #A78BFA, #6C5CE7, #4D3BC2);
-        transform: translateX(-50%);
-        border-radius: 2px;
-    }
-    .snake-node {
-        position: relative !important;
-        left: auto !important;
-        top: auto !important;
-        transform: none !important;
-    }
-    .snake-node:hover { transform: scale(1.05) !important; }
+    .sn-label strong { font-size: 0.65rem; }
+    .sn-label span { display: none; }
     .sn-milestone-badge,
     .sn-finish-flag {
-        position: static;
-        transform: none;
-        margin-bottom: 6px;
+        font-size: 0.55rem;
+        padding: 3px 7px;
+        bottom: calc(100% + 4px);
     }
+    .sn-milestone-badge .material-icons,
+    .sn-finish-flag .material-icons { font-size: 9px; }
+    .snake-path { stroke-width: 8; }
+}
+
+/* Very small phones — fallback to vertical zigzag */
+@media (max-width: 420px) {
+    .roadmap-snake { height: 380px; }
+    .sn-bubble { width: 36px; height: 36px; }
+    .sn-bubble .material-icons { font-size: 15px; }
+    .sn-label strong { font-size: 0.58rem; }
+    .sn-milestone-badge,
+    .sn-finish-flag { display: none; }
 }
 /* ===== END NEW SERPENTINE ROADMAP ===== */
 
