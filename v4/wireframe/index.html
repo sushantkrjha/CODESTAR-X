@@ -447,121 +447,74 @@
                 <h2 class="gradient-text">Your child's coding adventure</h2>
                 <p>A clear grade-by-grade roadmap from Grade 1 to Grade 10</p>
             </div>
-            <div class="roadmap-wrapper" id="roadmapWrapper">
-                <!-- Row 1: left to right — Grade 1, 2, 3 -->
-                <div class="roadmap-row roadmap-row-ltr">
-                    <div class="roadmap-node rn-start" data-grade="1">
-                        <div class="rn-bubble" style="background:linear-gradient(135deg,#33CCFF,#0099CC);">
-                            <span class="rn-grade">1</span>
-                        </div>
-                        <div class="rn-label">
-                            <strong>Grade 1</strong>
-                            <span>Scratch Jr.</span>
-                        </div>
+        </div>
+        <div class="roadmap-fullwidth">
+            <div class="roadmap-snake" id="roadmapWrapper">
+                <!-- SVG serpentine path — 3 rows -->
+                <svg class="snake-path" viewBox="0 0 1000 700" preserveAspectRatio="none" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="snakeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#A78BFA"/>
+                            <stop offset="50%" stop-color="#6C5CE7"/>
+                            <stop offset="100%" stop-color="#4D3BC2"/>
+                        </linearGradient>
+                    </defs>
+                    <path d="M 80,120 L 920,120 Q 980,120 980,200 L 980,280 Q 980,360 920,360 L 80,360 Q 20,360 20,440 L 20,520 Q 20,600 80,600 L 920,600"
+                          fill="none" stroke="url(#snakeGrad)" stroke-width="14" stroke-linecap="round"/>
+                    <path d="M 80,120 L 920,120 Q 980,120 980,200 L 980,280 Q 980,360 920,360 L 80,360 Q 20,360 20,440 L 20,520 Q 20,600 80,600 L 920,600"
+                          fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 10" opacity="0.7"/>
+                </svg>
+
+                <!-- Grade nodes — 4 + 3 + 3 distribution across 3 rows -->
+                <div class="snake-nodes">
+                    <!-- Row 1: 1, 2, 3, 4 (left to right) -->
+                    <div class="snake-node" style="left:8%; top:17%;" data-grade="1">
+                        <div class="sn-bubble"><span class="material-icons">extension</span><b class="sn-num">1</b></div>
+                        <div class="sn-label"><strong>Grade 1</strong><span>Scratch Jr.</span></div>
                     </div>
-                    <div class="roadmap-road"></div>
-                    <div class="roadmap-node" data-grade="2">
-                        <div class="rn-bubble" style="background:linear-gradient(135deg,#00B67A,#008C5E);">
-                            <span class="rn-grade">2</span>
-                        </div>
-                        <div class="rn-label">
-                            <strong>Grade 2</strong>
-                            <span>Block Coding</span>
-                        </div>
+                    <div class="snake-node" style="left:36%; top:17%;" data-grade="2">
+                        <div class="sn-bubble"><span class="material-icons">view_module</span><b class="sn-num">2</b></div>
+                        <div class="sn-label"><strong>Grade 2</strong><span>Block Coding</span></div>
                     </div>
-                    <div class="roadmap-road"></div>
-                    <div class="roadmap-node" data-grade="3">
-                        <div class="rn-bubble" style="background:linear-gradient(135deg,#E958B7,#B02890);">
-                            <span class="rn-grade">3</span>
-                        </div>
-                        <div class="rn-label">
-                            <strong>Grade 3</strong>
-                            <span>Creative Coding</span>
-                        </div>
+                    <div class="snake-node sn-milestone" style="left:64%; top:17%;" data-grade="3">
+                        <div class="sn-milestone-badge"><span class="material-icons">workspace_premium</span> Star Learner</div>
+                        <div class="sn-bubble"><span class="material-icons">palette</span><b class="sn-num">3</b></div>
+                        <div class="sn-label"><strong>Grade 3</strong><span>Creative Coding</span></div>
                     </div>
-                    <div class="roadmap-curve roadmap-curve-right"></div>
-                </div>
-                <!-- Row 2: right to left — Grade 4, 5 -->
-                <div class="roadmap-row roadmap-row-rtl">
-                    <div class="roadmap-curve roadmap-curve-left"></div>
-                    <div class="roadmap-node" data-grade="5">
-                        <div class="rn-bubble" style="background:linear-gradient(135deg,#FFA800,#CC8500);">
-                            <span class="rn-grade">5</span>
-                        </div>
-                        <div class="rn-label">
-                            <strong>Grade 5</strong>
-                            <span>Python Basics</span>
-                        </div>
+                    <div class="snake-node" style="left:92%; top:17%;" data-grade="4">
+                        <div class="sn-bubble"><span class="material-icons">extension</span><b class="sn-num">4</b></div>
+                        <div class="sn-label"><strong>Grade 4</strong><span>Scratch Advanced</span></div>
                     </div>
-                    <div class="roadmap-road"></div>
-                    <div class="roadmap-node rn-milestone" data-grade="4">
-                        <div class="rn-milestone-badge"><span class="material-icons">star</span> Star Learner</div>
-                        <div class="rn-bubble" style="background:linear-gradient(135deg,#FFCF11,#CCA500);">
-                            <span class="rn-grade">4</span>
-                        </div>
-                        <div class="rn-label">
-                            <strong>Grade 4</strong>
-                            <span>Scratch Advanced</span>
-                        </div>
+
+                    <!-- Row 2: 5, 6, 7 (right to left) -->
+                    <div class="snake-node" style="left:92%; top:51%;" data-grade="5">
+                        <div class="sn-bubble"><span class="material-icons">code</span><b class="sn-num">5</b></div>
+                        <div class="sn-label"><strong>Grade 5</strong><span>Python Basics</span></div>
                     </div>
-                </div>
-                <!-- Row 3: left to right — Grade 6, 7 -->
-                <div class="roadmap-row roadmap-row-ltr">
-                    <div class="roadmap-node" data-grade="6">
-                        <div class="rn-bubble" style="background:linear-gradient(135deg,#4D3BC2,#6C5CE7);">
-                            <span class="rn-grade">6</span>
-                        </div>
-                        <div class="rn-label">
-                            <strong>Grade 6</strong>
-                            <span>Web Dev</span>
-                        </div>
+                    <div class="snake-node" style="left:50%; top:51%;" data-grade="6">
+                        <div class="sn-bubble"><span class="material-icons">language</span><b class="sn-num">6</b></div>
+                        <div class="sn-label"><strong>Grade 6</strong><span>Web Dev</span></div>
                     </div>
-                    <div class="roadmap-road"></div>
-                    <div class="roadmap-node rn-milestone" data-grade="7">
-                        <div class="rn-milestone-badge"><span class="material-icons">lightbulb</span> Star Thinker</div>
-                        <div class="rn-bubble" style="background:linear-gradient(135deg,#ED675C,#C84A40);">
-                            <span class="rn-grade">7</span>
-                        </div>
-                        <div class="rn-label">
-                            <strong>Grade 7</strong>
-                            <span>Game Dev</span>
-                        </div>
+                    <div class="snake-node sn-milestone" style="left:8%; top:51%;" data-grade="7">
+                        <div class="sn-milestone-badge"><span class="material-icons">psychology</span> Star Thinker</div>
+                        <div class="sn-bubble"><span class="material-icons">sports_esports</span><b class="sn-num">7</b></div>
+                        <div class="sn-label"><strong>Grade 7</strong><span>Game Dev</span></div>
                     </div>
-                    <div class="roadmap-curve roadmap-curve-right"></div>
-                </div>
-                <!-- Row 4: right to left — Grade 8, 9, 10 -->
-                <div class="roadmap-row roadmap-row-rtl">
-                    <div class="roadmap-curve roadmap-curve-left"></div>
-                    <div class="roadmap-node" data-grade="10">
-                        <div class="rn-finish-flag"><span class="material-icons">flag</span> Finish</div>
-                        <div class="rn-bubble rn-final" style="background:linear-gradient(135deg,#FF7043,#E64A19);">
-                            <span class="rn-grade">10</span>
-                        </div>
-                        <div class="rn-label">
-                            <strong>Grade 10</strong>
-                            <span>AI Portfolio</span>
-                        </div>
+
+                    <!-- Row 3: 8, 9, 10 (left to right) -->
+                    <div class="snake-node sn-milestone" style="left:8%; top:86%;" data-grade="8">
+                        <div class="sn-milestone-badge"><span class="material-icons">auto_awesome</span> Star Innovator</div>
+                        <div class="sn-bubble"><span class="material-icons">phone_android</span><b class="sn-num">8</b></div>
+                        <div class="sn-label"><strong>Grade 8</strong><span>App Dev</span></div>
                     </div>
-                    <div class="roadmap-road"></div>
-                    <div class="roadmap-node" data-grade="9">
-                        <div class="rn-bubble" style="background:linear-gradient(135deg,#E958B7,#C23D99);">
-                            <span class="rn-grade">9</span>
-                        </div>
-                        <div class="rn-label">
-                            <strong>Grade 9</strong>
-                            <span>AR/VR Dev</span>
-                        </div>
+                    <div class="snake-node" style="left:50%; top:86%;" data-grade="9">
+                        <div class="sn-bubble"><span class="material-icons">view_in_ar</span><b class="sn-num">9</b></div>
+                        <div class="sn-label"><strong>Grade 9</strong><span>AR/VR Dev</span></div>
                     </div>
-                    <div class="roadmap-road"></div>
-                    <div class="roadmap-node rn-milestone" data-grade="8">
-                        <div class="rn-milestone-badge"><span class="material-icons">rocket_launch</span> Star Innovator</div>
-                        <div class="rn-bubble" style="background:linear-gradient(135deg,#7453D7,#5A3FB5);">
-                            <span class="rn-grade">8</span>
-                        </div>
-                        <div class="rn-label">
-                            <strong>Grade 8</strong>
-                            <span>App Dev</span>
-                        </div>
+                    <div class="snake-node sn-finish" style="left:92%; top:86%;" data-grade="10">
+                        <div class="sn-finish-flag"><span class="material-icons">emoji_events</span> Finish</div>
+                        <div class="sn-bubble sn-final"><span class="material-icons">smart_toy</span><b class="sn-num">10</b></div>
+                        <div class="sn-label"><strong>Grade 10</strong><span>AI Portfolio</span></div>
                     </div>
                 </div>
             </div>
