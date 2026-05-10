@@ -288,6 +288,21 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     display: block;
 }
 .main-nav a:hover { color: var(--primary); }
+.nav-static {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 8px 0;
+    display: block;
+    cursor: default;
+    user-select: none;
+}
+.footer-col ul li .nav-static {
+    color: rgba(255,255,255,0.7);
+    padding: 0;
+    cursor: default;
+    user-select: none;
+}
 .arrow { font-size: 0.6em; margin-left: 3px; }
 
 /* Dropdown */
