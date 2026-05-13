@@ -892,7 +892,8 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     justify-content: center;
     flex-wrap: wrap;
 }
-@media (max-width: 768px) {
+/* On small phones — horizontal scroll, left-aligned */
+@media (max-width: 520px) {
     .course-scroll { flex-wrap: nowrap; justify-content: flex-start; }
 }
 .course-scroll::-webkit-scrollbar { height: 6px; }
