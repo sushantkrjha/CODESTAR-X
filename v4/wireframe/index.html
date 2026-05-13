@@ -552,11 +552,19 @@
                 <p class="section-chip"><span class="material-icons">workspace_premium</span> Our Edge</p>
                 <h2 class="gradient-text">What really sets us apart</h2>
             </div>
-            <div class="features-orbit-wrap">
+            <div class="features-orbit-wrap" id="featuresOrbitWrap">
                 <div class="features-orbit-center">
                     <div class="orbit-center-live"><span class="orbit-live-dot"></span> Live Now</div>
                     <div class="orbit-center-num">1:1</div>
                     <div class="orbit-center-text">Personalised<br><span>Mentor Attention</span></div>
+                </div>
+                <div class="orbit-detail-overlay" id="orbitDetailOverlay">
+                    <div class="orbit-detail-card">
+                        <button class="orbit-detail-close" id="orbitDetailClose" aria-label="Close"><span class="material-icons">close</span></button>
+                        <div class="orbit-detail-icon"><span class="material-icons" id="orbitDetailIcon">tune</span></div>
+                        <h4 class="orbit-detail-title" id="orbitDetailTitle">Title</h4>
+                        <p class="orbit-detail-desc" id="orbitDetailDesc">Description</p>
+                    </div>
                 </div>
             <div class="features-grid features-orbit" data-reveal-stagger>
                 <div class="feature-card">
@@ -1331,7 +1339,7 @@
                                     <option>Wednesday</option>
                                     <option>Thursday</option>
                                     <option>Friday</option>
-                                    <option>Any Weekday</option>
+                            
                                 </select>
                                 <span class="field-error" id="err-preferredDay"></span>
                             </div>
@@ -1706,6 +1714,43 @@
                     if (v) { v.muted = true; v.play().catch(function(){}); }
                 });
                 document.removeEventListener('click', tryPlay);
+            });
+        })();
+
+        // ===== 14. ORBIT CARD TAP/CLICK → SHOW DETAIL OVERLAY =====
+        // Active on mobile/tablet viewports (<=900px) OR touch devices
+        (function() {
+            var overlay = document.getElementById('orbitDetailOverlay');
+            var closeBtn = document.getElementById('orbitDetailClose');
+            var titleEl = document.getElementById('orbitDetailTitle');
+            var descEl = document.getElementById('orbitDetailDesc');
+            var iconEl = document.getElementById('orbitDetailIcon');
+            if (!overlay) return;
+
+            function isMobileOrTouch() {
+                return window.innerWidth <= 900
+                    || window.matchMedia('(hover: none), (pointer: coarse)').matches;
+            }
+
+            document.querySelectorAll('.features-orbit .feature-card').forEach(function(card) {
+                card.addEventListener('click', function(e) {
+                    if (!isMobileOrTouch()) return; // desktop uses hover only
+                    e.preventDefault();
+                    var titleNode = card.querySelector('h4');
+                    var descNode = card.querySelector('p');
+                    var iconNode = card.querySelector('.feature-icon .material-icons');
+                    if (titleEl && titleNode) titleEl.textContent = titleNode.textContent;
+                    if (descEl && descNode) descEl.textContent = descNode.textContent;
+                    if (iconEl && iconNode) iconEl.textContent = iconNode.textContent;
+                    overlay.classList.add('active');
+                });
+            });
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function() { overlay.classList.remove('active'); });
+            }
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) overlay.classList.remove('active');
             });
         })();
 
