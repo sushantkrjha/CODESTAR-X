@@ -1346,34 +1346,40 @@
                                 <span class="field-error" id="err-preferredDay"></span>
                             </div>
                             <div class="form-group">
-                                <label>Preferred Time Slot (1 hour) *</label>
-                                <select id="preferredTime" required>
-                                    <option value="">Select Time Slot</option>
-                                    <option>12:00 AM – 1:00 AM</option>
-                                    <option>1:00 AM – 2:00 AM</option>
-                                    <option>2:00 AM – 3:00 AM</option>
-                                    <option>3:00 AM – 4:00 AM</option>
-                                    <option>4:00 AM – 5:00 AM</option>
-                                    <option>5:00 AM – 6:00 AM</option>
-                                    <option>6:00 AM – 7:00 AM</option>
-                                    <option>7:00 AM – 8:00 AM</option>
-                                    <option>8:00 AM – 9:00 AM</option>
-                                    <option>9:00 AM – 10:00 AM</option>
-                                    <option>10:00 AM – 11:00 AM</option>
-                                    <option>11:00 AM – 12:00 PM</option>
-                                    <option>12:00 PM – 1:00 PM</option>
-                                    <option>1:00 PM – 2:00 PM</option>
-                                    <option>2:00 PM – 3:00 PM</option>
-                                    <option>3:00 PM – 4:00 PM</option>
-                                    <option>4:00 PM – 5:00 PM</option>
-                                    <option>5:00 PM – 6:00 PM</option>
-                                    <option>6:00 PM – 7:00 PM</option>
-                                    <option>7:00 PM – 8:00 PM</option>
-                                    <option>8:00 PM – 9:00 PM</option>
-                                    <option>9:00 PM – 10:00 PM</option>
-                                    <option>10:00 PM – 11:00 PM</option>
-                                    <option>11:00 PM – 12:00 AM</option>
-                                </select>
+                                <label>Preferred Time *</label>
+                                <div class="custom-select" id="timeSelect">
+                                    <button type="button" class="custom-select-btn" id="timeSelectBtn">
+                                        <span class="cs-value">Select Time Slot</span>
+                                        <svg class="cs-arrow" width="12" height="8" viewBox="0 0 12 8"><path d="M1 1l5 5 5-5" stroke="rgba(255,255,255,0.7)" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg>
+                                    </button>
+                                    <ul class="custom-select-list" id="timeSelectList" role="listbox" aria-label="Select time slot">
+                                        <li class="cs-option" data-value="12:00 AM – 01:00 AM"><span>12:00 AM</span><span class="cs-dash">–</span><span>01:00 AM</span></li>
+                                        <li class="cs-option" data-value="01:00 AM – 02:00 AM"><span>01:00 AM</span><span class="cs-dash">–</span><span>02:00 AM</span></li>
+                                        <li class="cs-option" data-value="02:00 AM – 03:00 AM"><span>02:00 AM</span><span class="cs-dash">–</span><span>03:00 AM</span></li>
+                                        <li class="cs-option" data-value="03:00 AM – 04:00 AM"><span>03:00 AM</span><span class="cs-dash">–</span><span>04:00 AM</span></li>
+                                        <li class="cs-option" data-value="04:00 AM – 05:00 AM"><span>04:00 AM</span><span class="cs-dash">–</span><span>05:00 AM</span></li>
+                                        <li class="cs-option" data-value="05:00 AM – 06:00 AM"><span>05:00 AM</span><span class="cs-dash">–</span><span>06:00 AM</span></li>
+                                        <li class="cs-option" data-value="06:00 AM – 07:00 AM"><span>06:00 AM</span><span class="cs-dash">–</span><span>07:00 AM</span></li>
+                                        <li class="cs-option" data-value="07:00 AM – 08:00 AM"><span>07:00 AM</span><span class="cs-dash">–</span><span>08:00 AM</span></li>
+                                        <li class="cs-option" data-value="08:00 AM – 09:00 AM"><span>08:00 AM</span><span class="cs-dash">–</span><span>09:00 AM</span></li>
+                                        <li class="cs-option" data-value="09:00 AM – 10:00 AM"><span>09:00 AM</span><span class="cs-dash">–</span><span>10:00 AM</span></li>
+                                        <li class="cs-option" data-value="10:00 AM – 11:00 AM"><span>10:00 AM</span><span class="cs-dash">–</span><span>11:00 AM</span></li>
+                                        <li class="cs-option" data-value="11:00 AM – 12:00 PM"><span>11:00 AM</span><span class="cs-dash">–</span><span>12:00 PM</span></li>
+                                        <li class="cs-option" data-value="12:00 PM – 01:00 PM"><span>12:00 PM</span><span class="cs-dash">–</span><span>01:00 PM</span></li>
+                                        <li class="cs-option" data-value="01:00 PM – 02:00 PM"><span>01:00 PM</span><span class="cs-dash">–</span><span>02:00 PM</span></li>
+                                        <li class="cs-option" data-value="02:00 PM – 03:00 PM"><span>02:00 PM</span><span class="cs-dash">–</span><span>03:00 PM</span></li>
+                                        <li class="cs-option" data-value="03:00 PM – 04:00 PM"><span>03:00 PM</span><span class="cs-dash">–</span><span>04:00 PM</span></li>
+                                        <li class="cs-option" data-value="04:00 PM – 05:00 PM"><span>04:00 PM</span><span class="cs-dash">–</span><span>05:00 PM</span></li>
+                                        <li class="cs-option" data-value="05:00 PM – 06:00 PM"><span>05:00 PM</span><span class="cs-dash">–</span><span>06:00 PM</span></li>
+                                        <li class="cs-option" data-value="06:00 PM – 07:00 PM"><span>06:00 PM</span><span class="cs-dash">–</span><span>07:00 PM</span></li>
+                                        <li class="cs-option" data-value="07:00 PM – 08:00 PM"><span>07:00 PM</span><span class="cs-dash">–</span><span>08:00 PM</span></li>
+                                        <li class="cs-option" data-value="08:00 PM – 09:00 PM"><span>08:00 PM</span><span class="cs-dash">–</span><span>09:00 PM</span></li>
+                                        <li class="cs-option" data-value="09:00 PM – 10:00 PM"><span>09:00 PM</span><span class="cs-dash">–</span><span>10:00 PM</span></li>
+                                        <li class="cs-option" data-value="10:00 PM – 11:00 PM"><span>10:00 PM</span><span class="cs-dash">–</span><span>11:00 PM</span></li>
+                                        <li class="cs-option" data-value="11:00 PM – 12:00 AM"><span>11:00 PM</span><span class="cs-dash">–</span><span>12:00 AM</span></li>
+                                    </ul>
+                                    <input type="hidden" id="preferredTime" name="preferredTime" required>
+                                </div>
                                 <span class="field-error" id="err-preferredTime"></span>
                             </div>
                         </div>
@@ -1730,6 +1736,38 @@
                     if (v) { v.muted = true; v.play().catch(function(){}); }
                 });
                 document.removeEventListener('click', tryPlay);
+            });
+        })();
+
+        // ===== 15. CUSTOM TIME SELECT =====
+        (function() {
+            var wrap = document.getElementById('timeSelect');
+            var btn = document.getElementById('timeSelectBtn');
+            var list = document.getElementById('timeSelectList');
+            var hidden = document.getElementById('preferredTime');
+            if (!wrap || !btn || !list || !hidden) return;
+
+            wrap.classList.add('empty');
+
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                wrap.classList.toggle('open');
+            });
+
+            list.querySelectorAll('.cs-option').forEach(function(opt) {
+                opt.addEventListener('click', function() {
+                    var val = opt.getAttribute('data-value');
+                    hidden.value = val;
+                    btn.querySelector('.cs-value').textContent = val;
+                    wrap.classList.remove('empty');
+                    list.querySelectorAll('.cs-option').forEach(function(o) { o.classList.remove('selected'); });
+                    opt.classList.add('selected');
+                    wrap.classList.remove('open');
+                });
+            });
+
+            document.addEventListener('click', function(e) {
+                if (!wrap.contains(e.target)) wrap.classList.remove('open');
             });
         })();
 
