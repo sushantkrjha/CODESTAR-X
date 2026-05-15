@@ -44,6 +44,7 @@ html {
     font-size: 16px;
     overscroll-behavior-y: none;
     overflow-x: clip;
+    max-width: 100vw;
 }
 body {
     font-family: var(--font);
@@ -52,10 +53,13 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: clip;
-    overscroll-behavior-y: none;
+    overscroll-behavior: none;
     margin: 0;
     width: 100%;
+    max-width: 100vw;
 }
+/* Safety net — prevent any direct child of body from overflowing horizontally */
+body > * { max-width: 100vw; }
 img { max-width: 100%; display: block; }
 a { color: var(--primary); text-decoration: none; transition: color 0.2s; }
 ul { list-style: none; }
@@ -2478,8 +2482,8 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     border-radius: 26px;
     color: #fff;
 }
-.fab .material-icons { font-size: 24px; flex-shrink: 0; }
-.fab svg { flex-shrink: 0; }
+.fab .material-icons { font-size: 24px; flex-shrink: 0; line-height: 1; }
+.fab svg { flex-shrink: 0; width: 24px; height: 24px; display: block; }
 .fab-label {
     font-size: 0.8rem;
     font-weight: 700;
@@ -2669,7 +2673,7 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     }
     .fab { width: 46px; height: 46px; }
     .fab .material-icons { font-size: 20px; }
-    .fab svg { width: 18px; height: 18px; }
+    .fab svg { width: 20px; height: 20px; }
     .fab:hover { width: 46px; border-radius: 50%; }
     .fab:hover .fab-label { max-width: 0; opacity: 0; margin-left: 0; }
 
