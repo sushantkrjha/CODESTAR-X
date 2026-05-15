@@ -2094,6 +2094,71 @@ section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
     background: #fff;
     font-weight: 500;
 }
+/* ===== TIME PICKER — Custom select matching native form style ===== */
+.time-picker { position: relative; width: 100%; }
+.time-picker-btn {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: var(--radius-md);
+    background: rgba(255,255,255,0.12);
+    color: #FFFFFF;
+    font-family: var(--font);
+    font-size: 0.9rem;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: border-color 0.2s, background 0.2s;
+}
+.time-picker.empty .tp-value { color: rgba(255,255,255,0.55); }
+.time-picker-btn:hover,
+.time-picker.open .time-picker-btn { border-color: var(--accent); background: rgba(255,255,255,0.18); }
+.time-picker-btn svg { transition: transform 0.2s; flex-shrink: 0; }
+.time-picker.open .time-picker-btn svg { transform: rotate(180deg); }
+
+.time-picker-list {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    max-height: 260px;
+    overflow-y: auto;
+    z-index: 100;
+    padding: 4px;
+    display: none;
+}
+.time-picker.open .time-picker-list { display: block; }
+.tp-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #1E293B;
+    font-size: 0.9rem;
+    font-weight: 500;
+    font-family: var(--font);
+    font-variant-numeric: tabular-nums;
+    transition: background 0.15s, color 0.15s;
+}
+.tp-option > .tp-start,
+.tp-option > .tp-end {
+    width: 64px;
+    text-align: left;
+    display: inline-block;
+}
+.tp-option > .tp-dash { color: var(--text-secondary); }
+.tp-option:hover { background: var(--primary-light); color: var(--primary); }
+.tp-option:hover > .tp-dash { color: var(--primary); }
+.tp-option.selected { background: var(--primary); color: #FFFFFF; }
+.tp-option.selected > .tp-dash { color: rgba(255,255,255,0.85); }
 
 /* Custom select for time slot — perfect grid alignment */
 .custom-select {
