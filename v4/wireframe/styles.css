@@ -5146,3 +5146,319 @@ body {
     width: 0%;
     transition: width 0.1s linear;
 }
+
+/* ========================================
+   STUDENT PROJECTS (Star Category → Level → Project)
+   ======================================== */
+.projects-section {
+    background:
+        radial-gradient(circle at 12% 8%, rgba(77,59,194,0.07) 0%, transparent 45%),
+        radial-gradient(circle at 88% 92%, rgba(251,217,38,0.10) 0%, transparent 45%),
+        var(--bg-secondary);
+}
+
+/* ---- Category tabs ---- */
+.proj-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 36px;
+}
+.proj-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: 2px solid var(--border);
+    background: var(--bg);
+    color: var(--text-secondary);
+    font-family: var(--font);
+    font-size: 0.95rem;
+    font-weight: 800;
+    line-height: 1.2;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+.proj-tab .material-icons { font-size: 19px; }
+.proj-tab-sub {
+    font-size: 0.72rem;
+    font-weight: 700;
+    opacity: 0.75;
+    padding-left: 8px;
+    border-left: 1px solid currentColor;
+}
+.proj-tab:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+.proj-tab.active {
+    background: linear-gradient(135deg, var(--primary), #6C5CE7);
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 8px 22px rgba(77,59,194,0.28);
+}
+
+/* ---- Panels ---- */
+.proj-panel { display: none; }
+.proj-panel.active { display: block; animation: projFade 0.4s ease both; }
+@keyframes projFade {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Per-category accent (drives the card top border + icon tint) */
+.proj-theme-learners   { --proj-a: #33CCFF; --proj-b: #0099CC; }
+.proj-theme-thinkers   { --proj-a: #FFA800; --proj-b: #CC8500; }
+.proj-theme-innovators { --proj-a: #7453D7; --proj-b: #4D3BC2; }
+
+/* ---- Level group ---- */
+.proj-level { margin-bottom: 34px; }
+.proj-level:last-child { margin-bottom: 0; }
+.proj-level-head {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed var(--border);
+}
+.proj-level-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    border-radius: var(--radius-full);
+    font-size: 0.82rem;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #fff;
+}
+.proj-level-pill .material-icons { font-size: 16px; }
+.level-easy   { background: linear-gradient(135deg, #10B981, #059669); }
+.level-medium { background: linear-gradient(135deg, #FFA800, #E08A00); }
+.level-pro    { background: linear-gradient(135deg, #7453D7, #4D3BC2); }
+.proj-level-note {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+.proj-level-count {
+    margin-left: auto;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--text-light);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+}
+
+/* ---- Project cards ---- */
+.proj-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+}
+.proj-card {
+    position: relative;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 18px 18px 16px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.proj-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--proj-a, var(--primary)), var(--proj-b, #6C5CE7));
+}
+.proj-card:hover {
+    transform: translateY(-4px);
+    border-color: transparent;
+    box-shadow: var(--shadow-lg);
+}
+.proj-card-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.proj-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, var(--proj-a, var(--primary)), var(--proj-b, #6C5CE7));
+    color: #fff;
+}
+.proj-icon .material-icons { font-size: 21px; }
+.proj-platform {
+    font-size: 0.74rem;
+    font-weight: 800;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    line-height: 1.3;
+}
+.proj-name {
+    font-size: 1.06rem;
+    font-weight: 900;
+    color: var(--text);
+    margin-bottom: 12px;
+}
+.proj-foot {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-light);
+}
+.proj-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--text-secondary);
+    background: var(--bg-tertiary);
+    padding: 4px 9px;
+    border-radius: var(--radius-full);
+}
+.proj-tag .material-icons { font-size: 13px; }
+
+/* ---- Bottom CTA ---- */
+.proj-cta {
+    margin-top: 36px;
+    padding: 22px 26px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    box-shadow: var(--shadow-sm);
+}
+.proj-cta p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+}
+.proj-cta p .material-icons { color: var(--accent-dark); font-size: 22px; }
+
+@media (max-width: 768px) {
+    .proj-filters { gap: 8px; }
+    .proj-tab { padding: 9px 16px; font-size: 0.84rem; }
+    .proj-tab-sub { display: none; }
+    .proj-level-note { display: none; }
+    .proj-level-count { margin-left: auto; }
+    .proj-grid { grid-template-columns: 1fr; }
+    .proj-cta { flex-direction: column; text-align: center; }
+    .proj-cta p { flex-direction: column; gap: 6px; }
+}
+
+/* ========================================
+   PRICING — CLASS PACKS (30 / 70 / 120)
+   ======================================== */
+.pricing-classes {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+    padding: 5px 14px;
+    border-radius: var(--radius-full);
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+.pricing-classes .material-icons { font-size: 16px; }
+.pricing-featured .pricing-classes {
+    background: linear-gradient(135deg, var(--primary), #6C5CE7);
+    color: #fff;
+}
+.pricing-price { line-height: 1.1; }
+.pricing-compare {
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.pricing-compare s {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-light);
+}
+.pricing-save {
+    background: rgba(16,185,129,0.12);
+    color: #059669;
+    font-size: 0.75rem;
+    font-weight: 900;
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+}
+.pricing-perclass {
+    margin-top: 6px;
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: var(--text-secondary);
+}
+
+/* Free demo strip below the packs */
+.pricing-demo-strip {
+    margin-top: 28px;
+    padding: 20px 26px;
+    background: #fff;
+    border: 2px dashed var(--primary-light);
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.pds-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.pds-info > .material-icons {
+    font-size: 32px;
+    color: var(--accent-dark);
+    flex-shrink: 0;
+}
+.pds-info strong {
+    display: block;
+    font-size: 1rem;
+    color: var(--text);
+}
+.pds-info span {
+    font-size: 0.86rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .pricing-demo-strip { flex-direction: column; text-align: center; }
+    .pds-info { flex-direction: column; gap: 8px; }
+}
