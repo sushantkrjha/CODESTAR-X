@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Learning Journey</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background: #eef9ff;
+    color: #171650;
+    overflow-x: auto;
+}
+
+/* =========================================================
+   STAGE COLOURS
+========================================================= */
+
+:root {
+    --c-explore: #7b5be0;
+    --c-learn:   #3d9ae2;
+    --c-create:  #efa817;
+    --c-grow:    #4aa96c;
+    --c-succeed: #7b5be0;
+}
+
+/* =========================================================
+   MAIN SECTION
+========================================================= */
+
+.journey {
+    position: relative;
+    width: 100%;
+    min-width: 1100px;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #eaf7ff 0%, #f2fbff 45%, #f6fcf2 70%);
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.title-area {
+    position: relative;
+    z-index: 20;
+    text-align: center;
+    padding: 34px 20px 0;
+}
+
+.title {
+    margin: 0;
+    font-size: clamp(28px, 3vw, 46px);
+    line-height: 1.1;
+    font-weight: 900;
+    color: #15154e;
+    letter-spacing: -0.5px;
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 26px;
+    margin-top: 14px;
+    font-size: clamp(14px, 1.1vw, 19px);
+    font-weight: 800;
+}
+
+.legend span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.explore { color: var(--c-explore); }
+.explore .dot { background: var(--c-explore); }
+.learn { color: var(--c-learn); }
+.learn .dot { background: var(--c-learn); }
+.create { color: var(--c-create); }
+.create .dot { background: var(--c-create); }
+.grow { color: var(--c-grow); }
+.grow .dot { background: var(--c-grow); }
+.succeed { color: var(--c-succeed); }
+.succeed .dot { background: var(--c-succeed); }
+
+/* =========================================================
+   SCENE
+========================================================= */
+
+.scene {
+    position: relative;
+    width: 100%;
+    height: 780px;
+    margin-top: 6px;
+}
+
+/* ---- landscape (hills, trees, mountains) ---- */
+
+.landscape {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* ---- clouds ---- */
+
+.cloud {
+    position: absolute;
+    z-index: 2;
+    width: 120px;
+    height: 42px;
+    background: rgba(255,255,255,.95);
+    border-radius: 50px;
+    box-shadow: 0 6px 18px rgba(90,130,150,.07);
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 52px;
+    height: 52px;
+    left: 20px;
+    top: -25px;
+}
+
+.cloud::after {
+    width: 64px;
+    height: 64px;
+    right: 14px;
+    top: -32px;
+}
+
+.cloud-1 { left: 4%;  top: 70px; }
+.cloud-2 { left: 46%; top: 44px;  transform: scale(.8); }
+.cloud-3 { right: 6%; top: 92px;  transform: scale(.9); }
+
+/* ---- birds ---- */
+
+.bird {
+    position: absolute;
+    z-index: 3;
+    width: 26px;
+    height: 12px;
+    border-top: 3px solid #8f8db4;
+    border-radius: 50%;
+}
+
+.bird::after {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 12px;
+    left: 22px;
+    top: -3px;
+    border-top: 3px solid #8f8db4;
+    border-radius: 50%;
+}
+
+.bird-1 { right: 27%; top: 92px; }
+.bird-2 { right: 22%; top: 108px; transform: scale(.72); }
+
+/* ---- paper plane + dotted trail ---- */
+
+.plane-trail {
+    position: absolute;
+    z-index: 3;
+    left: 2%;
+    top: 96px;
+    width: 300px;
+    height: 150px;
+}
+
+/* =========================================================
+   ROAD
+========================================================= */
+
+.road-wrapper {
+    position: absolute;
+    z-index: 8;
+    left: 3%;
+    right: 3%;
+    top: 70px;
+    height: 560px;
+}
+
+.road-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.road-shadow {
+    fill: none;
+    stroke: rgba(46, 34, 110, .16);
+    stroke-width: 74;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.road-seg {
+    fill: none;
+    stroke-width: 62;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.seg-explore { stroke: var(--c-explore); }
+.seg-learn   { stroke: var(--c-learn); }
+.seg-create  { stroke: var(--c-create); }
+.seg-grow    { stroke: var(--c-grow); }
+.seg-succeed { stroke: var(--c-succeed); }
+
+.road-dash {
+    fill: none;
+    stroke: rgba(255,255,255,.92);
+    stroke-width: 5;
+    stroke-dasharray: 20 18;
+    stroke-linecap: round;
+}
+
+/* =========================================================
+   START SIGNPOST
+========================================================= */
+
+.start {
+    position: absolute;
+    z-index: 22;
+    left: -1%;
+    top: 52%;
+}
+
+.start-board {
+    position: relative;
+    background: linear-gradient(180deg, #c9832f, #a9631c);
+    color: #fff;
+    padding: 13px 30px 13px 22px;
+    font-size: 23px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    box-shadow: 0 6px 14px rgba(0,0,0,.16);
+}
+
+.start-board::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: 0;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-left: 20px solid #a9631c;
+}
+
+.start-post {
+    width: 14px;
+    height: 96px;
+    margin-left: 26px;
+    background: linear-gradient(90deg, #a9631c, #8d4f13);
+    border-radius: 0 0 4px 4px;
+}
+
+/* =========================================================
+   TROPHY + EXPERT FLAG
+========================================================= */
+
+.trophy-group {
+    position: absolute;
+    z-index: 30;
+    right: 5%;
+    top: 62px;
+    text-align: center;
+}
+
+.flag {
+    position: absolute;
+    left: 22px;
+    top: -26px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.flag-pole {
+    width: 5px;
+    height: 96px;
+    background: linear-gradient(180deg, #b9a7ee, #8a72d8);
+    border-radius: 3px;
+}
+
+.flag-cloth {
+    position: relative;
+    margin-left: -1px;
+    background: linear-gradient(135deg, #7b5be0, #5c3fd0);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: .5px;
+    padding: 9px 26px 9px 16px;
+    border-radius: 4px 6px 6px 4px;
+    box-shadow: 0 6px 14px rgba(77,50,180,.28);
+}
+
+.flag-cloth::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-top: 19px solid transparent;
+    border-bottom: 19px solid transparent;
+    border-right: 14px solid #eaf7ff;
+}
+
+.trophy {
+    font-size: 96px;
+    line-height: 1;
+    filter: drop-shadow(0 8px 8px rgba(0,0,0,.16));
+}
+
+/* =========================================================
+   MILESTONES
+========================================================= */
+
+.ms {
+    position: absolute;
+    z-index: 25;
+    width: 176px;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+/* pin */
+
+.ms-pin {
+    position: relative;
+    width: 92px;
+    height: 92px;
+    margin: 0 auto;
+    background: #fff;
+    border: 5px solid var(--c);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    box-shadow: 0 8px 18px rgba(50,40,130,.16);
+}
+
+/* pointed tip that touches the road */
+
+.ms-pin::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -16px;
+    transform: translateX(-50%);
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 18px solid var(--c);
+}
+
+.ms-num {
+    position: absolute;
+    left: -12px;
+    top: -12px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--c);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 900;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 10px rgba(50,40,130,.22);
+}
+
+/* card */
+
+.ms-card {
+    position: relative;
+    margin-top: 30px;
+    padding: 22px 12px 14px;
+    background: rgba(255,255,255,.97);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(46,50,100,.14);
+}
+
+.ms-label {
+    position: absolute;
+    left: 50%;
+    top: -14px;
+    transform: translateX(-50%);
+    background: var(--c);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 900;
+    padding: 5px 18px;
+    border-radius: 20px;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(50,40,130,.2);
+}
+
+.ms-card p {
+    margin: 0;
+    font-size: 13.5px;
+    line-height: 1.4;
+    font-weight: 600;
+    color: #5f607e;
+}
+
+/* ---- per-stage colour + position ---- */
+
+.ms-1 { --c: var(--c-explore); left: 11.0%;  top: calc(68.8% - 46px); }
+.ms-2 { --c: var(--c-learn);   left: 27.5%;  top: calc(50.8% - 46px); }
+.ms-3 { --c: var(--c-create);  left: 44.0%;  top: calc(61.7% - 46px); }
+.ms-4 { --c: var(--c-grow);    left: 60.5%;  top: calc(53.9% - 46px); }
+.ms-5 { --c: var(--c-explore); left: 76.0%;  top: calc(41.4% - 46px); }
+.ms-6 { --c: var(--c-succeed); left: 89.3%;  top: calc(29.7% - 46px); }
+
+/* =========================================================
+   BOTTOM FEATURES
+========================================================= */
+
+.features {
+    position: absolute;
+    z-index: 50;
+    left: 3%;
+    right: 3%;
+    bottom: 18px;
+    min-height: 104px;
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 10px 30px rgba(50,70,70,.10);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 18px 14px;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 0 18px;
+    border-right: 1px solid #ececf3;
+}
+
+.feature:last-child {
+    border-right: none;
+}
+
+.feature-icon {
+    flex: 0 0 54px;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: var(--c-explore);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.feature:nth-child(2) .feature-icon { background: var(--c-learn); }
+.feature:nth-child(3) .feature-icon { background: var(--c-create); }
+.feature:nth-child(4) .feature-icon { background: var(--c-grow); }
+.feature:nth-child(5) .feature-icon { background: var(--c-succeed); }
+
+.feature-text strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 900;
+    color: #171650;
+}
+
+.feature-text span {
+    display: block;
+    margin-top: 4px;
+    font-size: 12.5px;
+    line-height: 1.4;
+    color: #66677e;
+}
+
+/* =========================================================
+   RESPONSIVE (scale down, keep the layout intact)
+========================================================= */
+
+@media (max-width: 1350px) {
+
+    .scene { height: 720px; }
+    .road-wrapper { top: 62px; height: 520px; }
+
+    .ms { width: 158px; }
+
+    .ms-pin {
+        width: 78px;
+        height: 78px;
+        font-size: 33px;
+        border-width: 5px;
+    }
+
+    .ms-1 { top: calc(68.8% - 39px); }
+    .ms-2 { top: calc(50.8% - 39px); }
+    .ms-3 { top: calc(61.7% - 39px); }
+    .ms-4 { top: calc(53.9% - 39px); }
+    .ms-5 { top: calc(41.4% - 39px); }
+    .ms-6 { top: calc(29.7% - 39px); }
+
+    .ms-num {
+        width: 34px;
+        height: 34px;
+        font-size: 17px;
+    }
+
+    .ms-card p { font-size: 12.5px; }
+
+    .road-shadow { stroke-width: 66; }
+    .road-seg { stroke-width: 55; }
+
+    .trophy { font-size: 80px; }
+    .trophy-group { right: 7%; }
+
+    .feature { padding: 0 10px; }
+    .feature-icon { width: 46px; height: 46px; flex-basis: 46px; font-size: 21px; }
+    .feature-text strong { font-size: 13px; }
+    .feature-text span { font-size: 11px; }
+}
+</style>
+</head>
+
+<body>
+
+<section class="journey">
+
+    <!-- ================= TITLE ================= -->
+
+    <div class="title-area">
+
+        <h1 class="title">
+            Your Learning Journey to Become a Confident Expert
+        </h1>
+
+        <div class="legend">
+            <span class="explore"><i class="dot"></i> Explore</span>
+            <span class="learn"><i class="dot"></i> Learn</span>
+            <span class="create"><i class="dot"></i> Create</span>
+            <span class="grow"><i class="dot"></i> Grow</span>
+            <span class="succeed"><i class="dot"></i> Succeed</span>
+        </div>
+
+    </div>
+
+
+    <!-- ================= SCENE ================= -->
+
+    <div class="scene">
+
+        <!-- ---------- landscape ---------- -->
+
+        <svg class="landscape" viewBox="0 0 1400 780" preserveAspectRatio="none">
+
+            <!-- distant mountain -->
+            <path d="M 150 470 L 240 330 L 330 470 Z" fill="#cdd9ee" />
+            <path d="M 213 428 L 240 330 L 268 428 L 245 415 L 228 432 Z" fill="#ffffff" />
+
+            <!-- far hill (rises to the trophy on the right) -->
+            <path d="M 0 500 C 180 440, 330 505, 520 482
+                     C 760 456, 900 400, 1100 322
+                     C 1230 272, 1310 258, 1400 240
+                     L 1400 780 L 0 780 Z" fill="#dcf2bd" />
+
+            <!-- mid hill -->
+            <path d="M 0 575 C 210 522, 430 585, 665 548
+                     C 905 510, 1065 442, 1245 382
+                     C 1315 358, 1355 350, 1400 344
+                     L 1400 780 L 0 780 Z" fill="#c9e9a0" />
+
+            <!-- near hill -->
+            <path d="M 0 655 C 265 602, 525 668, 805 632
+                     C 1065 598, 1225 522, 1400 468
+                     L 1400 780 L 0 780 Z" fill="#b4e087" />
+
+            <!-- front meadow -->
+            <path d="M 0 726 C 300 696, 700 744, 1010 718
+                     C 1205 701, 1305 704, 1400 694
+                     L 1400 780 L 0 780 Z" fill="#a2d773" />
+
+            <!-- ---- trees ---- -->
+            <g fill="#5aa85f">
+                <!-- left cluster -->
+                <rect x="96" y="636" width="9" height="30" fill="#7d5330" />
+                <circle cx="100" cy="622" r="26" />
+                <circle cx="82"  cy="636" r="18" fill="#4d9a54" />
+                <circle cx="118" cy="638" r="17" fill="#68b46b" />
+
+                <rect x="292" y="690" width="8" height="26" fill="#7d5330" />
+                <circle cx="296" cy="678" r="22" />
+                <circle cx="314" cy="690" r="15" fill="#4d9a54" />
+
+                <!-- middle -->
+                <rect x="646" y="700" width="9" height="28" fill="#7d5330" />
+                <circle cx="650" cy="686" r="24" />
+                <circle cx="630" cy="700" r="16" fill="#4d9a54" />
+
+                <rect x="905" y="676" width="8" height="26" fill="#7d5330" />
+                <circle cx="909" cy="664" r="21" />
+
+                <!-- right, on the rising hill -->
+                <rect x="1178" y="528" width="8" height="26" fill="#7d5330" />
+                <circle cx="1182" cy="516" r="22" />
+                <circle cx="1200" cy="528" r="15" fill="#4d9a54" />
+
+                <rect x="1318" y="470" width="8" height="24" fill="#7d5330" />
+                <circle cx="1322" cy="460" r="19" />
+            </g>
+
+            <!-- ---- bushes ---- -->
+            <g fill="#8ccf72">
+                <ellipse cx="200" cy="710" rx="34" ry="18" />
+                <ellipse cx="232" cy="714" rx="24" ry="14" />
+                <ellipse cx="470" cy="726" rx="30" ry="16" />
+                <ellipse cx="770" cy="714" rx="34" ry="17" />
+                <ellipse cx="1090" cy="640" rx="30" ry="15" />
+                <ellipse cx="1268" cy="560" rx="26" ry="13" />
+            </g>
+
+        </svg>
+
+        <!-- ---------- clouds ---------- -->
+
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+
+        <!-- ---------- birds ---------- -->
+
+        <div class="bird bird-1"></div>
+        <div class="bird bird-2"></div>
+
+        <!-- ---------- paper plane with dotted trail ---------- -->
+
+        <svg class="plane-trail" viewBox="0 0 300 150">
+            <path d="M 8 138 C 40 120, 20 60, 70 62 C 108 64, 104 118, 148 106 C 186 96, 196 62, 232 44"
+                  fill="none" stroke="#b9a7ee" stroke-width="3"
+                  stroke-dasharray="2 9" stroke-linecap="round" />
+            <g transform="translate(236,26) rotate(-18)">
+                <path d="M 0 18 L 46 0 L 24 40 L 18 24 Z" fill="#9a7bec" />
+                <path d="M 18 24 L 46 0 L 24 40 Z" fill="#7b5be0" />
+            </g>
+        </svg>
+
+
+        <!-- ================= ROAD ================= -->
+
+        <div class="road-wrapper">
+
+            <svg class="road-svg" viewBox="0 0 1400 640" preserveAspectRatio="none">
+
+                <!-- full-path soft shadow -->
+                <path class="road-shadow" d="
+                    M 25 490
+                    C 80 490, 100 440, 154 440
+                    C 250 440, 285 325, 385 325
+                    C 490 325, 515 395, 616 395
+                    C 720 395, 745 345, 847 345
+                    C 940 345, 965 265, 1064 265
+                    C 1170 265, 1180 190, 1250 190
+                    C 1295 190, 1320 168, 1345 152
+                " />
+
+                <!-- colour-coded stage segments -->
+
+                <path class="road-seg seg-explore" d="
+                    M 25 490
+                    C 80 490, 100 440, 154 440
+                    C 250 440, 285 325, 385 325
+                " />
+
+                <path class="road-seg seg-learn" d="
+                    M 385 325
+                    C 490 325, 515 395, 616 395
+                " />
+
+                <path class="road-seg seg-create" d="
+                    M 616 395
+                    C 720 395, 745 345, 847 345
+                " />
+
+                <path class="road-seg seg-grow" d="
+                    M 847 345
+                    C 940 345, 965 265, 1064 265
+                " />
+
+                <path class="road-seg seg-succeed" d="
+                    M 1064 265
+                    C 1170 265, 1180 190, 1250 190
+                    C 1295 190, 1320 168, 1345 152
+                " />
+
+                <!-- white centre dashes -->
+                <path class="road-dash" d="
+                    M 25 490
+                    C 80 490, 100 440, 154 440
+                    C 250 440, 285 325, 385 325
+                    C 490 325, 515 395, 616 395
+                    C 720 395, 745 345, 847 345
+                    C 940 345, 965 265, 1064 265
+                    C 1170 265, 1180 190, 1250 190
+                    C 1295 190, 1320 168, 1345 152
+                " />
+
+            </svg>
+
+
+            <!-- START signpost -->
+
+            <div class="start">
+                <div class="start-board">START</div>
+                <div class="start-post"></div>
+            </div>
+
+
+            <!-- ================= MILESTONES ================= -->
+
+            <div class="ms ms-1">
+                <div class="ms-pin">
+                    <span class="ms-num">1</span>
+                    💡
+                </div>
+                <div class="ms-card">
+                    <span class="ms-label">Discover</span>
+                    <p>Learn the basics and explore new concepts.</p>
+                </div>
+            </div>
+
+            <div class="ms ms-2">
+                <div class="ms-pin">
+                    <span class="ms-num">2</span>
+                    📘
+                </div>
+                <div class="ms-card">
+                    <span class="ms-label">Learn</span>
+                    <p>Build strong foundations and gain new skills.</p>
+                </div>
+            </div>
+
+            <div class="ms ms-3">
+                <div class="ms-pin">
+                    <span class="ms-num">3</span>
+                    💻
+                </div>
+                <div class="ms-card">
+                    <span class="ms-label">Practice</span>
+                    <p>Apply what you learn through hands-on activities.</p>
+                </div>
+            </div>
+
+            <div class="ms ms-4">
+                <div class="ms-pin">
+                    <span class="ms-num">4</span>
+                    🚀
+                </div>
+                <div class="ms-card">
+                    <span class="ms-label">Create</span>
+                    <p>Build projects and bring your ideas to life.</p>
+                </div>
+            </div>
+
+            <div class="ms ms-5">
+                <div class="ms-pin">
+                    <span class="ms-num">5</span>
+                    📈
+                </div>
+                <div class="ms-card">
+                    <span class="ms-label">Grow</span>
+                    <p>Take on challenges, improve, and level up.</p>
+                </div>
+            </div>
+
+            <div class="ms ms-6">
+                <div class="ms-pin">
+                    <span class="ms-num">6</span>
+                    🏅
+                </div>
+                <div class="ms-card">
+                    <span class="ms-label">Succeed</span>
+                    <p>Achieve your goals and become a confident expert!</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- ================= TROPHY + EXPERT FLAG ================= -->
+
+        <div class="trophy-group">
+            <div class="flag">
+                <div class="flag-pole"></div>
+                <div class="flag-cloth">EXPERT</div>
+            </div>
+            <div class="trophy">🏆</div>
+        </div>
+
+
+        <!-- ================= FEATURES ================= -->
+
+        <div class="features">
+
+            <div class="feature">
+                <div class="feature-icon">🎓</div>
+                <div class="feature-text">
+                    <strong>Step-by-step Learning</strong>
+                    <span>Easy to follow and fun every step of the way.</span>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🚀</div>
+                <div class="feature-text">
+                    <strong>Hands-on Projects</strong>
+                    <span>Build real projects and showcase your skills.</span>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🏅</div>
+                <div class="feature-text">
+                    <strong>Rewards &amp; Badges</strong>
+                    <span>Earn badges and celebrate your achievements.</span>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">👥</div>
+                <div class="feature-text">
+                    <strong>Global Community</strong>
+                    <span>Connect, collaborate and learn together.</span>
+                </div>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <div class="feature-text">
+                    <strong>Future Ready Skills</strong>
+                    <span>Develop skills for tomorrow and beyond.</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>
